@@ -10,6 +10,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Rebuild twice a day so the Bluesky feed on the News section stays current
+  # even when nobody pushes.
+  schedule:
+    - cron: '17 6,18 * * *'
 
 permissions:
   contents: read
@@ -52,6 +56,13 @@ jobs:
 
       # enablement: true turns Pages on with the "GitHub Actions" source if it
       # has never been configured, so no manual setup is needed for a new repo.
+      # Refresh the Bluesky feed into data/bluesky.json before building, so the
+      # posts are baked into the HTML and no visitor's browser contacts Bluesky.
+      # The script keeps the committed copy if the API is unreachable, so an
+      # outage cannot fail a deploy.
+      - name: Refresh the Bluesky feed
+        run: python3 .github/scripts/fetch_bluesky.py
+
       - uses: actions/configure-pages@v5
         id: pages
         with:

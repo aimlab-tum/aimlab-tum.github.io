@@ -39,6 +39,13 @@ jobs:
 
       # --buildFuture surfaces posts dated ahead of today, which are otherwise
       # invisible until their publish date.
+      # Refresh the Bluesky feed into data/bluesky.json before building, so the
+      # posts are baked into the HTML and no visitor's browser contacts Bluesky.
+      # The script keeps the committed copy if the API is unreachable, so an
+      # outage cannot fail a deploy.
+      - name: Refresh the Bluesky feed
+        run: python3 .github/scripts/fetch_bluesky.py
+
       - name: Build
         run: hugo --gc --minify --buildFuture -b "http://localhost:1313/"
 

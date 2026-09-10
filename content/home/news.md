@@ -15,7 +15,12 @@ subtitle = ""
   page_type = "post"
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 5
+  count = 8
+
+  # Show the lab's Bluesky posts beside the news list.
+  # Handled by layouts/partials/widgets/pages.html; the feed itself is fetched
+  # at deploy time into data/bluesky.json by .github/scripts/fetch_bluesky.py.
+  bluesky_feed = true
   
   # Choose how many pages you would like to offset by
   offset = 0
