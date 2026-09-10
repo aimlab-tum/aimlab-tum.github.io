@@ -127,3 +127,151 @@
 @media (max-width: 800px) {
   .nw { grid-template-columns: 1fr; }
 }
+
+/* ---------------------------------------------------------------------------
+   Welcome hero: a photo carousel with the opening lines over it.
+
+   Each photograph carries its own scrim, set inline as `--scrim` on the figure
+   and measured from that photograph rather than chosen by eye: the 95th
+   percentile brightness of the region the text sits on, darkened just enough to
+   clear 4.5:1 against white. The four differ a lot (0.62 to 0.75), so one
+   shared value would crush three pictures to protect the fourth.
+
+   The gradient runs left to right and is gone by 70% across, so the group -
+   centre and right in every one of these photographs - keeps its exposure.
+   --------------------------------------------------------------------------- */
+#page_header {
+  padding-top: 0;
+  padding-bottom: 3.5rem;
+}
+
+.hero-band {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0b1016;
+  margin-bottom: 2.5rem;
+}
+
+.hero-shot {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity .5s ease;
+
+  &.is-on { opacity: 1; }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    display: block;
+  }
+
+  /* The per-photograph scrim. The gradient is plain black and the strength
+     comes from `opacity`, because this theme's Hugo builds Sass with libsass,
+     which tries to evaluate rgba() itself and errors on a custom property
+     inside it. Same result, and it compiles. */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: var(--scrim, .65);
+    background: linear-gradient(to right,
+      rgb(0, 0, 0) 0%,
+      rgb(0, 0, 0) 32%,
+      rgba(0, 0, 0, .5) 50%,
+      rgba(0, 0, 0, 0) 70%);
+  }
+}
+
+/* Grain over the gradient. A flat gradient this wide bands visibly on 8-bit
+   screens; the noise breaks the steps up. Inline, so nothing extra loads. */
+.hero-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+}
+
+/* Lines the words up with the rest of the page even though the band is
+   full-bleed. */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.hero-copy {
+  max-width: 34rem;
+  color: #fff;
+
+  h1 { color: #fff; margin: 0 0 .25rem; }
+  .hero-tagline { font-size: 1.1rem; color: rgba(255, 255, 255, .86); margin: 0 0 .75rem; }
+  .hero-lead { color: rgba(255, 255, 255, .92); margin: 0; }
+}
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(0, 0, 0, .42);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  transition: background .15s;
+
+  &:hover { background: rgba(0, 0, 0, .68); }
+}
+.hero-prev { left: 14px; }
+.hero-next { right: 14px; }
+
+.hero-dots {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  z-index: 3;
+  display: flex;
+  gap: 7px;
+
+  button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(255, 255, 255, .45);
+
+    &[aria-current="true"] { background: #fff; }
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-band { min-height: 300px; }
+  .hero-copy h1 { font-size: 1.9rem; }
+  /* no room beside the text for them; swipe and the dots still work */
+  .hero-arrow { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-shot { transition: none; }
+}
