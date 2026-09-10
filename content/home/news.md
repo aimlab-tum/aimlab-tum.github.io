@@ -15,7 +15,8 @@ subtitle = ""
   page_type = "post"
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 8
+  # Five in the section; everything else is one click away on /post/.
+  count = 5
 
   # Show the lab's Bluesky posts beside the news list.
   # Handled by layouts/partials/widgets/pages.html; the feed itself is fetched
@@ -27,6 +28,13 @@ subtitle = ""
 
   # Page order. Descending (desc) or ascending (asc) date.
   order = "desc"
+
+  # Always offer the full archive underneath the list, not only when there
+  # happen to be more posts than fit. The link points at the post section,
+  # which Hugo already generates at /post/.
+  [content.archive]
+    enable = true
+    text = "All news"
 
   # Filter posts by a taxonomy term.
   [content.filters]
