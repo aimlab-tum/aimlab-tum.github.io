@@ -22,6 +22,7 @@ subtitle = ""
   css_class = ""
 +++
 
+
 The Lab for AI in Medicine at [TU Munich](https://www.tum.de/) develops algorithms and models to improve medicine for patients and healthcare professionals. Our aim is to develop artificial intelligence (AI) and machine learning (ML) techniques for the analysis and interpretation of biomedical data. The group focuses on pursuing blue-sky research, including:
 
 - AI for the early detection, prediction and diagnosis of diseases
@@ -40,7 +41,10 @@ The following research groups are based at the chair:
 - [AI for vision](#ai-for-vision)
 - AI for opportunistic cardiac MRI
 
----
+<div class="rw">
+<div class="rw-rail"></div>
+
+<section class="rw-area">
 
 ## AI for biomedical image analysis and interpretation
 
@@ -74,60 +78,10 @@ Developing these algorithms in the medical domain presents many challenges which
   </div>
 </div>
 
-<style>
-.hrv-carousel { margin: 1.5rem 0 2rem; }
-.hrv-track {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: 0;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 8px;
-}
-.hrv-track::-webkit-scrollbar { display: none; }
-.hrv-track { scrollbar-width: none; }
-.hrv-slide {
-  flex: 0 0 100%;
-  scroll-snap-align: center;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-.hrv-slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  object-fit: contain;
-  background: #f5f5f5;
-}
-.hrv-slide figcaption {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-top: 0.6rem;
-  padding: 0 0.5rem;
-  line-height: 1.45;
-  text-align: left;
-}
-.hrv-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-top: 0.9rem;
-}
-.hrv-dots a {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #ccc;
-  transition: background 0.2s, transform 0.2s;
-}
-.hrv-dots a:hover { background: #888; transform: scale(1.15); }
-</style>
 
-<details>
-<summary><strong>Key publications</strong></summary>
+
+<details class="rw-pubs">
+<summary>Key publications</summary>
 
 - Hager, P., Jungmann, F., Holland, R., Bhagat, K., Hubrecht, I., Knauer, M.M., Vielhauer, J., Makowski, M., Braren, R., Kaissis, G., & Rueckert, D. (2024). Evaluation and mitigation of the limitations of large language models in clinical decision-making. *Nature Medicine, 30*, 2613–2622.
 - Dima, A.F., Zimmer, V.A., Menten, M.J., Li, H.B., Graf, M., Lemke, T., Raffler, P., Graf, R., Kirschke, J.S., Braren, R.F., & Rueckert, D. (2023). 3D Arterial Segmentation via Single 2D Projections and Depth Supervision in Contrast-Enhanced CT Images. *MICCAI*.
@@ -142,7 +96,9 @@ Developing these algorithms in the medical domain presents many challenges which
 
 </details>
 
----
+</section>
+
+<section class="rw-area">
 
 ## Inverse problems in biomedical imaging
 
@@ -154,8 +110,8 @@ The development of algorithms to solve inverse problems arising in sensor and im
 
 We study how these deep learning-based approaches can be optimized for clinical applications and how they can be combined with image analysis methods. Deep learning-based approaches for reconstructing magnetic resonance imaging (MRI) or computed tomography (CT) provide efficient AI models, allowing the reconstruction of high-quality MRI images, and high-quality CT images from low-dose X-ray images. Recent works on generative models have shown great promise for accelerating reconstruction tasks to shorten the scan time in MRI, as well as generating images with much higher resolution than the acquired resolution (e.g. super-resolution). Here, we tackle these problems by utilizing AI (i.e., diffusion models) guided by readily available MR images from other organs/tissues, MRI scanning parameters, or other MRI physics-guided information.
 
-<details>
-<summary><strong>Key publications</strong></summary>
+<details class="rw-pubs">
+<summary>Key publications</summary>
 
 - Schlemper, J., Caballero, J., Hajnal, J.V., Price, A.N. & Rueckert, D. (2017). A deep cascade of convolutional neural networks for dynamic MR image reconstruction. *IEEE Transactions on Medical Imaging*.
 - Qin, C., Schlemper, J., Caballero, J., Price, A.N., Hajnal, J.V. & Rueckert, D. (2018). Convolutional recurrent neural networks for dynamic MR image reconstruction. *IEEE Transactions on Medical Imaging*.
@@ -171,7 +127,9 @@ We study how these deep learning-based approaches can be optimized for clinical 
 
 </details>
 
----
+</section>
+
+<section class="rw-area">
 
 ## Privacy-preserving and trustworthy AI in medicine
 
@@ -206,8 +164,8 @@ Building trust in AI necessitates a comprehensive approach encompassing privacy,
   </div>
 </div>
 
-<details>
-<summary><strong>Key publications</strong></summary>
+<details class="rw-pubs">
+<summary>Key publications</summary>
 
 - Kaiser, J., Ziller, A., Triantafillou, E., Rückert, D., & Kaissis, G. (2026). Your Privacy Depends on Others: Collusion Vulnerabilities in Individual Differential Privacy. *4th IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)*.
 - Lockfisch, S., Schwethelm, K., Menten, M., Braren, R., Rueckert, D., Ziller, A., & Kaissis, G. (2025). On Arbitrary Predictions from Equally Valid Models. *AAAI Workshop on Navigating Model Uncertainty and the Rashomon Effect (MURE)*.
@@ -228,7 +186,9 @@ Building trust in AI necessitates a comprehensive approach encompassing privacy,
 
 </details>
 
----
+</section>
+
+<section class="rw-area">
 
 ## AI for vision
 
@@ -242,8 +202,8 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 
 **Deep learning for ophthalmology.** Good vision is essential for navigating our environment, communicating, and performing everyday activities. As of 2020, more than 200 million people worldwide suffered from moderate to severe vision impairment. Driven by the comparative ease of imaging the eye and obtaining large imaging datasets, ophthalmology has been an early adopter of deep learning in healthcare. Our group's work in machine learning for ophthalmology simultaneously evaluates new algorithmic innovations while aiming to improve medical care for patients affected by ocular diseases.
 
-<details>
-<summary><strong>Key publications</strong></summary>
+<details class="rw-pubs">
+<summary>Key publications</summary>
 
 - Holland, R., Leingang, O., Bogunović, H., Riedl, S., Fritsche, L., Prevost, T., Scholl, H. P. N., Schmidt-Erfurth, U., Sivaprasad, S., Lotery, A. J., Rueckert, D., & Menten, M. J. (2024). Metadata-enhanced contrastive learning from retinal optical coherence tomography images. *Medical Image Analysis, 97*:103296.
 - Kreitner, L., Paetzold, J. C., Rauch, N., Chen, C., Hagag, A. M., Fayed, A. E., Sivaprasad, S., Rausch, S., Weichsel, J., Menze, B. H., Harders, M., Knier, B., Rueckert, D., & Menten, M. J. (2024). Synthetic optical coherence tomography angiographs for detailed retinal vessel segmentation without human annotations. *IEEE Transactions on Medical Imaging, 43*(6):2061–2073.
@@ -254,3 +214,110 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 - Menten, M. J., Paetzold, J. C., Dima, A., Menze, B. H., Knier, B., & Rueckert, D. (2022). Physiology-based simulation of the retinal vasculature enables annotation-free segmentation of OCT angiographs. *MICCAI*, 330–340.
 
 </details>
+
+</section>
+
+</div>
+
+<style>
+/* Research areas: a horizontal rail of cards, with the selected area's full
+   text below it. The cards are built from the sections themselves, so adding
+   an area means adding one <section> wrapper around ordinary Markdown -
+   nothing has to be repeated in two places.
+   Values follow Wowchemy: 1rem/1.5 body, headings at weight 500, #dee2e6
+   rules, rgba(0,0,0,.54) for secondary text. */
+.rw-rail{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory}
+.rw-card{flex:0 0 15.5rem;scroll-snap-align:start;display:flex;flex-direction:column;overflow:hidden;
+  border:1px solid #dee2e6;background:#fff;padding:0;text-align:left;font:inherit;color:#212529;cursor:pointer}
+.rw-card:hover{border-color:#2962ff}
+.rw-card[aria-current="true"]{border-color:#2962ff;box-shadow:inset 0 0 0 1px #2962ff}
+.rw-thumb{height:6.5rem;width:100%;object-fit:cover;display:block;background:#f7f7f7}
+.rw-thumb-empty{display:flex;align-items:center;justify-content:center;font-size:.875rem;color:rgba(0,0,0,.54)}
+.rw-card-body{display:flex;flex-direction:column;gap:.3rem;padding:.75rem .875rem .875rem}
+.rw-card-title{font-weight:500;line-height:1.3}
+.rw-card-lead{font-size:.875rem;color:#2962ff}
+.rw-card-teaser{font-size:.875rem;color:rgba(0,0,0,.54);line-height:1.45}
+.rw-area{padding-top:1.25rem;border-top:1px solid #dee2e6;margin-top:.5rem}
+.rw-area h2{font-size:1.5rem;font-weight:500;line-height:1.2;margin:0 0 .25rem}
+.rw-pubs{margin-top:1.125rem;border-top:1px solid #dee2e6;padding-top:.75rem}
+.rw-pubs summary{cursor:pointer;font-weight:500}
+.rw-pubs ul{margin:.75rem 0 0}
+.rw-pubs li{margin-bottom:.5rem;font-size:.875rem;color:rgba(0,0,0,.54)}
+
+/* Figure carousels inside an area - unchanged from the previous layout. */
+.hrv-carousel{margin:1.5rem 0 2rem}
+.hrv-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.hrv-track::-webkit-scrollbar{display:none}
+.hrv-slide{flex:0 0 100%;scroll-snap-align:center;margin:0;padding:0;text-align:center}
+.hrv-slide img{width:100%;height:auto;display:block;object-fit:contain;background:#f7f7f7}
+.hrv-slide figcaption{font-size:.875rem;color:rgba(0,0,0,.54);margin-top:.6rem;padding:0 .5rem;text-align:left}
+.hrv-dots{display:flex;justify-content:center;gap:.6rem;margin-top:.9rem}
+.hrv-dots a{width:11px;height:11px;border-radius:50%;background:#dee2e6}
+.hrv-dots a:hover{background:rgba(0,0,0,.54)}
+</style>
+
+<script>
+/* Builds the rail from the sections below it, so a new research area is just
+   another <section class="rw-area"> with ordinary Markdown inside - no card to
+   write, nothing repeated.
+
+   Progressive enhancement: with JavaScript off, the rail stays empty and every
+   area is visible, which is how this section behaved before. Each heading keeps
+   its generated id, so deep links such as #ai-for-vision still resolve. */
+(function () {
+  var rail = document.querySelector('.rw-rail');
+  var areas = Array.prototype.slice.call(document.querySelectorAll('.rw-area'));
+  if (!rail || !areas.length) return;
+
+  var cards = areas.map(function (area) {
+    var heading = area.querySelector('h2');
+    var leadPara = area.querySelector('p a[href^="/author/"]');
+    var lead = leadPara ? leadPara.closest('p').textContent.trim() : 'Lead to be announced';
+    var paras = Array.prototype.filter.call(area.querySelectorAll('p'), function (p) {
+      return !p.querySelector('a[href^="/author/"]') && p.textContent.trim().length > 40;
+    });
+    var img = area.querySelector('img');
+
+    var card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'rw-card';
+    card.dataset.target = heading ? heading.id : '';
+    card.innerHTML =
+      (img ? '<img class="rw-thumb" alt="" loading="lazy" src="' + img.getAttribute('src') + '">'
+           : '<span class="rw-thumb rw-thumb-empty">No figure yet</span>') +
+      '<span class="rw-card-body">' +
+        '<span class="rw-card-title"></span>' +
+        '<span class="rw-card-lead"></span>' +
+        '<span class="rw-card-teaser"></span>' +
+      '</span>';
+    card.querySelector('.rw-card-title').textContent = heading ? heading.textContent : '';
+    card.querySelector('.rw-card-lead').textContent = lead;
+    card.querySelector('.rw-card-teaser').textContent =
+      paras.length ? paras[0].textContent.trim().slice(0, 110) + '…' : 'Section in preparation.';
+    rail.appendChild(card);
+    return card;
+  });
+
+  function select(id) {
+    areas.forEach(function (a, i) {
+      var h = a.querySelector('h2');
+      var match = h && h.id === id;
+      a.style.display = match ? '' : 'none';
+      cards[i].setAttribute('aria-current', match ? 'true' : 'false');
+    });
+  }
+  cards.forEach(function (c) {
+    c.addEventListener('click', function () { select(c.dataset.target); });
+  });
+  function fromHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    return cards.some(function (c) { return c.dataset.target === id; }) ? id : null;
+  }
+  window.addEventListener('hashchange', function () {
+    var id = fromHash();
+    if (id) { select(id); document.getElementById(id).scrollIntoView({block: 'start'}); }
+  });
+  select(fromHash() || cards[0].dataset.target);
+})();
+</script>
