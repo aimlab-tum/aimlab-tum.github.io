@@ -69,3 +69,61 @@
         url('/fonts/roboto-mono-v22-latin-regular.woff') format('woff');
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* ---------------------------------------------------------------------------
+   News section: page list on the left, the lab's Bluesky feed on the right.
+   Used by the local override of the pages widget, which only emits these
+   classes when a section sets `bluesky_feed = true`.
+   Values follow the theme: 1rem/1.5 body, headings at weight 500, #dee2e6
+   rules, rgba(0,0,0,.54) for secondary text.
+   --------------------------------------------------------------------------- */
+.nw {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.nw-side { min-width: 0; }
+.nw-feed { border: 1px solid #dee2e6; }
+.nw-feed-head {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .75rem .875rem;
+  border-bottom: 1px solid #dee2e6;
+}
+.nw-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: 0 0 40px; }
+.nw-feed-name { font-weight: 500; line-height: 1.2; }
+.nw-feed-handle { font-size: .875rem; color: rgba(0, 0, 0, .54); }
+.nw-follow { margin-left: auto; font-size: .875rem; white-space: nowrap; }
+.nw-posts { max-height: 40rem; overflow-y: auto; }
+.nw-post { padding: .875rem; border-bottom: 1px solid #dee2e6; }
+.nw-post > * + * { margin-top: .5rem; }
+.nw-text {
+  font-size: .875rem;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.nw-img { width: 100%; display: block; background: #f7f7f7; }
+.nw-ext {
+  display: block;
+  font-size: .875rem;
+  border: 1px solid #dee2e6;
+  padding: .5rem .625rem;
+  color: #212529;
+  &:hover { text-decoration: none; background: #f7f7f7; }
+}
+.nw-meta {
+  display: flex;
+  gap: .875rem;
+  font-size: .875rem;
+  letter-spacing: .03em;
+  color: rgba(0, 0, 0, .54);
+}
+.nw-feed-foot { display: flex; gap: 1.125rem; padding: .75rem .875rem; font-size: .875rem; }
+
+@media (max-width: 800px) {
+  .nw { grid-template-columns: 1fr; }
+}
