@@ -30,20 +30,6 @@ subtitle = ""
        alt="The lab on its summer retreat in Obertraun, Austria" width="2560" height="1486" loading="lazy">
 </figure>
 
-<figure class="hero-shot" style="--scrim:0.63; --focal:90%">
-  <img src="/media/lab_retreat_winter_2024-800.jpg"
-       srcset="/media/lab_retreat_winter_2024-800.jpg 800w"
-       sizes="100vw"
-       alt="The lab on the 2024 winter retreat" width="800" height="600" loading="lazy">
-</figure>
-
-<figure class="hero-shot" style="--scrim:0.71; --focal:53%">
-  <img src="/media/miccai_2024-1200.jpg"
-       srcset="/media/miccai_2024-1200.jpg 1200w"
-       sizes="100vw"
-       alt="The lab at MICCAI 2024 in Marrakech" width="1200" height="900" loading="lazy">
-</figure>
-
 <div class="hero-inner">
   <div class="hero-copy">
     <h1>Welcome</h1>
