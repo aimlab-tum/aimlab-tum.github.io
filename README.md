@@ -76,8 +76,7 @@ with. Bump them in a pull request so the build check tells you whether the upgra
 
 - `static/admin/` is a Netlify CMS admin UI shipped by the `netlify-cms-academic` module. It
   needs Netlify Identity / git-gateway to work and is not wired up on GitHub Pages.
-- There is deliberately **no `CNAME` file** yet. `aim-lab.io` is still served by
-  `danielrueckert/danielrueckert.github.io`, and GitHub will not let two repositories claim
-  the same domain. When the domain moves here it goes in `static/CNAME` as the bare hostname
-  — Hugo only copies `static/` into the build, so a `CNAME` at the repository root would
-  never be published. See [MIGRATION.md](MIGRATION.md).
+- `static/CNAME` claims the custom domain `aim-lab.io`. It lives in `static/` because Hugo
+  only copies that directory into the build — a `CNAME` at the repository root would never
+  reach the deployed site, and the custom domain would be dropped on the next deploy. See
+  [MIGRATION.md](MIGRATION.md).

@@ -46,18 +46,34 @@ Proven on a sandbox copy of this exact tree before it was brought here:
    do not exist, so the workflow also identifies a request from the shape of its body.
 4. **Check the site** at `https://aimlab-tum.github.io/` and compare it against `aim-lab.io`.
    The two should be identical apart from absolute URLs.
-5. **Move the domain.**
-   - Add `static/CNAME` containing the bare hostname `aim-lab.io`. It must live in `static/`:
-     Hugo only copies that directory into the build, so a `CNAME` at the repository root is
-     never published.
-   - Remove the custom domain from `danielrueckert/danielrueckert.github.io` **first** —
-     GitHub will not let two repositories claim the same domain.
-   - Set `aim-lab.io` as the custom domain here, and enable **Enforce HTTPS**.
-   - DNS needs no change: the apex already points at the Pages IPs
-     (`185.199.108-111.153`). Repoint the `www` CNAME, which currently targets
-     `danielrueckert.github.io`, at this repository's Pages host.
-   - Set `baseurl` in `config/_default/config.toml` back to `https://aim-lab.io/`. CI
-     overrides it per build, so this only affects anyone running Hugo locally.
+5. **Move the domain.** Order matters — GitHub will not let two repositories claim one
+   domain, and `aim-lab.io` is unreachable in the gap between releasing and reclaiming it.
+
+   1. *(optional, ~30 min ahead)* In Namecheap, lower the TTL on the `www` record from
+      `Automatic` (1800 s) to 1-5 minutes, so the later change propagates quickly. Lowering
+      a TTL only helps if done before the switch — resolvers keep the old value until the
+      old TTL expires.
+   2. Remove the custom domain from `danielrueckert/danielrueckert.github.io`
+      (Settings → Pages). **This must be first.**
+   3. Set `aim-lab.io` as the custom domain here, immediately after.
+   4. Merge the `static/CNAME` change, so deploys keep the domain rather than dropping it.
+      Do not merge it earlier: deploying a CNAME for a domain another repository still owns
+      can fail the deploy.
+   5. In Namecheap → Advanced DNS, repoint the `www` CNAME from `danielrueckert.github.io.`
+      to `aimlab-tum.github.io.` **Nothing else changes** — the apex `A` records
+      (`185.199.108-111.153`) are GitHub's shared Pages IPs and already correct, and the
+      `TXT` record is SPF for email forwarding, so deleting it would break mail.
+   6. Wait for the TLS certificate, then enable **Enforce HTTPS**. Until it is issued,
+      `https://aim-lab.io` returns a certificate error; this is expected.
+   7. Restore the `www` TTL to `Automatic` once confirmed.
+
+   `baseurl` in `config/_default/config.toml` is already `https://aim-lab.io/`; CI overrides
+   it per build, so it only affects anyone running Hugo locally.
+
+   Worth doing afterwards: verify the domain for the `aimlab-tum` organisation
+   (Organization settings → Pages → Verified domains). Neither owner has verified it —
+   there is no `_github-pages-challenge-*` TXT record for the domain — and verifying
+   prevents anyone else claiming it later.
 6. **Archive, do not delete,** `danielrueckert.github.io` and `website_source`. They are the
    rollback: if anything goes wrong, restore the custom domain to the old output repo and the
    site is back within minutes.
