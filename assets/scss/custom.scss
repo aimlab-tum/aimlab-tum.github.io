@@ -149,7 +149,9 @@
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  min-height: 380px;
+  /* Taller means less of each photograph is thrown away: at 620px on a 1920
+     viewport the band is 3.1:1, which is the shape these were measured at. */
+  min-height: clamp(360px, 34vw, 620px);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -170,7 +172,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 45%;
+    /* Per photograph, set inline: the row band where the people actually are,
+       found from the picture rather than guessed. */
+    object-position: center var(--focal, 50%);
     display: block;
   }
 
@@ -266,7 +270,7 @@
 }
 
 @media (max-width: 800px) {
-  .hero-band { min-height: 300px; }
+  .hero-band { min-height: 340px; }
   .hero-copy h1 { font-size: 1.9rem; }
   /* no room beside the text for them; swipe and the dots still work */
   .hero-arrow { display: none; }
