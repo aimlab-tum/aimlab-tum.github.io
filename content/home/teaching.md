@@ -35,84 +35,84 @@ subtitle = ""
   css_class = ""
 +++
 
+Teaching and education are an integral part of our institute's mission. All of our courses—which are heavily influenced by our research—are taught in English. We offer lectures for students from various disciplines, but our core lectures are aimed at computer science students:
 
 <div class="tw">
 <div class="tw-main">
 
 <div class="tw-head">
-  <h4>Courses</h4>
-  <label class="tw-pick" for="tw-select">Semester
-    <select id="tw-select"></select>
-  </label>
+  <span class="tw-col-title">Courses</span>
+  <label class="tw-pick" for="tw-select">Semester <select id="tw-select"></select></label>
 </div>
 
-<div class="tw-semesters">
+<section class="tw-sem" data-code="WS26/27">
 
-<section class="tw-sem" data-code="WS26/27" data-label="Winter semester 2026/27">
-  <p class="tw-label">Winter semester 2026/27</p>
-  <div class="tw-cat">
-    <h6>Lectures</h6>
-    <div class="tw-course">Künstliche Intelligenz in der Medizin I<span class="tw-code">IN2403</span></div>
-    <div class="tw-course">Foundations of AI in Biomedicine<span class="tw-code">CIT423005</span>
-      <div class="tw-note">AI in Biomedicine students only</div></div>
-    <div class="tw-course">Multimodal AI in Medicine<span class="tw-code">CIT423009</span></div>
-    <div class="tw-course">Trustworthy AI for Medicine<span class="tw-code">CIT423007</span></div>
-  </div>
-  <div class="tw-cat">
-    <h6>Practical</h6>
-    <div class="tw-course"><a href="https://kiinformatik.mri.tum.de/de/practicalalex">Applied Deep Learning in Medicine</a><span class="tw-code">IN2106 · IN4314</span></div>
-  </div>
-  <div class="tw-cat">
-    <h6>Seminars</h6>
-    <div class="tw-course">Research Skills and Methods<span class="tw-code">CIT422000</span>
-      <div class="tw-note">AI in Biomedicine students only</div></div>
-    <div class="tw-course">Master's Seminar: Large Language Models in Medicine<span class="tw-code">IN2107</span></div>
-    <div class="tw-course">Master's Seminar: AI Research in the Large Language Models Era<span class="tw-code">IN2107</span></div>
-  </div>
+### Winter semester 2026/27
+
+**Practical:**
+
+- [Applied Deep Learning in Medicine](https://kiinformatik.mri.tum.de/de/practicalalex) (IN2106, IN4314)
+
+**Lecture:**
+
+- Künstliche Intelligenz in der Medizin I (IN2403)
+- Foundations of AI in Biomedicine (CIT423005) — *exclusively for AI in Biomedicine students*
+- Multimodal AI in Medicine (CIT423009)
+- Trustworthy AI for Medicine (CIT423007)
+
+**Seminar:**
+
+- Research Skills and Methods (CIT422000) — *exclusively for AI in Biomedicine students*
+- Master's Seminar: Large Language Models in Medicine (IN2107)
+- Master's Seminar: AI Research in the Large Language Models Era (IN2107)
+
 </section>
 
-<section class="tw-sem" data-code="SS26" data-label="Summer semester 2026">
-  <p class="tw-label">Summer semester 2026</p>
-  <div class="tw-cat">
-    <h6>Lecture</h6>
-    <div class="tw-course">Artificial Intelligence in Medicine II<span class="tw-code">IN2408</span></div>
-  </div>
-  <div class="tw-cat">
-    <h6>Practical</h6>
-    <div class="tw-course"><a href="https://kiinformatik.mri.tum.de/de/practicalalex">Applied Deep Learning in Medicine</a><span class="tw-code">IN2106 · IN4314</span></div>
-  </div>
-  <div class="tw-cat">
-    <h6>Seminars</h6>
-    <div class="tw-course"><a href="https://kiinformatik.mri.tum.de/de/seminarharvey">Implicit Neural Representation and Neural Fields</a><span class="tw-code">IN2107</span></div>
-    <div class="tw-course"><a href="https://kiinformatik.mri.tum.de/de/seminarsevgi">Deep Learning for Inverse Problems in Medical Imaging</a><span class="tw-code">IN2107</span></div>
-  </div>
+<section class="tw-sem" data-code="SS26">
+
+### Summer semester 2026
+
+**Practical:**
+
+- [Applied Deep Learning in Medicine](https://kiinformatik.mri.tum.de/de/practicalalex) (IN2106, IN4314)
+
+**Lecture:**
+
+- Artificial Intelligence in Medicine II (IN2408)
+
+**Seminar:**
+
+- [Implicit Neural Representation and Neural Fields](https://kiinformatik.mri.tum.de/de/seminarharvey) (IN2107)
+- [Deep Learning for Inverse Problems in Medical Imaging](https://kiinformatik.mri.tum.de/de/seminarsevgi) (IN2107)
+
 </section>
 
-<section class="tw-sem" data-code="WS25/26" data-label="Winter semester 2025/26">
-  <p class="tw-label">Winter semester 2025/26</p>
-  <div class="tw-cat">
-    <h6>Lectures</h6>
-    <div class="tw-course">Künstliche Intelligenz in der Medizin I<span class="tw-code">IN2403</span></div>
-    <div class="tw-course">Multi-modal AI in Medicine<span class="tw-code">CIT423009</span></div>
-  </div>
-  <div class="tw-cat">
-    <h6>Practical</h6>
-    <div class="tw-course"><a href="https://kiinformatik.mri.tum.de/de/practicalalex">Applied Deep Learning in Medicine</a><span class="tw-code">IN2106 · IN4314</span></div>
-  </div>
-  <div class="tw-cat">
-    <h6>Seminars</h6>
-    <div class="tw-course">Trustworthy AI for Medicine<span class="tw-code">IN2107 · IN45048</span></div>
-    <div class="tw-course"><a href="https://kiinformatik.mri.tum.de/de/seminarharvey-multi-modal-ai-medicine">Multi-modal AI for Medicine</a><span class="tw-code">IN2107 · IN45072</span></div>
-  </div>
-</section>
+<section class="tw-sem" data-code="WS25/26">
 
-</div>
+### Winter semester 2025/26
+
+**Practical:**
+
+- [Applied Deep Learning in Medicine](https://kiinformatik.mri.tum.de/de/practicalalex) (IN2106, IN4314)
+
+**Lecture:**
+
+- Künstliche Intelligenz in der Medizin I (IN2403)
+- Multi-modal AI in Medicine (CIT423009)
+
+**Seminar:**
+
+- Trustworthy AI for Medicine (IN2107, IN45048)
+- [Multi-modal AI for Medicine](https://kiinformatik.mri.tum.de/de/seminarharvey-multi-modal-ai-medicine) (IN2107, IN45072)
+
+</section>
 
 <div class="tw-evergreen">
-  <h6>Computer Science for Medical Students</h6>
-  <p>Offered as an elective for medical students. The course gives insights into AI methods — especially neural
-  networks — and their applications in medicine. Alongside the theoretical basics, students gain first practical
-  experience with Python and train their own neural networks.</p>
+
+As an elective for medical students, we offer: **Computer Science for Medical Students**
+
+This course offers students exciting insights into the world of AI methods (especially neural networks) and their applications in medicine. In addition to acquiring basic theoretical knowledge, they gain initial practical experience with Python programming and have the opportunity to train their own neural networks.
+
 </div>
 
 </div>
@@ -120,73 +120,77 @@ subtitle = ""
 <aside class="tw-side">
 
 <div class="tw-card">
-  <p class="tw-kicker">Elite Master's programme</p>
-  <h5>AI in Biomedicine</h5>
-  <p>A research-oriented two-year programme bridging computer science, engineering and medicine, offered by the
-  Technical University of Munich together with Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU). Prof.
-  Daniel Rückert is programme speaker.</p>
-  <dl class="tw-facts">
-    <div><dt>Apply</dt><dd>1 February – 31 May, every year</dd></div>
-    <div><dt>Length</dt><dd>2 years, optional Research Excellence Certificate</dd></div>
-    <div><dt>At the chair</dt><dd>2 courses reserved for AIBM students</dd></div>
-  </dl>
-  <a class="btn btn-primary" href="https://www.cit.tum.de/en/cit/studies/degree-programs/ai-in-biomedicine/" target="_blank" rel="noopener">Programme website&nbsp;→</a>
-  <p class="tw-small">Questions about applying: <a href="mailto:app-msaibm.asa@xcit.tum.de">app-msaibm.asa@xcit.tum.de</a></p>
+
+**Elite Master's programme**
+
+## AI in Biomedicine
+
+A research-oriented two-year programme bridging computer science, engineering and medicine, offered by the Technical University of Munich together with Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU). Prof. Daniel Rückert is programme speaker.
+
+- **Apply** — 1 February to 31 May, every year
+- **Length** — 2 years, optional Research Excellence Certificate
+- **At the chair** — 2 courses reserved for AIBM students
+
+<a class="btn btn-primary" href="https://www.cit.tum.de/en/cit/studies/degree-programs/ai-in-biomedicine/" target="_blank" rel="noopener">Programme website&nbsp;→</a>
+
+Questions about applying: [app-msaibm.asa@xcit.tum.de](mailto:app-msaibm.asa@xcit.tum.de)
+
 </div>
 
 <div class="tw-card">
-  <p class="tw-kicker">Work with us</p>
-  <h5>Theses &amp; student projects</h5>
-  <p>Bachelor's, master's and IDP projects, internships and student research assistant positions. Every current
-  opening is listed on the CIT thesis portal.</p>
-  <a class="btn btn-outline-primary" href="https://thesis.aet.cit.tum.de/?groups=c9a54897-40cb-4cdb-87ce-171f33b0a7e2" target="_blank" rel="noopener">Browse our open projects&nbsp;→</a>
+
+**Work with us**
+
+## Theses & student projects
+
+Bachelor's, master's and IDP projects, internships and student research assistant positions. Every current opening is listed on the CIT thesis portal.
+
+<a class="btn btn-outline-primary" href="https://thesis.aet.cit.tum.de/?groups=c9a54897-40cb-4cdb-87ce-171f33b0a7e2" target="_blank" rel="noopener">Browse our open projects&nbsp;→</a>
+
 </div>
 
 </aside>
 </div>
 
 <style>
-/* Teaching section: courses on the left, the two things a prospective student
-   can act on pinned to the right. Prefixed .tw- throughout so nothing collides
-   with Bootstrap or the theme. Values follow Wowchemy: 1rem/1.5 body, headings
-   at weight 500, #dee2e6 rules, rgba(0,0,0,.54) for secondary text. */
+/* Teaching: courses on the left, the two things a prospective student can act
+   on pinned to the right. Everything inside the wrappers is ordinary Markdown,
+   so adding a course is still one bullet and adding a semester is one
+   <section> around the same Markdown as before.
+   Values follow Wowchemy: 1rem/1.5 body, headings at weight 500, #dee2e6
+   rules, rgba(0,0,0,.54) for secondary text. */
 .tw{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:2rem;align-items:start}
 .tw-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
   margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid #dee2e6}
-.tw-head h4{margin:0;font-size:1.25rem;font-weight:500}
+.tw-col-title{font-size:1.25rem;font-weight:500}
 .tw-pick{font-size:.875rem;color:rgba(0,0,0,.54);margin:0}
 .tw-pick select{font:inherit;font-size:1rem;color:#212529;padding:.3rem .5rem;margin-left:.4rem;
   border:1px solid #dee2e6;background:#fff}
-.tw-sem{margin-bottom:1.5rem}
-.tw-label{font-size:1.25rem;font-weight:500;line-height:1.2;margin:0 0 .75rem}
-.tw-cat{margin:0 0 1rem}
-.tw-cat h6{margin:0 0 .25rem;font-size:.875rem;font-weight:400;letter-spacing:.03em;color:rgba(0,0,0,.54)}
-.tw-course{padding:.25rem 0}
-.tw-code{font-size:.875rem;color:rgba(0,0,0,.54);margin-left:.5rem;white-space:nowrap}
-.tw-note{font-size:.875rem;color:rgba(0,0,0,.54);font-style:italic}
-.tw-evergreen{margin-top:1.5rem;padding-top:1.125rem;border-top:1px solid #dee2e6}
-.tw-evergreen h6{margin:0 0 .25rem;font-size:1rem;font-weight:500}
-.tw-evergreen p{margin:0;font-size:.875rem;color:rgba(0,0,0,.54)}
+.tw-sem h3{font-size:1.25rem;font-weight:500;line-height:1.2;margin:0 0 .75rem}
+.tw-sem p{margin:0 0 .25rem;font-size:.875rem;color:rgba(0,0,0,.54)}
+.tw-sem p strong{font-weight:400}
+.tw-sem ul{margin:0 0 1rem;padding-left:1.25rem}
+.tw-sem li{margin-bottom:.15rem}
+.tw-evergreen{margin-top:1.5rem;padding-top:1.125rem;border-top:1px solid #dee2e6;
+  font-size:.875rem;color:rgba(0,0,0,.54)}
 .tw-card{border:1px solid #dee2e6;padding:1.125rem;margin-bottom:1.25rem}
-.tw-kicker{font-size:.875rem;letter-spacing:.03em;color:rgba(0,0,0,.54);margin:0 0 .375rem}
-.tw-card h5{margin:0 0 .5rem;font-size:1.25rem;font-weight:500}
-.tw-card p{margin:0 0 .75rem;font-size:.875rem}
-.tw-facts{margin:0 0 .875rem;padding-top:.75rem;border-top:1px solid #dee2e6}
-.tw-facts div{display:flex;gap:.625rem;font-size:.875rem}
-.tw-facts dt{font-weight:400;color:rgba(0,0,0,.54);flex:0 0 6.5rem}
-.tw-facts dd{margin:0}
-.tw-small{font-size:.875rem;color:rgba(0,0,0,.54);margin:.625rem 0 0}
+.tw-card > p:first-child{font-size:.875rem;letter-spacing:.03em;color:rgba(0,0,0,.54);margin:0 0 .375rem}
+.tw-card > p:first-child strong{font-weight:400}
+.tw-card h2{font-size:1.25rem;font-weight:500;line-height:1.2;margin:0 0 .5rem}
+.tw-card p{font-size:.875rem}
+.tw-card ul{list-style:none;padding:0;margin:0 0 .875rem;padding-top:.75rem;border-top:1px solid #dee2e6}
+.tw-card li{font-size:.875rem;margin-bottom:.25rem}
 @media (max-width:800px){
   .tw{grid-template-columns:1fr}
-  /* The programme card is the strongest recruiting asset, so it leads on narrow screens. */
+  /* The programme card is the strongest recruiting asset, so it leads here. */
   .tw-side{order:-1}
 }
 </style>
 
 <script>
 /* Progressive enhancement: without JavaScript every semester stays visible,
-   which is the behaviour this section had before. With it, the dropdown shows
-   one semester at a time, newest first. */
+   which is how this section behaved before. With it, the dropdown shows one
+   semester at a time, newest first - the order the sections are written in. */
 (function () {
   var sems = Array.prototype.slice.call(document.querySelectorAll('.tw-sem'));
   var select = document.getElementById('tw-select');
