@@ -86,21 +86,26 @@
 
 {{ $columns := $st.Params.design.columns | default "2" }}
 
-<div class="row {{if not $st.Title | or (eq $columns "1") }}justify-content-center{{end}}">
-  {{ if $st.Title }}
-    {{ if eq $columns "1" }}
-      <div class="col-12 col-lg-8 section-heading text-center">
-        {{ with $st.Title }}<h1>{{.}}</h1>{{ end }}
-        {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-      </div>
-    {{else}}
-      <div class="col-12 col-lg-4 section-heading">
-        {{ with $st.Title }}<h1>{{.}}</h1>{{ end }}
-        {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-      </div>
-    {{end}}
+{{/* With columns = "1" the section takes the full width and the heading sits
+     above the content, which is what the blank widget does and what the
+     Research section uses. Upstream instead centres a col-lg-8, which is too
+     narrow for a section with a sidebar. columns = "2" is untouched. */}}
+{{ $wide := eq $columns "1" }}
+{{ $content_class := cond $wide "col-lg-12" "col-12 col-lg-8" }}
+
+<div class="row{{ if and (not $wide) (not $st.Title) }} justify-content-center{{ end }}">
+  {{ if and $st.Title (not $wide) }}
+    <div class="col-12 col-lg-4 section-heading">
+      <h1>{{ $st.Title }}</h1>
+      {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+    </div>
   {{ end }}
-  <div class="col-12 col-lg-8">
+  <div class="{{ $content_class }}">
+
+    {{ if and $st.Title $wide }}
+      <h1>{{ $st.Title }}</h1>
+      {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+    {{ end }}
 
     {{ with $st.Content }}{{ . }}{{ end }}
 
