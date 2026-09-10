@@ -56,7 +56,7 @@ Teaching and education are an integral part of our institute's mission. All of o
 
 </details>
 
-<details open>
+<details>
 <summary><strong>Summer semester 2026 (SS26)</strong></summary>
 
 **Practical:**
@@ -71,6 +71,28 @@ Teaching and education are an integral part of our institute's mission. All of o
 
 - [Implicit Neural Representation and Neural Fields](https://kiinformatik.mri.tum.de/de/seminarharvey) (IN2107)
 - [Deep Learning for Inverse Problems in Medical Imaging](https://kiinformatik.mri.tum.de/de/seminarsevgi) (IN2107)
+
+</details>
+
+<details open>
+<summary><strong>Winter semester 2026/27 (WS26/27)</strong></summary>
+
+**Practical:**
+
+- [Applied Deep Learning in Medicine](https://kiinformatik.mri.tum.de/de/practicalalex) (IN2106, IN4314)
+
+**Lecture:**
+
+- Künstliche Intelligenz in der Medizin I (IN2403)
+- Foundations of AI in Biomedicine (CIT423005) — *exclusively for AI in Biomedicine students*
+- Multimodal AI in Medicine (CIT423009)
+- Trustworthy AI for Medicine (CIT423007)
+
+**Seminar:**
+
+- Research Skills and Methods (CIT422000) — *exclusively for AI in Biomedicine students*
+- Master's Seminar: Large Language Models in Medicine (IN2107)
+- Master's Seminar: AI Research in the Large Language Models Era (IN2107)
 
 </details>
 
