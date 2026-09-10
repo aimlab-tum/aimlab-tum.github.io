@@ -231,3 +231,31 @@
   .hero-copy h1 { font-size: 1.9rem; }
 }
 
+
+/* The two social links, as icons under the hero text. Inline SVG rather than
+   the theme's icon font: this Wowchemy predates Bluesky, so there is no glyph
+   for it in the bundled Font Awesome. */
+.hero-social {
+  display: flex;
+  gap: .9rem;
+  margin: 1.25rem 0 0;
+
+  a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #fff;
+    opacity: .6;
+    transition: opacity .15s ease;
+
+    &:hover,
+    &:focus-visible { opacity: 1; }
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    display: block;
+  }
+}
