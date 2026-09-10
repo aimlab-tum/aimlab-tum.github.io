@@ -37,6 +37,10 @@ subtitle = ""
     exclude_featured = false
   
 [design]
+  # Full width, with the heading above the content - the same layout the
+  # Research section uses. Needed because this section now has a sidebar.
+  columns = "1"
+
   # Toggle between the various page layout types.
   #   1 = List
   #   2 = Compact
