@@ -1,0 +1,13 @@
+# IDEs
+.idea/
+
+# Hugo
+resources/
+public/
+.hugo_build.lock
+
+*.DS_Store*
+update-website.sh
+
+# Python
+__pycache__/

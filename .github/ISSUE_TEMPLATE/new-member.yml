@@ -1,0 +1,118 @@
+name: Add a new team member
+description: Request a profile on the People section of the website.
+title: "Add team member: "
+labels: ["new-member"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only **two** things are required: your name and a photo. Everything else is
+        optional or already filled in — change what applies to you and leave the rest.
+
+        Your profile URL, last name and affiliation are worked out automatically.
+        A maintainer reviews this and a pull request is opened for you; you do not
+        need write access to the repository.
+  - type: input
+    id: full-name
+    attributes:
+      label: Full name
+      description: Exactly as it should appear on the site. Umlauts and accents are fine.
+      placeholder: Jane Doe
+    validations: {required: true}
+  - type: textarea
+    id: photo
+    attributes:
+      label: Photo
+      description: >-
+        Drag a square image into this box (JPEG, PNG, WebP or GIF; 500x500 is plenty,
+        max 8 MB). Do not paste a link to a photo hosted somewhere else.
+    validations: {required: true}
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      options:
+        - Doctoral researcher
+        - Research Scientist
+        - Affiliated Researcher
+        - Science Manager
+        - Executive Assistant
+        - Other (write it in the box below)
+      default: 0
+    validations: {required: true}
+  - type: input
+    id: role-other
+    attributes:
+      label: Role (if you picked Other)
+    validations: {required: false}
+  - type: dropdown
+    id: group
+    attributes:
+      label: Group
+      description: Which heading you appear under on the People section.
+      options:
+        - Researchers
+        - Senior Researchers
+        - Management
+        - Collaborators
+        - Visitors
+        - Chair
+        - Alumni
+      default: 0
+    validations: {required: true}
+  - type: input
+    id: email
+    attributes:
+      label: Email
+      placeholder: jane.doe@tum.de
+    validations: {required: false}
+  - type: textarea
+    id: interests
+    attributes:
+      label: Interests
+      description: One per line.
+      placeholder: |
+        Medical Image Registration
+        Foundation Models
+    validations: {required: false}
+  - type: textarea
+    id: education
+    attributes:
+      label: Education
+      description: "One per line: Course | Institution | Year"
+      placeholder: |
+        MSc Computer Science | TUM | 2024
+        BSc Informatik | LMU Munich | 2021
+    validations: {required: false}
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: >-
+        One URL per line — GitHub, Google Scholar, LinkedIn, ORCID, a personal site.
+        The right icon is picked automatically, you do not need to say which is which.
+      placeholder: |
+        https://github.com/janedoe
+        https://scholar.google.com/citations?user=abc123
+    validations: {required: false}
+  - type: input
+    id: short-bio
+    attributes:
+      label: Short bio
+      description: One line, shown under posts you author.
+    validations: {required: false}
+  - type: textarea
+    id: biography
+    attributes:
+      label: Biography
+      description: >-
+        The longer text on your profile page. Markdown works
+        (**bold**, [links](https://example.com)).
+    validations: {required: false}
+  - type: input
+    id: additional-affiliation
+    attributes:
+      label: Additional affiliation
+      description: Only if you belong somewhere beyond TUM, e.g. a graduate school.
+      placeholder: Konrad Zuse School of Excellence in Reliable AI
+    validations: {required: false}
