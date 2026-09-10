@@ -16,17 +16,32 @@ subtitle = ""
 
 <div class="hero-band" id="hero-band">
 
-<figure class="hero-shot is-on" style="--scrim:.62">
-  <img src="/media/lab_retreat_winter.jpg" alt="The lab on a winter retreat in the Alps" width="1920" height="1440">
+<figure class="hero-shot is-on" style="--scrim:0.62; --focal:56%">
+  <img src="/media/lab_retreat_winter-2560.jpg"
+       srcset="/media/lab_retreat_winter-1280.jpg 1280w, /media/lab_retreat_winter-1920.jpg 1920w, /media/lab_retreat_winter-2560.jpg 2560w"
+       sizes="100vw"
+       alt="The lab on a winter retreat in the Alps" width="2560" height="1920">
 </figure>
-<figure class="hero-shot" style="--scrim:.75">
-  <img src="/media/lab_retreat_summer.jpg" alt="The lab on its summer retreat in Obertraun, Austria" width="1920" height="1114" loading="lazy">
+
+<figure class="hero-shot" style="--scrim:0.75; --focal:55%">
+  <img src="/media/lab_retreat_summer-2560.jpg"
+       srcset="/media/lab_retreat_summer-1280.jpg 1280w, /media/lab_retreat_summer-1920.jpg 1920w, /media/lab_retreat_summer-2560.jpg 2560w"
+       sizes="100vw"
+       alt="The lab on its summer retreat in Obertraun, Austria" width="2560" height="1486" loading="lazy">
 </figure>
-<figure class="hero-shot" style="--scrim:.63">
-  <img src="/media/lab_retreat_winter_2024.jpg" alt="The lab on the 2024 winter retreat" width="800" height="600" loading="lazy">
+
+<figure class="hero-shot" style="--scrim:0.63; --focal:90%">
+  <img src="/media/lab_retreat_winter_2024-800.jpg"
+       srcset="/media/lab_retreat_winter_2024-800.jpg 800w"
+       sizes="100vw"
+       alt="The lab on the 2024 winter retreat" width="800" height="600" loading="lazy">
 </figure>
-<figure class="hero-shot" style="--scrim:.71">
-  <img src="/media/miccai_2024.jpg" alt="The lab at MICCAI 2024 in Marrakech" width="1200" height="900" loading="lazy">
+
+<figure class="hero-shot" style="--scrim:0.71; --focal:53%">
+  <img src="/media/miccai_2024-1200.jpg"
+       srcset="/media/miccai_2024-1200.jpg 1200w"
+       sizes="100vw"
+       alt="The lab at MICCAI 2024 in Marrakech" width="1200" height="900" loading="lazy">
 </figure>
 
 <div class="hero-inner">
