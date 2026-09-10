@@ -129,13 +129,16 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Welcome hero: a photo carousel with the opening lines over it.
+   Welcome hero: the winter retreat photograph with the opening lines over it.
 
-   Each photograph carries its own scrim, set inline as `--scrim` on the figure
-   and measured from that photograph rather than chosen by eye: the 95th
-   percentile brightness of the region the text sits on, darkened just enough to
-   clear 4.5:1 against white. The four differ a lot (0.62 to 0.75), so one
-   shared value would crush three pictures to protect the fourth.
+   The scrim is set inline as `--scrim` on the figure and measured from the
+   photograph rather than chosen by eye: the 95th percentile brightness of the
+   region the text sits on - the bright pixels, since that is where white text
+   fails - darkened just enough to clear 4.5:1. It comes out at 0.62.
+
+   `--focal` is likewise measured: the rows carrying the most detail, which in a
+   group shot is the band where the people are. Both live on the figure, so a
+   different photograph brings its own two numbers and nothing else changes.
 
    The gradient runs left to right and is gone by 70% across, so the group -
    centre and right in every one of these photographs - keeps its exposure.
@@ -163,11 +166,6 @@
   position: absolute;
   inset: 0;
   margin: 0;
-  opacity: 0;
-  transition: opacity .5s ease;
-
-  &.is-on { opacity: 1; }
-
   img {
     width: 100%;
     height: 100%;
@@ -227,55 +225,9 @@
   .hero-lead { color: rgba(255, 255, 255, .92); margin: 0; }
 }
 
-.hero-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  width: 42px;
-  height: 42px;
-  border: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  background: rgba(0, 0, 0, .42);
-  color: #fff;
-  font-size: 20px;
-  line-height: 1;
-  transition: background .15s;
-
-  &:hover { background: rgba(0, 0, 0, .68); }
-}
-.hero-prev { left: 14px; }
-.hero-next { right: 14px; }
-
-.hero-dots {
-  position: absolute;
-  right: 18px;
-  bottom: 16px;
-  z-index: 3;
-  display: flex;
-  gap: 7px;
-
-  button {
-    width: 9px;
-    height: 9px;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    cursor: pointer;
-    background: rgba(255, 255, 255, .45);
-
-    &[aria-current="true"] { background: #fff; }
-  }
-}
 
 @media (max-width: 800px) {
   .hero-band { min-height: 340px; }
   .hero-copy h1 { font-size: 1.9rem; }
-  /* no room beside the text for them; swipe and the dots still work */
-  .hero-arrow { display: none; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-shot { transition: none; }
-}
