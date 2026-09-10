@@ -1,0 +1,102 @@
+{
+  "profile": {
+    "name": "TUM AI in Medicine Lab",
+    "handle": "tum-aim-lab.bsky.social",
+    "url": "https://bsky.app/profile/tum-aim-lab.bsky.social",
+    "avatar": "/media/bluesky/avatar-d1ea43ac.jpg",
+    "followers": 89
+  },
+  "posts": [
+    {
+      "text": "One month left 'til @iclr-conf.bsky.social, about time to launch our ✨@gram-org.bsky.social Competititon✨ The theme is geometry x AI4science with a dataset kindly provided by BeyondMath.\n\nDeadline: April 22, 2026 (AoE)\n\n🔗 gram-competition.github.io",
+      "date": "2026-03-27",
+      "url": "https://bsky.app/profile/tum-aim-lab.bsky.social/post/3mi27d25tnk2g",
+      "image": "/media/bluesky/3mi27d25tnk2g-85a2177a.jpg",
+      "alt": "",
+      "external": null,
+      "likes": 6,
+      "reposts": 3,
+      "replies": 1
+    },
+    {
+      "text": "Thrilled to present our paper \"Unintended Memorization of Sensitive Information in Fine-Tuned Language Models\" at #EACL2026 in Rabat! 🇲🇦\n\nw/ J. Marin Ruiz, G. Kaissis, P. Seidl, R. v. Eisenhart-Rothe, F. Hinterwimmer & @danielrueckert.bsky.social.\n\nRead here: arxiv.org/abs/2601.174...",
+      "date": "2026-03-10",
+      "url": "https://bsky.app/profile/tum-aim-lab.bsky.social/post/3mgpa6hyopc2r",
+      "image": "/media/bluesky/3mgpa6hyopc2r-e3a2619c.jpg",
+      "alt": "A promotional graphic for an oral presentation at the EACL 2026 conference in Morocco. The background features a sunny, historic Moroccan stone fortress gate with palm trees, a clear blue sky, and dec",
+      "external": null,
+      "likes": 5,
+      "reposts": 2,
+      "replies": 2
+    },
+    {
+      "text": "Our latest paper on ML-based flow estimation ✨trained on 4D flow MRI✨ in the carotid arteries is now published (open-access) in Medical Image Analysis.\n\n🔗 www.sciencedirect.com/science/arti...",
+      "date": "2026-02-27",
+      "url": "https://bsky.app/profile/tum-aim-lab.bsky.social/post/3mftqquwfd22u",
+      "image": "/media/bluesky/3mftqquwfd22u-849b7e30.jpg",
+      "alt": "",
+      "external": {
+        "title": "Physics-informed graph neural networks for flow field estimation in carotid arteries",
+        "url": "https://www.sciencedirect.com/science/article/pii/S1361841526000435"
+      },
+      "likes": 3,
+      "reposts": 1,
+      "replies": 1
+    },
+    {
+      "text": "January Thesis Highlights from AIM Lab 🎓\n\nTo celebrate their hard work, we want to showcase the excellent research our bachelor and master students produce!\n\nThis month, Florian Braunmiller finished a great master thesis on Mixture-of-Experts (MoE) architectures for medical imaging.\n\n1/n",
+      "date": "2026-02-02",
+      "url": "https://bsky.app/profile/tum-aim-lab.bsky.social/post/3mdupckemrs26",
+      "image": "/media/bluesky/3mdupckemrs26-0a6b0e9e.jpg",
+      "alt": "Student in front of a research poster on Mixture-of-Experts",
+      "external": null,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1
+    },
+    {
+      "text": "🦄 Build Europe’s next AI unicorn - @sprind-de.bsky.social Next Frontier AI initiative backs bold ideas with €125M to create European frontier AI labs.\n\nBelieve Europe should lead in AI? Join the challenge!\n\n👉 next-frontier.ai",
+      "date": "2025-12-19",
+      "url": "https://bsky.app/profile/tum-aim-lab.bsky.social/post/3madbfr2p252q",
+      "image": "/media/bluesky/3madbfr2p252q-9b20b747.jpg",
+      "alt": "SPRIND'S Next Frontier AI initiative",
+      "external": null,
+      "likes": 9,
+      "reposts": 4,
+      "replies": 0
+    },
+    {
+      "text": "Great having Robbie Holland back for a visit at our lab!\n\nHe’s at AIMI at Stanford University and gave a speech on auto-generated hypotheses in the context of AI4Science. Not only for the lab, but maybe more importantly for our lab‘s seminar on Multi-modal AI for Medicine (IN2107, IN45072).\n#AIMnews",
+      "date": "2025-12-17",
+      "url": "https://bsky.app/profile/tum-aim-lab.bsky.social/post/3ma6y3wenus2d",
+      "image": "/media/bluesky/3ma6y3wenus2d-967df092.jpg",
+      "alt": "",
+      "external": null,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1
+    },
+    {
+      "text": "🎄 Lab Christmas Party! 🎄\n\nIt's always great to use the holiday season as an opportunity to (re-)connect! \nWe had a blast at our Christmas party with lots of laughs, pizza, and Glühwein 🍷\n\nWishing everyone a good end to this year and happiest of holidays to those who celebrate! ✨ #AIMsocial",
+      "date": "2025-12-16",
+      "url": "https://bsky.app/profile/tum-aim-lab.bsky.social/post/3ma3s3crvbs2p",
+      "image": "/media/bluesky/3ma3s3crvbs2p-a723366f.jpg",
+      "alt": "",
+      "external": null,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0
+    },
+    {
+      "text": "Great being at #NeurIPS last week! \n\nThankful for the good times in the sun and the people I met.\n\nIf you’ve ever wondered whether model performance can be inferred directly from your training alone, check out our work!\n1/2",
+      "date": "2025-12-10",
+      "url": "https://bsky.app/profile/tum-aim-lab.bsky.social/post/3m7mutkpsrk2l",
+      "image": "/media/bluesky/3m7mutkpsrk2l-574d3702.jpg",
+      "alt": "",
+      "external": null,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 1
+    }
+  ]
+}
