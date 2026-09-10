@@ -35,12 +35,24 @@ DEFAULT_ORG_URL = (
 OTHER_ROLE = "Other (write it in the box below)"
 NO_CHANGE = "No change"
 
+# Formats the site's pinned Hugo (0.74.3, 2020) can actually put through its
+# image pipeline. Wowchemy crops every avatar, so a format Hugo cannot decode
+# fails the whole build rather than just that one picture.
 IMAGE_EXT = {
     "image/jpeg": ".jpg",
     "image/jpg": ".jpg",
     "image/png": ".png",
-    "image/webp": ".webp",
     "image/gif": ".gif",
+}
+# Accepted by browsers and screenshot tools, rejected here: Hugo 0.74.3 predates
+# WebP support, and an avatar.webp breaks the site build.
+UNSUPPORTED = {
+    "image/webp": "WebP",
+    "image/avif": "AVIF",
+    "image/heic": "HEIC",
+    "image/heif": "HEIF",
+    "image/svg+xml": "SVG",
+    "image/tiff": "TIFF",
 }
 MAX_AVATAR_BYTES = 8 * 1024 * 1024
 
@@ -161,9 +173,15 @@ def save_avatar(section, folder):
     if not url.startswith("https://"):
         fail(f"The photo must be an image uploaded to the issue (got '{url}').")
     ctype, data = fetch_bytes(url)
+    if ctype in UNSUPPORTED:
+        fail(
+            f"The photo is a {UNSUPPORTED[ctype]} image, which this site cannot use - "
+            "its Hugo version predates that format, and the build would fail. "
+            "Please re-save or export the photo as a JPEG or PNG and upload it again."
+        )
     if ctype not in IMAGE_EXT:
         fail(
-            f"The photo must be a JPEG, PNG, WebP or GIF image "
+            f"The photo must be a JPEG, PNG or GIF image "
             f"(got '{ctype or 'unknown'}' from {url})."
         )
     if len(data) > MAX_AVATAR_BYTES:

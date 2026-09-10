@@ -24,8 +24,9 @@ body:
     attributes:
       label: Photo
       description: >-
-        Drag a square image into this box (JPEG, PNG, WebP or GIF; 500x500 is plenty,
-        max 8 MB). Do not paste a link to a photo hosted somewhere else.
+        Drag a square image into this box - **JPEG or PNG** (500x500 is plenty, max
+        8 MB). WebP is rejected: the site's Hugo version cannot read it. Do not paste
+        a link to a photo hosted somewhere else.
     validations: {required: true}
   - type: dropdown
     id: role

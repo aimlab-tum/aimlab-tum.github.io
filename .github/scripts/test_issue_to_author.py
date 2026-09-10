@@ -67,12 +67,18 @@ Original biography text.
 PNG = ("image/png", b"\x89PNG\r\n\x1a\n" + b"x" * 100)
 JPG = ("image/jpeg", b"\xff\xd8\xff\xe0" + b"x" * 100)
 PDF = ("application/pdf", b"%PDF-1.4")
+# The real shape of a browser-produced upload that broke the site build.
+WEBP = ("image/webp", b"RIFF\n\x16\x00\x00WEBP" + b"x" * 100)
+AVIF = ("image/avif", b"\x00\x00\x00\x1cftypavif" + b"x" * 100)
 HUGE = ("image/png", b"x" * (8 * 1024 * 1024 + 1))
 FAKE = {
     "https://github.com/user-attachments/assets/png": PNG,
     "https://github.com/user-attachments/assets/jpg": JPG,
     "https://github.com/user-attachments/assets/pdf": PDF,
     "https://github.com/user-attachments/assets/huge": HUGE,
+    "https://github.com/user-attachments/assets/webp": WEBP,
+    "https://github.com/user-attachments/assets/avif": AVIF,
+    "https://github.com/user-attachments/assets/gif": ("image/gif", b"GIF89a" + b"x" * 100),
 }
 IMG = '<img width="500" height="500" alt="Image" src="https://github.com/user-attachments/assets/png" />'
 IMG_JPG = "![photo](https://github.com/user-attachments/assets/jpg)"
@@ -289,7 +295,19 @@ def main():
                 {**NEW_MIN, "Photo": ""}, "photo is required")
     expect_fail("new: photo is not an image", "new-member",
                 {**NEW_MIN, "Photo": "https://github.com/user-attachments/assets/pdf"},
-                "must be a JPEG, PNG, WebP or GIF")
+                "must be a JPEG, PNG or GIF")
+    # Hugo 0.74.3 cannot decode WebP; an avatar.webp fails the whole site build,
+    # so it has to be caught here with an explanation rather than accepted.
+    expect_fail("new: WebP photo rejected with guidance", "new-member",
+                {**NEW_MIN, "Photo": "https://github.com/user-attachments/assets/webp"},
+                "re-save or export the photo as a JPEG or PNG")
+    expect_fail("new: AVIF photo rejected", "new-member",
+                {**NEW_MIN, "Photo": "https://github.com/user-attachments/assets/avif"},
+                "AVIF image, which this site cannot use")
+    expect_ok("new: GIF photo still accepted", "new-member",
+              {**NEW_MIN, "Photo": "https://github.com/user-attachments/assets/gif"},
+              lambda t, o: None if (t / "content/authors/JaneDoe/avatar.gif").exists()
+              else "avatar.gif not written")
     expect_fail("new: photo over 8 MB", "new-member",
                 {**NEW_MIN, "Photo": "https://github.com/user-attachments/assets/huge"},
                 "larger than 8 MB")
@@ -387,6 +405,10 @@ def main():
                 {"Your name": "Tamara Mueler"}, "did you mean")
     expect_fail("update: nothing filled in", "update-profile",
                 {"Your name": "Tamara Müller"}, "nothing to change")
+    expect_fail("update: WebP photo rejected", "update-profile",
+                {"Your name": "Tamara Müller",
+                 "Photo": "https://github.com/user-attachments/assets/webp"},
+                "JPEG or PNG")
     expect_fail("update: invalid group", "update-profile",
                 {"Your name": "Tamara Müller", "Group": "Alumny"}, "not a valid group")
     expect_fail("update: empty name", "update-profile",

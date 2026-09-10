@@ -56,7 +56,9 @@ body:
     id: photo
     attributes:
       label: Photo
-      description: Drag a new square image here to replace the current one.
+      description: >-
+        Drag a new square image here to replace the current one. JPEG or PNG -
+        WebP is rejected, the site's Hugo version cannot read it.
     validations: {required: false}
   - type: input
     id: email
