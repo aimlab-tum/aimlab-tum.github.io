@@ -57,10 +57,33 @@ jobs:
         with:
           enablement: true
 
-      # base_url adapts to wherever Pages serves this repo, overriding the
-      # baseurl in config/_default/config.toml.
+      # The repository is the source of truth for the public address: when
+      # static/CNAME claims a custom domain, build against that. Otherwise fall
+      # back to whatever Pages reports, which covers *.github.io hosts and
+      # project subpaths.
+      #
+      # Without this the two drift silently. During the aim-lab.io cutover the
+      # Pages setting said www.aim-lab.io while static/CNAME said aim-lab.io, so
+      # every generated URL - canonical tags, sitemap, RSS - pointed at a host
+      # that only redirects.
+      - name: Determine base URL
+        id: base
+        env:
+          PAGES_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          set -euo pipefail
+          if [ -s static/CNAME ]; then
+            domain=$(tr -d '[:space:]' < static/CNAME)
+            url="https://${domain}/"
+            echo "static/CNAME claims ${domain}, building against ${url}"
+          else
+            url="${PAGES_URL}/"
+            echo "no static/CNAME, building against the Pages URL ${url}"
+          fi
+          echo "url=${url}" >> "$GITHUB_OUTPUT"
+
       - name: Build
-        run: hugo --gc --minify -b "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --gc --minify -b "${{ steps.base.outputs.url }}"
 
       - uses: actions/upload-pages-artifact@v3
         with:
