@@ -109,6 +109,8 @@ Teaching and education are an integral part of our institute's mission. All of o
 
 <div class="tw-evergreen">
 
+In addition to the main lecture series, the individual sub-areas and subject areas are explored in depth through practical sessions and seminars. Through direct interaction with our lecturers, students can deepen and apply their acquired knowledge.
+
 As an elective for medical students, we offer: **Computer Science for Medical Students**
 
 This course offers students exciting insights into the world of AI methods (especially neural networks) and their applications in medicine. In addition to acquiring basic theoretical knowledge, they gain initial practical experience with Python programming and have the opportunity to train their own neural networks.
@@ -125,15 +127,13 @@ This course offers students exciting insights into the world of AI methods (espe
 
 ## AI in Biomedicine
 
-A research-oriented two-year programme bridging computer science, engineering and medicine, offered by the Technical University of Munich together with Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU). Prof. Daniel Rückert is programme speaker.
+Our chair is participating in the Elite Master's program AI in Biomedicine, with Prof. Daniel Rückert as program speaker. The program bridges the gap between computer science, engineering, and medicine to train future generations of AI experts who combine deep technical expertise in cutting-edge AI techniques with domain knowledge about biomedical applications. AI in Biomedicine is a research-oriented two-year graduate program, with an optional Research Excellence Certificate, offered at the Technical University of Munich in cooperation with Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU). It is designed to prepare students for careers in academic research and high-impact industrial innovation. The program emphasizes independent scientific thinking, methodological rigor, and the ability to contribute to the advancement of AI technologies in biomedicine.
 
-- **Apply** — 1 February to 31 May, every year
-- **Length** — 2 years, optional Research Excellence Certificate
-- **At the chair** — 2 courses reserved for AIBM students
+More details on the [program website](https://www.cit.tum.de/en/cit/studies/degree-programs/ai-in-biomedicine/).
+
+Applications can be submitted every year between February 1 and May 31. If you have questions regarding the application, please contact [app-msaibm.asa@xcit.tum.de](mailto:app-msaibm.asa@xcit.tum.de).
 
 <a class="btn btn-primary" href="https://www.cit.tum.de/en/cit/studies/degree-programs/ai-in-biomedicine/" target="_blank" rel="noopener">Programme website&nbsp;→</a>
-
-Questions about applying: [app-msaibm.asa@xcit.tum.de](mailto:app-msaibm.asa@xcit.tum.de)
 
 </div>
 
@@ -141,9 +141,9 @@ Questions about applying: [app-msaibm.asa@xcit.tum.de](mailto:app-msaibm.asa@xci
 
 **Work with us**
 
-## Theses & student projects
+## Theses, internships and student positions
 
-Bachelor's, master's and IDP projects, internships and student research assistant positions. Every current opening is listed on the CIT thesis portal.
+In addition to lectures, seminars, and internships, we offer a range of bachelor's, master's and IDP projects. All current openings are listed on the CIT thesis portal:
 
 <a class="btn btn-outline-primary" href="https://thesis.aet.cit.tum.de/?groups=c9a54897-40cb-4cdb-87ce-171f33b0a7e2" target="_blank" rel="noopener">Browse our open projects&nbsp;→</a>
 
