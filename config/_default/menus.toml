@@ -26,7 +26,7 @@
 [[main]]
   name = "Research"
   url = "#publications"
-  weight = 40
+  weight = 20
 
 [[main]]
   name = "Teaching"

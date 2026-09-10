@@ -34,16 +34,4 @@ subtitle = ""
 
 </div>
 
-In addition to creating new and pioneering approaches in the fields of data science, artificial intelligence (AI) and machine learning (ML), clinical translation to improve medical care and thus provide concrete benefits for patients is another research focus of the Chair.
-
-The Chair focuses on basic research in the following areas
-- AI for the early detection, prediction and diagnosis of diseases
-- AI for personalized interventions and therapies
-- AI for the identification of new biomarkers and targets for therapy 
-- safe, robust and interpretable AI approaches
-- AI approaches to preserve privacy
-
-We are particularly interested in applications in medical imaging and radiology. One focus is neuroradiology, e.g. better understanding of brain development (in utero and ex utero) and improving the diagnosis and stratification of patients with dementia, stroke and traumatic brain injury. In addition, applications for the detection and diagnosis of cardiovascular diseases and cancer are another research focus.
-
 Find our lab on [LinkedIn](https://www.linkedin.com/company/tum-aim-lab) and [Bluesky](https://bsky.app/profile/tum-aim-lab.bsky.social).
-
