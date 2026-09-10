@@ -42,47 +42,20 @@ The following research groups are based at the chair:
 - AI for opportunistic cardiac MRI
 
 <div class="rw">
-  <div class="rw-rail">
-    <button type="button" class="rw-card" data-area="ai-for-biomedical-image-analysis-and-interpretation">
-      <img class="rw-thumb" src="/home/harvey_research_1.png" alt="" loading="lazy">
-      <span class="rw-card-body">
-        <span class="rw-card-title">AI for biomedical image analysis and interpretation</span>
-        <span class="rw-card-lead">Huaqi (Harvey) Qiu</span>
-        <span class="rw-card-teaser">Medical imaging allows doctors to examine the interior structure or function of the human body, often without …</span>
-      </span>
-    </button>
-    <button type="button" class="rw-card" data-area="inverse-problems-in-biomedical-imaging">
-      <span class="rw-thumb rw-thumb-empty">No figure yet</span>
-      <span class="rw-card-body">
-        <span class="rw-card-title">Inverse problems in biomedical imaging</span>
-        <span class="rw-card-lead">Ivan Ezhov · Sevgi Gokce Kafali</span>
-        <span class="rw-card-teaser">Our group is working on inverse problems in biomedical imaging and their solution using artificial intelligenc…</span>
-      </span>
-    </button>
-    <button type="button" class="rw-card" data-area="privacy-preserving-and-trustworthy-ai-in-medicine">
-      <img class="rw-thumb" src="/home/privacy_research_2.png" alt="" loading="lazy">
-      <span class="rw-card-body">
-        <span class="rw-card-title">Privacy-preserving and trustworthy AI in medicine</span>
-        <span class="rw-card-lead">Alexander Ziller</span>
-        <span class="rw-card-teaser">Our group is developing the next generation of privacy-preserving, secure, and trustworthy AI algorithms for m…</span>
-      </span>
-    </button>
-    <button type="button" class="rw-card" data-area="ai-for-vision">
-      <span class="rw-thumb rw-thumb-empty">No figure yet</span>
-      <span class="rw-card-body">
-        <span class="rw-card-title">AI for vision</span>
-        <span class="rw-card-lead">Martin Menten</span>
-        <span class="rw-card-teaser">The AI for Vision group focuses on blue-sky research in medical image analysis with a particular focus on the …</span>
-      </span>
-    </button>
-  </div>
+<div class="rw-rail"></div>
 
-<section class="rw-area" id="ai-for-biomedical-image-analysis-and-interpretation">
-  <h2>AI for biomedical image analysis and interpretation</h2>
-  <p class="rw-leads"><a href="/author/huaqi-harvey-qiu/">Huaqi (Harvey) Qiu</a></p>
-  <p>Medical imaging allows doctors to examine the interior structure or function of the human body, often without the need for invasive surgical procedures. It comprises a range of different techniques, such as computed tomography (CT), magnetic resonance imaging (MR) and ultrasound (US). Clinicians rely on the information provided by medical imaging to monitor patients, diagnose illnesses and decide on treatment.</p>
-  <p>Our mission is to support doctors in the clinical process and improve patient care by developing advanced algorithms that use artificial intelligence (AI) techniques. To this end, we create and improve machine learning (ML) algorithms for various parts of the medical imaging pipeline. At the image level, we develop methods to tackle tasks such as segmentation of relevant anatomical structures, registration of images across time or modalities, and enhancement of image quality. At the decision level, we innovate solutions to extract clinically useful information from medical images, diagnose diseases and predict future outcomes.</p>
-  <p>Developing these algorithms in the medical domain presents many challenges which we are striving to overcome. Medical data is often sparse and annotations for algorithm training are costly to acquire, with problems such as domain shift plaguing the few available data, which could be detrimental to ML algorithms. For this, we are developing data-efficient and domain-robust solutions, as well as exploring opportunities provided by the increasing availability of large public datasets / biobanks. Medical images are usually accompanied by additional information from different sources such as doctor's notes, laboratory test results or genomics data, all of which should be considered when interpreting the images. Part of our research centers on developing multi-modal AI solutions that integrate these diverse data sources. Finally, to successfully deploy these algorithms in a hospital setting, we work in close collaboration with medical professionals to align our research with clinical value and to improve the interpretability of our ML algorithms to foster trust and facilitate adoption.</p>
+<section class="rw-area">
+
+## AI for biomedical image analysis and interpretation
+
+[Huaqi (Harvey) Qiu](/author/huaqi-harvey-qiu/)
+
+Medical imaging allows doctors to examine the interior structure or function of the human body, often without the need for invasive surgical procedures. It comprises a range of different techniques, such as computed tomography (CT), magnetic resonance imaging (MR) and ultrasound (US). Clinicians rely on the information provided by medical imaging to monitor patients, diagnose illnesses and decide on treatment.
+
+Our mission is to support doctors in the clinical process and improve patient care by developing advanced algorithms that use artificial intelligence (AI) techniques. To this end, we create and improve machine learning (ML) algorithms for various parts of the medical imaging pipeline. At the image level, we develop methods to tackle tasks such as segmentation of relevant anatomical structures, registration of images across time or modalities, and enhancement of image quality. At the decision level, we innovate solutions to extract clinically useful information from medical images, diagnose diseases and predict future outcomes.
+
+Developing these algorithms in the medical domain presents many challenges which we are striving to overcome. Medical data is often sparse and annotations for algorithm training are costly to acquire, with problems such as domain shift plaguing the few available data, which could be detrimental to ML algorithms. For this, we are developing data-efficient and domain-robust solutions, as well as exploring opportunities provided by the increasing availability of large public datasets / biobanks. Medical images are usually accompanied by additional information from different sources such as doctor's notes, laboratory test results or genomics data, all of which should be considered when interpreting the images. Part of our research centers on developing multi-modal AI solutions that integrate these diverse data sources. Finally, to successfully deploy these algorithms in a hospital setting, we work in close collaboration with medical professionals to align our research with clinical value and to improve the interpretability of our ML algorithms to foster trust and facilitate adoption.
+
 <div class="hrv-carousel">
   <div class="hrv-track">
     <figure class="hrv-slide" id="hrv-slide-1">
@@ -104,53 +77,76 @@ The following research groups are based at the chair:
     <a href="#hrv-slide-3" aria-label="Go to slide 3"></a>
   </div>
 </div>
-  <details class="rw-pubs">
-    <summary>Key publications <span>10</span></summary>
-    <ol>
-      <li>Hager, P., Jungmann, F., Holland, R., Bhagat, K., Hubrecht, I., Knauer, M.M., Vielhauer, J., Makowski, M., Braren, R., Kaissis, G., & Rueckert, D. (2024). Evaluation and mitigation of the limitations of large language models in clinical decision-making. <em>Nature Medicine, 30</em>, 2613–2622.</li>
-      <li>Dima, A.F., Zimmer, V.A., Menten, M.J., Li, H.B., Graf, M., Lemke, T., Raffler, P., Graf, R., Kirschke, J.S., Braren, R.F., & Rueckert, D. (2023). 3D Arterial Segmentation via Single 2D Projections and Depth Supervision in Contrast-Enhanced CT Images. <em>MICCAI</em>.</li>
-      <li>Turgut, Ö., Müller, P., Hager, P., Shit, S., Starck, S., Menten, M.J., Martens, E., & Rueckert, D. (2023). Unlocking the Diagnostic Potential of ECG through Knowledge Transfer from Cardiac MRI.</li>
-      <li>Müller, P., Kaissis, G., & Rueckert, D. (2024). ChEX: Interactive Localization and Region Description in Chest X-rays. <em>European Conference on Computer Vision</em>.</li>
-      <li>Mueller, T.T., Starck, S., Bintsi, K., Ziller, A., Braren, R., Kaissis, G., & Rueckert, D. (2024). Are Population Graphs Really as Powerful as Believed? <em>Trans. Mach. Learn. Res., 2024</em>.</li>
-      <li>Sideri-Lampretsa, V., McGinnis, J., Qiu, H., Paschali, M., Simson, W., & Rueckert, D. (2024). SINR: Spline-enhanced implicit neural representation for multi-modal registration. <em>Medical Imaging with Deep Learning</em>.</li>
-      <li>Berger, A.H., Stucki, N., Lux, L., Buergin, V., Shit, S., Banaszak, A., Rueckert, D., Bauer, U., & Paetzold, J.C. (2024). Topologically faithful multi-class segmentation in medical images. <em>MICCAI</em>.</li>
-      <li>Dannecker, M., Kyriakopoulou, V., Cordero-Grande, L., Price, A., Hajnal, J.V., & Rueckert, D. (2024). CINA: Conditional Implicit Neural Atlas for Spatio-Temporal Representation of Fetal Brains. <em>MICCAI</em>.</li>
-      <li>Starck, S., Sideri-Lampretsa, V., Ritter, J. J., Zimmer, V. A., Braren, R., Mueller, T. T., & Rueckert, D. (2024). Using UK Biobank data to establish population-specific atlases from whole body MRI. <em>Communications Medicine, 4</em>(1), 237.</li>
-      <li>Zhang, Y., Chen, C., Shit, S., Starck, S., Rueckert, D., & Pan, J. (2024). Whole heart 3D+t representation learning through sparse 2D cardiac MR images. <em>MICCAI</em> (pp. 359–369). Springer.</li>
-    </ol>
-  </details>
+
+
+
+<details class="rw-pubs">
+<summary>Key publications</summary>
+
+- Hager, P., Jungmann, F., Holland, R., Bhagat, K., Hubrecht, I., Knauer, M.M., Vielhauer, J., Makowski, M., Braren, R., Kaissis, G., & Rueckert, D. (2024). Evaluation and mitigation of the limitations of large language models in clinical decision-making. *Nature Medicine, 30*, 2613–2622.
+- Dima, A.F., Zimmer, V.A., Menten, M.J., Li, H.B., Graf, M., Lemke, T., Raffler, P., Graf, R., Kirschke, J.S., Braren, R.F., & Rueckert, D. (2023). 3D Arterial Segmentation via Single 2D Projections and Depth Supervision in Contrast-Enhanced CT Images. *MICCAI*.
+- Turgut, Ö., Müller, P., Hager, P., Shit, S., Starck, S., Menten, M.J., Martens, E., & Rueckert, D. (2023). Unlocking the Diagnostic Potential of ECG through Knowledge Transfer from Cardiac MRI.
+- Müller, P., Kaissis, G., & Rueckert, D. (2024). ChEX: Interactive Localization and Region Description in Chest X-rays. *European Conference on Computer Vision*.
+- Mueller, T.T., Starck, S., Bintsi, K., Ziller, A., Braren, R., Kaissis, G., & Rueckert, D. (2024). Are Population Graphs Really as Powerful as Believed? *Trans. Mach. Learn. Res., 2024*.
+- Sideri-Lampretsa, V., McGinnis, J., Qiu, H., Paschali, M., Simson, W., & Rueckert, D. (2024). SINR: Spline-enhanced implicit neural representation for multi-modal registration. *Medical Imaging with Deep Learning*.
+- Berger, A.H., Stucki, N., Lux, L., Buergin, V., Shit, S., Banaszak, A., Rueckert, D., Bauer, U., & Paetzold, J.C. (2024). Topologically faithful multi-class segmentation in medical images. *MICCAI*.
+- Dannecker, M., Kyriakopoulou, V., Cordero-Grande, L., Price, A., Hajnal, J.V., & Rueckert, D. (2024). CINA: Conditional Implicit Neural Atlas for Spatio-Temporal Representation of Fetal Brains. *MICCAI*.
+- Starck, S., Sideri-Lampretsa, V., Ritter, J. J., Zimmer, V. A., Braren, R., Mueller, T. T., & Rueckert, D. (2024). Using UK Biobank data to establish population-specific atlases from whole body MRI. *Communications Medicine, 4*(1), 237.
+- Zhang, Y., Chen, C., Shit, S., Starck, S., Rueckert, D., & Pan, J. (2024). Whole heart 3D+t representation learning through sparse 2D cardiac MR images. *MICCAI* (pp. 359–369). Springer.
+
+</details>
+
 </section>
 
-<section class="rw-area" id="inverse-problems-in-biomedical-imaging">
-  <h2>Inverse problems in biomedical imaging</h2>
-  <p class="rw-leads"><a href="/author/ivan-ezhov/">Ivan Ezhov</a> · <a href="/author/sevgi-gokce-kafali/">Sevgi Gokce Kafali</a></p>
-  <p>Our group is working on inverse problems in biomedical imaging and their solution using artificial intelligence and machine learning.</p>
-  <p>The development of algorithms to solve inverse problems arising in sensor and imaging systems has a long tradition. Examples include compressed sensing approaches, e.g. for medical and computational imaging. Until recently, most algorithms for inverse problems were based on statistical or physical signal models, such as wavelets or sparse representations. Our research focuses on novel approaches based on deep learning to accelerate solving such problems.</p>
-  <p>We study how these deep learning-based approaches can be optimized for clinical applications and how they can be combined with image analysis methods. Deep learning-based approaches for reconstructing magnetic resonance imaging (MRI) or computed tomography (CT) provide efficient AI models, allowing the reconstruction of high-quality MRI images, and high-quality CT images from low-dose X-ray images. Recent works on generative models have shown great promise for accelerating reconstruction tasks to shorten the scan time in MRI, as well as generating images with much higher resolution than the acquired resolution (e.g. super-resolution). Here, we tackle these problems by utilizing AI (i.e., diffusion models) guided by readily available MR images from other organs/tissues, MRI scanning parameters, or other MRI physics-guided information.</p>
-  <details class="rw-pubs">
-    <summary>Key publications <span>11</span></summary>
-    <ol>
-      <li>Schlemper, J., Caballero, J., Hajnal, J.V., Price, A.N. & Rueckert, D. (2017). A deep cascade of convolutional neural networks for dynamic MR image reconstruction. <em>IEEE Transactions on Medical Imaging</em>.</li>
-      <li>Qin, C., Schlemper, J., Caballero, J., Price, A.N., Hajnal, J.V. & Rueckert, D. (2018). Convolutional recurrent neural networks for dynamic MR image reconstruction. <em>IEEE Transactions on Medical Imaging</em>.</li>
-      <li>Hammernik, K., Schlemper, J., Qin, C., Duan, J., Summers, R.M. & Rueckert, D. (2021). Systematic evaluation of iterative deep neural networks for fast parallel MRI reconstruction with sensitivity-weighted coil combination. <em>Magnetic Resonance in Medicine</em>.</li>
-      <li>Hammernik, K., Küstner, T., Yaman, B., Huang, Z., Rueckert, D., Knoll, F. & Akçakaya, M. (2023). Physics-Driven Deep Learning for Computational Magnetic Resonance Imaging. <em>IEEE Signal Processing Magazine</em>.</li>
-      <li>Huang, W., Li, H.B., Pan, J., Cruz, G., Rueckert, D. & Hammernik, K. (2023). Neural implicit k-space for binning-free non-cartesian cardiac MR imaging. <em>IPMI</em>.</li>
-      <li>Pan, J., Hamdi, M., Huang, W., Hammernik, K., Kuestner, T. & Rueckert, D. (2024). Unrolled and rapid motion-compensated reconstruction for cardiac CINE MRI. <em>Medical Image Analysis</em>.</li>
-      <li>Pan, J., Huang, W., Rückert, D., Küstner, T. & Hammernik, K. (2024). Reconstruction-driven motion estimation for motion-compensated MR CINE imaging. <em>IEEE Transactions on Medical Imaging</em>.</li>
-      <li>Ezhov, I., Scibilia, K., Giannoni, L., Kofler, F., Iliash, I., Hsieh, F., Shit, S., Caredda, C., Lange, F., Montcel, B., Tachtsidis, I., & Rueckert, D. (2024). Learnable real-time inference of molecular composition from diffuse spectroscopy of brain tissue. <em>Journal of Biomedical Optics</em>.</li>
-      <li>Chung, H., Lee, D., Wu, Z., Kim, B. H., Bouman, K. L., & Ye, J. C. (2025). ContextMRI: Enhancing Compressed Sensing MRI through Metadata Conditioning. <em>arXiv:2501.04284</em>.</li>
-      <li>Jiang, L., Mao, Y., Wang, X., Chen, X., & Li, C. (2023). Cola-diff: Conditional latent diffusion model for multi-modal MRI synthesis. <em>MICCAI</em> (pp. 398–408). Springer.</li>
-      <li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., & Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. <em>CVPR</em> (pp. 10684–10695).</li>
-    </ol>
-  </details>
+<section class="rw-area">
+
+## Inverse problems in biomedical imaging
+
+[Ivan Ezhov](/author/ivan-ezhov/)  ·  [Sevgi Gokce Kafali](/author/sevgi-gokce-kafali/)
+
+Our group is working on inverse problems in biomedical imaging and their solution using artificial intelligence and machine learning.
+
+The development of algorithms to solve inverse problems arising in sensor and imaging systems has a long tradition. Examples include compressed sensing approaches, e.g. for medical and computational imaging. Until recently, most algorithms for inverse problems were based on statistical or physical signal models, such as wavelets or sparse representations. Our research focuses on novel approaches based on deep learning to accelerate solving such problems.
+
+We study how these deep learning-based approaches can be optimized for clinical applications and how they can be combined with image analysis methods. Deep learning-based approaches for reconstructing magnetic resonance imaging (MRI) or computed tomography (CT) provide efficient AI models, allowing the reconstruction of high-quality MRI images, and high-quality CT images from low-dose X-ray images. Recent works on generative models have shown great promise for accelerating reconstruction tasks to shorten the scan time in MRI, as well as generating images with much higher resolution than the acquired resolution (e.g. super-resolution). Here, we tackle these problems by utilizing AI (i.e., diffusion models) guided by readily available MR images from other organs/tissues, MRI scanning parameters, or other MRI physics-guided information.
+
+<details class="rw-pubs">
+<summary>Key publications</summary>
+
+- Schlemper, J., Caballero, J., Hajnal, J.V., Price, A.N. & Rueckert, D. (2017). A deep cascade of convolutional neural networks for dynamic MR image reconstruction. *IEEE Transactions on Medical Imaging*.
+- Qin, C., Schlemper, J., Caballero, J., Price, A.N., Hajnal, J.V. & Rueckert, D. (2018). Convolutional recurrent neural networks for dynamic MR image reconstruction. *IEEE Transactions on Medical Imaging*.
+- Hammernik, K., Schlemper, J., Qin, C., Duan, J., Summers, R.M. & Rueckert, D. (2021). Systematic evaluation of iterative deep neural networks for fast parallel MRI reconstruction with sensitivity-weighted coil combination. *Magnetic Resonance in Medicine*.
+- Hammernik, K., Küstner, T., Yaman, B., Huang, Z., Rueckert, D., Knoll, F. & Akçakaya, M. (2023). Physics-Driven Deep Learning for Computational Magnetic Resonance Imaging. *IEEE Signal Processing Magazine*.
+- Huang, W., Li, H.B., Pan, J., Cruz, G., Rueckert, D. & Hammernik, K. (2023). Neural implicit k-space for binning-free non-cartesian cardiac MR imaging. *IPMI*.
+- Pan, J., Hamdi, M., Huang, W., Hammernik, K., Kuestner, T. & Rueckert, D. (2024). Unrolled and rapid motion-compensated reconstruction for cardiac CINE MRI. *Medical Image Analysis*.
+- Pan, J., Huang, W., Rückert, D., Küstner, T. & Hammernik, K. (2024). Reconstruction-driven motion estimation for motion-compensated MR CINE imaging. *IEEE Transactions on Medical Imaging*.
+- Ezhov, I., Scibilia, K., Giannoni, L., Kofler, F., Iliash, I., Hsieh, F., Shit, S., Caredda, C., Lange, F., Montcel, B., Tachtsidis, I., & Rueckert, D. (2024). Learnable real-time inference of molecular composition from diffuse spectroscopy of brain tissue. *Journal of Biomedical Optics*.
+- Chung, H., Lee, D., Wu, Z., Kim, B. H., Bouman, K. L., & Ye, J. C. (2025). ContextMRI: Enhancing Compressed Sensing MRI through Metadata Conditioning. *arXiv:2501.04284*.
+- Jiang, L., Mao, Y., Wang, X., Chen, X., & Li, C. (2023). Cola-diff: Conditional latent diffusion model for multi-modal MRI synthesis. *MICCAI* (pp. 398–408). Springer.
+- Rombach, R., Blattmann, A., Lorenz, D., Esser, P., & Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. *CVPR* (pp. 10684–10695).
+
+</details>
+
 </section>
 
-<section class="rw-area" id="privacy-preserving-and-trustworthy-ai-in-medicine">
-  <h2>Privacy-preserving and trustworthy AI in medicine</h2>
-  <p class="rw-leads"><a href="/author/alexander-ziller/">Alexander Ziller</a></p>
-  <p>Our group is developing the next generation of privacy-preserving, secure, and trustworthy AI algorithms for medical applications.</p>
-  <p>AI in medicine requires large, diverse, and representative datasets to train fair, generalizable, and reliable models. However, such datasets often contain sensitive personal information. Privacy-preserving machine learning bridges the gap between data utilization and data protection by enabling the training of AI models on private data while providing formal privacy guarantees. Our group focuses on:</p>
-  <p>Building trust in AI necessitates a comprehensive approach encompassing privacy, reliability, and security. Our work on trustworthy machine learning includes quantifying uncertainty in model outputs, incorporating domain expertise, developing probabilistic models to counteract poorly calibrated predictions, employing computational Bayesian techniques, and exploring the intersection of probabilistic and privacy-preserving machine learning. As AI systems increasingly integrate generative models like LLMs, we also work on establishing formal guarantees of safety and reliability for agentic LLM applications, exploring robustness in generative systems, and ensuring alignment of generative models with human values and ethical guidelines, particularly in high-stakes domains like healthcare.</p>
+<section class="rw-area">
+
+## Privacy-preserving and trustworthy AI in medicine
+
+[Alexander Ziller](/author/alexander-ziller/)
+
+Our group is developing the next generation of privacy-preserving, secure, and trustworthy AI algorithms for medical applications.
+
+AI in medicine requires large, diverse, and representative datasets to train fair, generalizable, and reliable models. However, such datasets often contain sensitive personal information. Privacy-preserving machine learning bridges the gap between data utilization and data protection by enabling the training of AI models on private data while providing formal privacy guarantees. Our group focuses on:
+
+- Differential privacy (DP) theory and applications to machine learning and deep learning, targeting both unstructured datasets (e.g., images) and structured data (e.g., tabular and graph databases).
+- Generative models and their applications, such as large language models (LLMs) and agentic systems, integrating differential privacy to ensure secure and privacy-preserving outcomes.
+- Data attribution techniques, which enable transparent and accountable data usage in training and inference.
+- Developing techniques to mitigate trade-offs between privacy, model utility, and computational efficiency.
+- AI security, including the study of vulnerabilities in collaborative machine learning protocols (e.g., federated learning) and designing robust defense mechanisms against adversarial attacks.
+
+Building trust in AI necessitates a comprehensive approach encompassing privacy, reliability, and security. Our work on trustworthy machine learning includes quantifying uncertainty in model outputs, incorporating domain expertise, developing probabilistic models to counteract poorly calibrated predictions, employing computational Bayesian techniques, and exploring the intersection of probabilistic and privacy-preserving machine learning. As AI systems increasingly integrate generative models like LLMs, we also work on establishing formal guarantees of safety and reliability for agentic LLM applications, exploring robustness in generative systems, and ensuring alignment of generative models with human values and ethical guidelines, particularly in high-stakes domains like healthcare.
+
 <div class="hrv-carousel">
   <div class="hrv-track">
     <figure class="hrv-slide" id="priv-slide-1">
@@ -167,56 +163,69 @@ The following research groups are based at the chair:
     <a href="#priv-slide-2" aria-label="Go to slide 2"></a>
   </div>
 </div>
-  <details class="rw-pubs">
-    <summary>Key publications <span>16</span></summary>
-    <ol>
-      <li>Kaiser, J., Ziller, A., Triantafillou, E., Rückert, D., & Kaissis, G. (2026). Your Privacy Depends on Others: Collusion Vulnerabilities in Individual Differential Privacy. <em>4th IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)</em>.</li>
-      <li>Lockfisch, S., Schwethelm, K., Menten, M., Braren, R., Rueckert, D., Ziller, A., & Kaissis, G. (2025). On Arbitrary Predictions from Equally Valid Models. <em>AAAI Workshop on Navigating Model Uncertainty and the Rashomon Effect (MURE)</em>.</li>
-      <li>Kaiser, J., Mueller, T., & Kaissis, G. (2025). Differential privacy in medical imaging applications. In <em>Trustworthy AI in Medical Imaging</em> (pp. 411–424). Academic Press.</li>
-      <li>Koeken, A., Ziller, A., Knolle, M., & Rueckert, D. (2025). Sensitivity, Specificity, and Consistency: A Tripartite Evaluation of Privacy Filters for Synthetic Data Generation. <em>ICCV 2025 Workshop on Responsible Imaging</em>.</li>
-      <li>Schwethelm, K., Kaiser, J., Kuntzer, J., Yiğitsoy, M., Rückert, D., & Kaissis, G. (2025). Differentially Private Active Learning: Balancing Effective Data Selection and Privacy. <em>IEEE SaTML</em> (pp. 858–878). doi:<a href="https://doi.org/10.1109/SaTML64287.2025.00053">10.1109/SaTML64287.2025.00053</a>.</li>
-      <li>Schwethelm, K., Kaiser, J., Knolle, M., Lockfisch, S., Rueckert, D., & Ziller, A. (2025). Visual privacy auditing with diffusion models. <em>Transactions on Machine Learning Research</em>.</li>
-      <li>Ziller, A., Mueller, T., Stieger, S., Feiner, L., Brandt, J., Braren, R., Rueckert, D., & Kaissis, G. (2024). Reconciling Privacy and Accuracy in AI for Medical Imaging. <em>Nature Machine Intelligence</em>.</li>
-      <li>Kaess, P., Ziller, A., Mantz, L., Rueckert, D., Fintelmann, F. J., & Kaissis, G. (2024). Fair and private CT contrast agent detection. <em>MICCAI Workshop on Fairness of AI in Medical Imaging</em> (pp. 34–45). Springer.</li>
-      <li>Kaissis, G., Kolek, S., Balle, B., Hayes, J., & Rueckert, D. (2024). Beyond the calibration point: Mechanism comparison in Differential Privacy. <em>International Conference on Machine Learning</em>.</li>
-      <li>Tayebi Arasteh, S., Ziller, A., Kuhl, C., Makowski, M., Nebelung, S., Braren, R., Rueckert, D., Truhn, D., & Kaissis, G. (2024). Preserving fairness and diagnostic accuracy in private large-scale AI models for medical imaging. <em>Communications Medicine</em>.</li>
-      <li>Hölzl, F. A., Rueckert, D., & Kaissis, G. (2023). Equivariant differentially private deep learning: Why DP-SGD needs sparser models. <em>16th ACM Workshop on Artificial Intelligence and Security</em> (pp. 11–22).</li>
-      <li>Kaissis, G., Ziller, A., Kolek, S., Riess, A., & Rueckert, D. (2023). Optimal privacy guarantees for a relaxed threat model: Addressing sub-optimal adversaries in differentially private machine learning. <em>NeurIPS</em>.</li>
-      <li>Mueller, T.T., Paetzold, J.C., Prabhakar, C., Usynin, D., Rueckert, D., & Kaissis, G. (2022). Differentially Private Graph Neural Networks for Whole-Graph Classification. <em>IEEE TPAMI</em>.</li>
-      <li>Usynin, D., Ziller, A., Makowski, M., Braren, R., Rueckert, D., Glocker, B., Kaissis, G., & Passerat-Palmbach, J. (2021). Adversarial interference and its mitigations in privacy-preserving collaborative machine learning. <em>Nature Machine Intelligence</em>.</li>
-      <li>Kaissis, G., Ziller, A., Passerat-Palmbach, J., Ryffel, T., Usynin, D., Trask, A., Lima Jr, I., Mancuso, J., Jungmann, F., Steinborn, M.M., & Saleh, A. (2021). End-to-end privacy preserving deep learning on multi-institutional medical imaging. <em>Nature Machine Intelligence</em>.</li>
-      <li>Kaissis, G., Makowski, M.R., Rückert, D., & Braren, R.F. (2020). Secure, privacy-preserving and federated machine learning in medical imaging. <em>Nature Machine Intelligence</em>.</li>
-    </ol>
-  </details>
+
+<details class="rw-pubs">
+<summary>Key publications</summary>
+
+- Kaiser, J., Ziller, A., Triantafillou, E., Rückert, D., & Kaissis, G. (2026). Your Privacy Depends on Others: Collusion Vulnerabilities in Individual Differential Privacy. *4th IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)*.
+- Lockfisch, S., Schwethelm, K., Menten, M., Braren, R., Rueckert, D., Ziller, A., & Kaissis, G. (2025). On Arbitrary Predictions from Equally Valid Models. *AAAI Workshop on Navigating Model Uncertainty and the Rashomon Effect (MURE)*.
+- Kaiser, J., Mueller, T., & Kaissis, G. (2025). Differential privacy in medical imaging applications. In *Trustworthy AI in Medical Imaging* (pp. 411–424). Academic Press.
+- Koeken, A., Ziller, A., Knolle, M., & Rueckert, D. (2025). Sensitivity, Specificity, and Consistency: A Tripartite Evaluation of Privacy Filters for Synthetic Data Generation. *ICCV 2025 Workshop on Responsible Imaging*.
+- Schwethelm, K., Kaiser, J., Kuntzer, J., Yiğitsoy, M., Rückert, D., & Kaissis, G. (2025). Differentially Private Active Learning: Balancing Effective Data Selection and Privacy. *IEEE SaTML* (pp. 858–878). doi:[10.1109/SaTML64287.2025.00053](https://doi.org/10.1109/SaTML64287.2025.00053).
+- Schwethelm, K., Kaiser, J., Knolle, M., Lockfisch, S., Rueckert, D., & Ziller, A. (2025). Visual privacy auditing with diffusion models. *Transactions on Machine Learning Research*.
+- Ziller, A., Mueller, T., Stieger, S., Feiner, L., Brandt, J., Braren, R., Rueckert, D., & Kaissis, G. (2024). Reconciling Privacy and Accuracy in AI for Medical Imaging. *Nature Machine Intelligence*.
+- Kaess, P., Ziller, A., Mantz, L., Rueckert, D., Fintelmann, F. J., & Kaissis, G. (2024). Fair and private CT contrast agent detection. *MICCAI Workshop on Fairness of AI in Medical Imaging* (pp. 34–45). Springer.
+- Kaissis, G., Kolek, S., Balle, B., Hayes, J., & Rueckert, D. (2024). Beyond the calibration point: Mechanism comparison in Differential Privacy. *International Conference on Machine Learning*.
+- Tayebi Arasteh, S., Ziller, A., Kuhl, C., Makowski, M., Nebelung, S., Braren, R., Rueckert, D., Truhn, D., & Kaissis, G. (2024). Preserving fairness and diagnostic accuracy in private large-scale AI models for medical imaging. *Communications Medicine*.
+- Hölzl, F. A., Rueckert, D., & Kaissis, G. (2023). Equivariant differentially private deep learning: Why DP-SGD needs sparser models. *16th ACM Workshop on Artificial Intelligence and Security* (pp. 11–22).
+- Kaissis, G., Ziller, A., Kolek, S., Riess, A., & Rueckert, D. (2023). Optimal privacy guarantees for a relaxed threat model: Addressing sub-optimal adversaries in differentially private machine learning. *NeurIPS*.
+- Mueller, T.T., Paetzold, J.C., Prabhakar, C., Usynin, D., Rueckert, D., & Kaissis, G. (2022). Differentially Private Graph Neural Networks for Whole-Graph Classification. *IEEE TPAMI*.
+- Usynin, D., Ziller, A., Makowski, M., Braren, R., Rueckert, D., Glocker, B., Kaissis, G., & Passerat-Palmbach, J. (2021). Adversarial interference and its mitigations in privacy-preserving collaborative machine learning. *Nature Machine Intelligence*.
+- Kaissis, G., Ziller, A., Passerat-Palmbach, J., Ryffel, T., Usynin, D., Trask, A., Lima Jr, I., Mancuso, J., Jungmann, F., Steinborn, M.M., & Saleh, A. (2021). End-to-end privacy preserving deep learning on multi-institutional medical imaging. *Nature Machine Intelligence*.
+- Kaissis, G., Makowski, M.R., Rückert, D., & Braren, R.F. (2020). Secure, privacy-preserving and federated machine learning in medical imaging. *Nature Machine Intelligence*.
+
+</details>
+
 </section>
 
-<section class="rw-area" id="ai-for-vision">
-  <h2>AI for vision</h2>
-  <p class="rw-leads"><a href="/author/martin-menten/">Martin Menten</a></p>
-  <p>The AI for Vision group focuses on blue-sky research in medical image analysis with a particular focus on the application of machine learning and computer vision algorithms in the field of ophthalmology. Specifically, we are working on:</p>
-  <p><em>*Self-supervised learning.</em>* Labeling medical data is very expensive, as it is time-consuming and requires expert knowledge. Moreover, medical data often includes highly sensitive information, making it challenging to share without compromising the privacy of the subjects involved. To overcome the limited availability of large annotated medical datasets, we are researching self-supervised learning, leveraging unlabeled medical data to enable neural networks to extract meaningful features that can be effectively adapted to a wide range of downstream tasks.</p>
-  <p><em>*Multimodal deep learning.</em>* Clinicians rarely rely on a single source of information when diagnosing patients and deciding on a course of action. They consider an array of multimodal data, such as demographic and genomic information, patient interviews, laboratory test results and biomedical images. Our research focuses on developing deep learning algorithms capable of integrating diverse multimodal data to support autonomous and effective clinical decision making.</p>
-  <p><em>*Deep learning for ophthalmology.</em>* Good vision is essential for navigating our environment, communicating, and performing everyday activities. As of 2020, more than 200 million people worldwide suffered from moderate to severe vision impairment. Driven by the comparative ease of imaging the eye and obtaining large imaging datasets, ophthalmology has been an early adopter of deep learning in healthcare. Our group's work in machine learning for ophthalmology simultaneously evaluates new algorithmic innovations while aiming to improve medical care for patients affected by ocular diseases.</p>
-  <details class="rw-pubs">
-    <summary>Key publications <span>7</span></summary>
-    <ol>
-      <li>Holland, R., Leingang, O., Bogunović, H., Riedl, S., Fritsche, L., Prevost, T., Scholl, H. P. N., Schmidt-Erfurth, U., Sivaprasad, S., Lotery, A. J., Rueckert, D., & Menten, M. J. (2024). Metadata-enhanced contrastive learning from retinal optical coherence tomography images. <em>Medical Image Analysis, 97</em>:103296.</li>
-      <li>Kreitner, L., Paetzold, J. C., Rauch, N., Chen, C., Hagag, A. M., Fayed, A. E., Sivaprasad, S., Rausch, S., Weichsel, J., Menze, B. H., Harders, M., Knier, B., Rueckert, D., & Menten, M. J. (2024). Synthetic optical coherence tomography angiographs for detailed retinal vessel segmentation without human annotations. <em>IEEE Transactions on Medical Imaging, 43</em>(6):2061–2073.</li>
-      <li>Menten, M. J., Paetzold, J. C., Zimmer, V. A., Shit, S., Ezhov, I., Holland, R., Probst, M., Schnabel, J. A., & Rueckert, D. (2023). A skeletonization algorithm for gradient-based optimization. <em>ICCV</em>, 21394–21403.</li>
-      <li>Holland, R., Leingang, O., Holmes, C., Anders, P., Kaye, R., Riedl, S., Paetzold, J. C., Ezhov, I., Bogunović, H., Schmidt-Erfurth, U., Scholl, H. P. N., Sivaprasad, S., Lotery, A. J., Rueckert, D., & Menten, M. J. (2023). Clustering disease trajectories in contrastive feature space for biomarker proposal in age-related macular degeneration. <em>MICCAI</em>, 724–734.</li>
-      <li>Menten, M. J., Holland, R., Leingang, O., Bogunović, H., Hagag, A. M., Kaye, R., Riedl, S., Traber, G. L., Hassan, O. N., Pawlowski, N., Glocker, B., Fritsche, L. G., Scholl, H. P. N., Sivaprasad, S., Schmidt-Erfurth, U., Rueckert, D., & Lotery, A. J. (2023). Exploring healthy retinal aging with deep learning. <em>Ophthalmology Science, 3</em>(3):100294.</li>
-      <li>Hager, P., Menten, M. J., & Rueckert, D. (2023). Best of both worlds: Multimodal contrastive learning with tabular and imaging data. <em>CVPR</em>, 23924–23935.</li>
-      <li>Menten, M. J., Paetzold, J. C., Dima, A., Menze, B. H., Knier, B., & Rueckert, D. (2022). Physiology-based simulation of the retinal vasculature enables annotation-free segmentation of OCT angiographs. <em>MICCAI</em>, 330–340.</li>
-    </ol>
-  </details>
+<section class="rw-area">
+
+## AI for vision
+
+[Martin Menten](/author/martin-menten/)
+
+The AI for Vision group focuses on blue-sky research in medical image analysis with a particular focus on the application of machine learning and computer vision algorithms in the field of ophthalmology. Specifically, we are working on:
+
+**Self-supervised learning.** Labeling medical data is very expensive, as it is time-consuming and requires expert knowledge. Moreover, medical data often includes highly sensitive information, making it challenging to share without compromising the privacy of the subjects involved. To overcome the limited availability of large annotated medical datasets, we are researching self-supervised learning, leveraging unlabeled medical data to enable neural networks to extract meaningful features that can be effectively adapted to a wide range of downstream tasks.
+
+**Multimodal deep learning.** Clinicians rarely rely on a single source of information when diagnosing patients and deciding on a course of action. They consider an array of multimodal data, such as demographic and genomic information, patient interviews, laboratory test results and biomedical images. Our research focuses on developing deep learning algorithms capable of integrating diverse multimodal data to support autonomous and effective clinical decision making.
+
+**Deep learning for ophthalmology.** Good vision is essential for navigating our environment, communicating, and performing everyday activities. As of 2020, more than 200 million people worldwide suffered from moderate to severe vision impairment. Driven by the comparative ease of imaging the eye and obtaining large imaging datasets, ophthalmology has been an early adopter of deep learning in healthcare. Our group's work in machine learning for ophthalmology simultaneously evaluates new algorithmic innovations while aiming to improve medical care for patients affected by ocular diseases.
+
+<details class="rw-pubs">
+<summary>Key publications</summary>
+
+- Holland, R., Leingang, O., Bogunović, H., Riedl, S., Fritsche, L., Prevost, T., Scholl, H. P. N., Schmidt-Erfurth, U., Sivaprasad, S., Lotery, A. J., Rueckert, D., & Menten, M. J. (2024). Metadata-enhanced contrastive learning from retinal optical coherence tomography images. *Medical Image Analysis, 97*:103296.
+- Kreitner, L., Paetzold, J. C., Rauch, N., Chen, C., Hagag, A. M., Fayed, A. E., Sivaprasad, S., Rausch, S., Weichsel, J., Menze, B. H., Harders, M., Knier, B., Rueckert, D., & Menten, M. J. (2024). Synthetic optical coherence tomography angiographs for detailed retinal vessel segmentation without human annotations. *IEEE Transactions on Medical Imaging, 43*(6):2061–2073.
+- Menten, M. J., Paetzold, J. C., Zimmer, V. A., Shit, S., Ezhov, I., Holland, R., Probst, M., Schnabel, J. A., & Rueckert, D. (2023). A skeletonization algorithm for gradient-based optimization. *ICCV*, 21394–21403.
+- Holland, R., Leingang, O., Holmes, C., Anders, P., Kaye, R., Riedl, S., Paetzold, J. C., Ezhov, I., Bogunović, H., Schmidt-Erfurth, U., Scholl, H. P. N., Sivaprasad, S., Lotery, A. J., Rueckert, D., & Menten, M. J. (2023). Clustering disease trajectories in contrastive feature space for biomarker proposal in age-related macular degeneration. *MICCAI*, 724–734.
+- Menten, M. J., Holland, R., Leingang, O., Bogunović, H., Hagag, A. M., Kaye, R., Riedl, S., Traber, G. L., Hassan, O. N., Pawlowski, N., Glocker, B., Fritsche, L. G., Scholl, H. P. N., Sivaprasad, S., Schmidt-Erfurth, U., Rueckert, D., & Lotery, A. J. (2023). Exploring healthy retinal aging with deep learning. *Ophthalmology Science, 3*(3):100294.
+- Hager, P., Menten, M. J., & Rueckert, D. (2023). Best of both worlds: Multimodal contrastive learning with tabular and imaging data. *CVPR*, 23924–23935.
+- Menten, M. J., Paetzold, J. C., Dima, A., Menze, B. H., Knier, B., & Rueckert, D. (2022). Physiology-based simulation of the retinal vasculature enables annotation-free segmentation of OCT angiographs. *MICCAI*, 330–340.
+
+</details>
+
 </section>
+
 </div>
 
 <style>
 /* Research areas: a horizontal rail of cards, with the selected area's full
-   text below it. Prefixed .rw- so nothing collides with Bootstrap or the
-   theme. Values follow Wowchemy: 1rem/1.5 body, headings at weight 500,
-   #dee2e6 rules, rgba(0,0,0,.54) for secondary text. */
+   text below it. The cards are built from the sections themselves, so adding
+   an area means adding one <section> wrapper around ordinary Markdown -
+   nothing has to be repeated in two places.
+   Values follow Wowchemy: 1rem/1.5 body, headings at weight 500, #dee2e6
+   rules, rgba(0,0,0,.54) for secondary text. */
 .rw-rail{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory}
 .rw-card{flex:0 0 15.5rem;scroll-snap-align:start;display:flex;flex-direction:column;overflow:hidden;
   border:1px solid #dee2e6;background:#fff;padding:0;text-align:left;font:inherit;color:#212529;cursor:pointer}
@@ -230,11 +239,9 @@ The following research groups are based at the chair:
 .rw-card-teaser{font-size:.875rem;color:rgba(0,0,0,.54);line-height:1.45}
 .rw-area{padding-top:1.25rem;border-top:1px solid #dee2e6;margin-top:.5rem}
 .rw-area h2{font-size:1.5rem;font-weight:500;line-height:1.2;margin:0 0 .25rem}
-.rw-leads{margin:0 0 1rem}
 .rw-pubs{margin-top:1.125rem;border-top:1px solid #dee2e6;padding-top:.75rem}
 .rw-pubs summary{cursor:pointer;font-weight:500}
-.rw-pubs summary span{font-size:.875rem;color:rgba(0,0,0,.54);font-weight:400}
-.rw-pubs ol{margin:.75rem 0 0;padding-left:1.25rem}
+.rw-pubs ul{margin:.75rem 0 0}
 .rw-pubs li{margin-bottom:.5rem;font-size:.875rem;color:rgba(0,0,0,.54)}
 
 /* Figure carousels inside an area - unchanged from the previous layout. */
@@ -251,35 +258,66 @@ The following research groups are based at the chair:
 </style>
 
 <script>
-/* Progressive enhancement: without JavaScript every research area is visible
-   and the rail is simply a set of links, which is how this section behaved
-   before. With it, the rail selects one area at a time. Each area keeps its
-   own id, so deep links such as #ai-for-vision still work - the handler below
-   opens the matching card when the page loads on one. */
-(function () {
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.rw-card'));
-  var areas = Array.prototype.slice.call(document.querySelectorAll('.rw-area'));
-  if (!cards.length || !areas.length) return;
+/* Builds the rail from the sections below it, so a new research area is just
+   another <section class="rw-area"> with ordinary Markdown inside - no card to
+   write, nothing repeated.
 
-  function select(slug, scroll) {
-    areas.forEach(function (a) { a.style.display = (a.id === slug) ? '' : 'none'; });
-    cards.forEach(function (c) { c.setAttribute('aria-current', c.dataset.area === slug); });
-    if (scroll) {
-      var el = document.getElementById(slug);
-      if (el) el.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    }
+   Progressive enhancement: with JavaScript off, the rail stays empty and every
+   area is visible, which is how this section behaved before. Each heading keeps
+   its generated id, so deep links such as #ai-for-vision still resolve. */
+(function () {
+  var rail = document.querySelector('.rw-rail');
+  var areas = Array.prototype.slice.call(document.querySelectorAll('.rw-area'));
+  if (!rail || !areas.length) return;
+
+  var cards = areas.map(function (area) {
+    var heading = area.querySelector('h2');
+    var leadPara = area.querySelector('p a[href^="/author/"]');
+    var lead = leadPara ? leadPara.closest('p').textContent.trim() : 'Lead to be announced';
+    var paras = Array.prototype.filter.call(area.querySelectorAll('p'), function (p) {
+      return !p.querySelector('a[href^="/author/"]') && p.textContent.trim().length > 40;
+    });
+    var img = area.querySelector('img');
+
+    var card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'rw-card';
+    card.dataset.target = heading ? heading.id : '';
+    card.innerHTML =
+      (img ? '<img class="rw-thumb" alt="" loading="lazy" src="' + img.getAttribute('src') + '">'
+           : '<span class="rw-thumb rw-thumb-empty">No figure yet</span>') +
+      '<span class="rw-card-body">' +
+        '<span class="rw-card-title"></span>' +
+        '<span class="rw-card-lead"></span>' +
+        '<span class="rw-card-teaser"></span>' +
+      '</span>';
+    card.querySelector('.rw-card-title').textContent = heading ? heading.textContent : '';
+    card.querySelector('.rw-card-lead').textContent = lead;
+    card.querySelector('.rw-card-teaser').textContent =
+      paras.length ? paras[0].textContent.trim().slice(0, 110) + '…' : 'Section in preparation.';
+    rail.appendChild(card);
+    return card;
+  });
+
+  function select(id) {
+    areas.forEach(function (a, i) {
+      var h = a.querySelector('h2');
+      var match = h && h.id === id;
+      a.style.display = match ? '' : 'none';
+      cards[i].setAttribute('aria-current', match ? 'true' : 'false');
+    });
   }
   cards.forEach(function (c) {
-    c.addEventListener('click', function () { select(c.dataset.area, false); });
+    c.addEventListener('click', function () { select(c.dataset.target); });
   });
   function fromHash() {
-    var slug = decodeURIComponent(location.hash.slice(1));
-    return areas.some(function (a) { return a.id === slug; }) ? slug : null;
+    var id = decodeURIComponent(location.hash.slice(1));
+    return cards.some(function (c) { return c.dataset.target === id; }) ? id : null;
   }
   window.addEventListener('hashchange', function () {
-    var s = fromHash();
-    if (s) select(s, true);
+    var id = fromHash();
+    if (id) { select(id); document.getElementById(id).scrollIntoView({block: 'start'}); }
   });
-  select(fromHash() || areas[0].id, false);
+  select(fromHash() || cards[0].dataset.target);
 })();
 </script>
