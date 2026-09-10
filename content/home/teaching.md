@@ -12,7 +12,11 @@ subtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "2"
+  # 1 puts the heading above the content and gives the section the full
+  # width (col-lg-12), matching the Research section. With 2 the heading
+  # sits in a narrow left gutter and the content is squeezed into col-lg-8,
+  # which left the two-column layout below far too cramped.
+  columns = "1"
 
 [design.background]
   # Apply a background color, gradient, or image.
