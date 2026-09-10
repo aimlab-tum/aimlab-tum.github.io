@@ -14,20 +14,13 @@ subtitle = ""
   columns = "1"
 +++
 
-<div class="hero-band" id="hero-band">
+<div class="hero-band">
 
-<figure class="hero-shot is-on" style="--scrim:0.62; --focal:56%">
+<figure class="hero-shot" style="--scrim:0.62; --focal:56%">
   <img src="/media/lab_retreat_winter-2560.jpg"
        srcset="/media/lab_retreat_winter-1280.jpg 1280w, /media/lab_retreat_winter-1920.jpg 1920w, /media/lab_retreat_winter-2560.jpg 2560w"
        sizes="100vw"
        alt="The lab on a winter retreat in the Alps" width="2560" height="1920">
-</figure>
-
-<figure class="hero-shot" style="--scrim:0.75; --focal:55%">
-  <img src="/media/lab_retreat_summer-2560.jpg"
-       srcset="/media/lab_retreat_summer-1280.jpg 1280w, /media/lab_retreat_summer-1920.jpg 1920w, /media/lab_retreat_summer-2560.jpg 2560w"
-       sizes="100vw"
-       alt="The lab on its summer retreat in Obertraun, Austria" width="2560" height="1486" loading="lazy">
 </figure>
 
 <div class="hero-inner">
@@ -38,10 +31,6 @@ subtitle = ""
     algorithms and methods for the analysis and interpretation of biomedical data.</p>
   </div>
 </div>
-
-<button class="hero-arrow hero-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
-<button class="hero-arrow hero-next" type="button" aria-label="Next photo">&rsaquo;</button>
-<div class="hero-dots" id="hero-dots"></div>
 
 </div>
 
@@ -60,50 +49,3 @@ Find our lab on [LinkedIn](https://www.linkedin.com/company/tum-aim-lab) and [Bl
 
 We currently have no vacancies for PhD students or post-docs.
 
-<script>
-/* Welcome carousel. Progressive enhancement: with JavaScript off the first
-   photograph stays put and the section reads exactly as it should - the arrows
-   and dots are the only things that stop working. */
-(function () {
-  var band = document.getElementById('hero-band');
-  if (!band) return;
-  var shots = Array.prototype.slice.call(band.querySelectorAll('.hero-shot'));
-  var dots = document.getElementById('hero-dots');
-  if (shots.length < 2) return;
-  var at = 0;
-
-  shots.forEach(function (s, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', 'Show photo ' + (i + 1) + ' of ' + shots.length);
-    b.addEventListener('click', function () { go(i); });
-    dots.appendChild(b);
-  });
-
-  function go(i) {
-    at = (i + shots.length) % shots.length;
-    shots.forEach(function (s, j) { s.classList.toggle('is-on', j === at); });
-    Array.prototype.forEach.call(dots.children, function (b, j) {
-      b.setAttribute('aria-current', j === at ? 'true' : 'false');
-    });
-  }
-  band.querySelector('.hero-prev').addEventListener('click', function () { go(at - 1); });
-  band.querySelector('.hero-next').addEventListener('click', function () { go(at + 1); });
-
-  band.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') { go(at - 1); }
-    if (e.key === 'ArrowRight') { go(at + 1); }
-  });
-
-  var x0 = null;
-  band.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, {passive: true});
-  band.addEventListener('touchend', function (e) {
-    if (x0 === null) { return; }
-    var dx = e.changedTouches[0].clientX - x0;
-    if (Math.abs(dx) > 40) { go(at + (dx < 0 ? 1 : -1)); }
-    x0 = null;
-  });
-
-  go(0);
-})();
-</script>
