@@ -47,5 +47,3 @@ We are particularly interested in applications in medical imaging and radiology.
 
 Find our lab on [LinkedIn](https://www.linkedin.com/company/tum-aim-lab) and [Bluesky](https://bsky.app/profile/tum-aim-lab.bsky.social).
 
-We currently have no vacancies for PhD students or post-docs.
-
