@@ -388,3 +388,20 @@
     min-height: 44px;
   }
 }
+
+/* A section with `columns = "1"` - Research, News and Teaching - takes its
+   heading straight from the widget as a bare `<h1>` at the top of the content
+   column, while every two-column section wraps it in the theme's
+   `.section-heading`. The two are not the same heading: the bare one keeps the
+   browser's 18px top margin, which `.section-heading h1` drops, so those three
+   sat 18px lower than People, Vacancies and Contact and were the only ones
+   ranged left rather than centred. Give them the theme's own spacing, and
+   centre them the way the People heading already is.
+
+   The child combinator is load-bearing. The Welcome hero is also a
+   single-column blank widget, but its heading is inside `.hero-copy`, where it
+   belongs to the photograph and must stay ranged left. */
+.home-section .row > .col-lg-12 > h1 {
+  margin: 0 0 10px;
+  text-align: center;
+}
