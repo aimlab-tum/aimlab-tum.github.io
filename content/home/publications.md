@@ -37,13 +37,14 @@ The following research groups are based at our chair:
 
 <div class="rw">
 <div class="rc" hidden>
-  <div class="rc-controls">
-    <button type="button" class="rc-nav rc-prev" aria-label="Previous research area">&#8592;</button>
-    <div class="rc-steps" role="tablist" aria-label="Research areas"></div>
-    <button type="button" class="rc-nav rc-next" aria-label="Next research area">&#8594;</button>
-  </div>
-  <div class="rc-viewport" tabindex="0" role="region" aria-label="Research areas">
-    <div class="rc-track"></div>
+  <div class="rc-stage">
+    <div class="rc-viewport" tabindex="0" role="region" aria-label="Research areas">
+      <div class="rc-track"></div>
+    </div>
+    <div class="rc-arrows">
+      <button type="button" class="rc-nav rc-prev" aria-label="Previous research area">&#8592;</button>
+      <button type="button" class="rc-nav rc-next" aria-label="Next research area">&#8594;</button>
+    </div>
   </div>
 </div>
 
@@ -293,29 +294,27 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 .rc-slide .rw-pubs li{color:var(--rc-muted)}
 .rc-slide .rw-pubs{border-top-color:var(--rc-line)}
 
-.rc-controls{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
-.rc-nav{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+/* The arrows sit against the sides of the slides rather than in a row of their
+   own. A slide is taller than the window, so a button centred on the slide
+   would be several hundred pixels below the fold: the overlay is the full
+   height of the stage and each button is sticky at the middle of the window,
+   so it rides down beside whatever you are reading. */
+.rc-stage{position:relative}
+.rc-arrows{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;
+  display:flex;align-items:flex-start;justify-content:space-between}
+.rc-nav{pointer-events:auto;position:sticky;top:calc(50vh - 1.375rem);
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
   width:2.75rem;height:2.75rem;padding:0;font:inherit;line-height:1;cursor:pointer;
   border:1px solid var(--rc-line);background:var(--rc-bg);color:var(--rc-fg)}
 .rc-nav:hover:not(:disabled){border-color:var(--rc-accent);color:var(--rc-accent)}
-.rc-nav:disabled{opacity:.35;cursor:default}
-/* A segmented bar rather than dots: it reads as position and as progress at the
-   same time. The bar is drawn inside the button rather than being the button,
-   so the target is the full 2.5rem the padding gives it and not the 2px you
-   can see - a pseudo-element stretched over a 2px button is not reliably
-   hit-tested. */
-.rc-steps{display:flex;flex:1;gap:.375rem}
-.rc-step{display:block;flex:1;padding:1.25rem 0;border:0;background:none;cursor:pointer}
-.rc-step::before{content:"";display:block;height:2px;background:var(--rc-line)}
-.rc-step[aria-selected="true"]::before{background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark))}
-.rc-step:hover::before{background:var(--rc-muted)}
-.rc-step[aria-selected="true"]:hover::before{background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark))}
+.rc-nav:disabled{opacity:0;pointer-events:none}
 
 @media (max-width:700px){
   /* A tenth of a neighbour is not worth the width on a phone; take a slimmer
      peek and stack the figure over the text. */
   .rc-track{gap:.75rem;padding:0 6%}
   .rc-slide{flex:0 0 88%}
+  .rc-nav{width:2.5rem;height:2.5rem}
   .rc-figure img{max-height:11rem}
   .rc-body{padding:1.25rem}
   .rc-slide .rw-area h2{font-size:1.25rem}
@@ -374,7 +373,7 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
    behaved before it had a rail.
 
    Slides are 80% wide and snap to centre, so the previous and next one show at
-   the edges. A swipe needs none of this code; the arrows, the segmented bar,
+   the edges, and the mono numerals on each slide say where in the run you are. A swipe needs none of this code; the arrows, the segmented bar,
    the arrow keys and a click on a neighbouring slide drive the same scroll. */
 (function () {
   var root = document.querySelector('.rc');
@@ -383,7 +382,6 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 
   var viewport = root.querySelector('.rc-viewport');
   var track = root.querySelector('.rc-track');
-  var stepbar = root.querySelector('.rc-steps');
   var prev = root.querySelector('.rc-prev');
   var next = root.querySelector('.rc-next');
   var total = areas.length;
@@ -410,25 +408,12 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
     return slide;
   });
 
-  var steps = areas.map(function (area, i) {
-    var heading = area.querySelector('h2');
-    var step = document.createElement('button');
-    step.type = 'button';
-    step.className = 'rc-step';
-    step.setAttribute('role', 'tab');
-    step.setAttribute('aria-label', heading ? heading.textContent : 'Area ' + (i + 1));
-    step.addEventListener('click', function () { go(i); });
-    stepbar.appendChild(step);
-    return step;
-  });
-
   var current = -1;
 
   function select(i) {
     if (i === current) return;
     current = i;
     slides.forEach(function (s, n) { s.dataset.active = n === i ? 'true' : 'false'; });
-    steps.forEach(function (s, n) { s.setAttribute('aria-selected', n === i ? 'true' : 'false'); });
     /* Disabling the button that has focus drops focus to the document, and the
        next arrow key is then someone else's event. Read who had it first -
        setting `disabled` blurs it before we could ask - and hand focus to the
