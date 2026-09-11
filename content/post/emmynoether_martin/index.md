@@ -10,7 +10,7 @@ tags: []
 categories: []
 date: 2024-06-01T13:45:38+02:00
 date: 2024-06-01T13:45:38+02:00
-featured: false
+featured: true
 draft: false
 
 # Featured image

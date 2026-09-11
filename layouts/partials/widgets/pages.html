@@ -52,6 +52,14 @@
 {{ if $st.Params.content.filters.exclude_featured }}
   {{ $query = where $query "Params.featured" "!=" true }}
 {{ end }}
+{{/* The mirror of the line above. Upstream can drop the featured posts from a
+     list but not keep only them, which is what a curated section needs: the
+     News section on the homepage shows the handful worth putting in front of a
+     visitor, and /post/ still carries everything. `featured` is the theme's own
+     front matter field and sits in every post already. */}}
+{{ if $st.Params.content.filters.featured }}
+  {{ $query = where $query "Params.featured" true }}
+{{ end }}
 {{ if $st.Params.content.filters.exclude_past }}
   {{ $query = where $query "Date" ">=" now }}
 {{ end }}

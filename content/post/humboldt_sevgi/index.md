@@ -9,7 +9,7 @@ authors: ["Sevgi Kafali"]
 tags: []
 categories: []
 date: 2025-10-06T09:00:00+02:00
-featured: false
+featured: true
 draft: false
 
 # Featured image
