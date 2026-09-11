@@ -37,13 +37,13 @@ The following research groups are based at our chair:
 
 <div class="rw">
 <div class="rc" hidden>
-  <div class="rc-viewport" tabindex="0" role="region" aria-label="Research areas">
-    <div class="rc-track"></div>
-  </div>
   <div class="rc-controls">
     <button type="button" class="rc-nav rc-prev" aria-label="Previous research area">&#8592;</button>
     <div class="rc-steps" role="tablist" aria-label="Research areas"></div>
     <button type="button" class="rc-nav rc-next" aria-label="Next research area">&#8594;</button>
+  </div>
+  <div class="rc-viewport" tabindex="0" role="region" aria-label="Research areas">
+    <div class="rc-track"></div>
   </div>
 </div>
 
@@ -247,10 +247,19 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 .rc-viewport{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
   -webkit-overflow-scrolling:touch;scrollbar-width:none}
 .rc-viewport::-webkit-scrollbar{display:none}
-.rc-track{display:flex}
-.rc-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;position:relative;
-  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
-  border:1px solid var(--rc-line);background:var(--rc-bg)}
+/* 80% slides inside a track padded by 10% leave a tenth of the previous and the
+   next one showing at rest, and let the first and last sit in the middle like
+   every other slide rather than jamming against the end. */
+.rc-track{display:flex;gap:1rem;padding:0 10%;align-items:stretch}
+/* One column, not two. With the whole area folded in, a 5/7 split left the
+   figure column empty for seventeen hundred pixels and squeezed the text into
+   a 400px measure. Figure across the top, text under it at the full width of
+   the slide. */
+.rc-slide{flex:0 0 80%;min-width:0;scroll-snap-align:center;position:relative;
+  display:flex;flex-direction:column;align-self:start;
+  border:1px solid var(--rc-line);background:var(--rc-bg);color:var(--rc-fg);
+  opacity:.3;transition:opacity .4s ease;cursor:pointer}
+.rc-slide[data-active="true"]{opacity:1;cursor:default}
 /* The one flourish: a hairline that draws itself across the slide you land on.
    Nothing moves on the page, so it is safe to leave running. */
 .rc-slide::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;z-index:1;
@@ -259,29 +268,32 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 .rc-slide[data-active="true"]::before{transform:scaleX(1)}
 
 .rc-figure{margin:0;background:var(--rc-thumb);display:flex;align-items:center;
-  justify-content:center;overflow:hidden;min-height:15rem;padding:1rem}
+  justify-content:center;overflow:hidden;padding:1rem;border-bottom:1px solid var(--rc-line)}
 /* `contain`, not `cover`: these are figures from papers, and a panel cropped to
    fill the box loses the half of the diagram that carried the point. */
-.rc-figure img{max-width:100%;max-height:16rem;width:auto;height:auto;
+.rc-figure img{max-width:100%;max-height:13rem;width:auto;height:auto;
   object-fit:contain;display:block}
 .rc-figure-empty{font-size:.875rem;letter-spacing:.04em;color:var(--rc-muted)}
 
-.rc-body{display:flex;flex-direction:column;justify-content:center;gap:.5rem;
-  padding:1.75rem 1.875rem}
+.rc-body{padding:1.75rem 1.875rem;min-width:0}
 /* Mono numerals and a rule running off to the edge: the technical register the
    section is about, without anything glowing. */
-.rc-index{display:flex;align-items:center;gap:.75rem;margin:0;
+.rc-index{display:flex;align-items:center;gap:.75rem;margin:0 0 .75rem;
   font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   font-size:.75rem;letter-spacing:.18em;color:var(--rc-muted)}
 .rc-index::after{content:"";flex:1;height:1px;background:var(--rc-line)}
-.rc-title{font-size:1.375rem;font-weight:500;line-height:1.25;margin:0;color:var(--rc-fg)}
-.rc-lead{font-size:.875rem;color:var(--rc-accent);margin:0}
-.rc-teaser{font-size:.9375rem;line-height:1.6;color:var(--rc-muted);margin:0}
-.rc-more{align-self:flex-start;margin-top:.375rem;padding:0;border:0;background:none;
-  font:inherit;font-size:.875rem;color:var(--rc-accent);cursor:pointer}
-.rc-more:hover{text-decoration:underline}
 
-.rc-controls{display:flex;align-items:center;gap:1rem;margin-top:1rem}
+/* The area itself is moved into the slide rather than copied, so the text is
+   never in two places and the heading keeps the id its deep link uses. The
+   rule and spacing it carried as a standalone section come off here. */
+.rc-slide .rw-area{border:0;margin:0;padding:0;display:block}
+.rc-slide .rw-area h2{font-size:1.375rem;font-weight:500;line-height:1.25;
+  margin:0 0 .35rem;color:var(--rc-fg)}
+.rc-slide .rw-area p{font-size:.9375rem;line-height:1.6}
+.rc-slide .rw-pubs li{color:var(--rc-muted)}
+.rc-slide .rw-pubs{border-top-color:var(--rc-line)}
+
+.rc-controls{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
 .rc-nav{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
   width:2.75rem;height:2.75rem;padding:0;font:inherit;line-height:1;cursor:pointer;
   border:1px solid var(--rc-line);background:var(--rc-bg);color:var(--rc-fg)}
@@ -298,6 +310,16 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 .rc-step[aria-selected="true"]::before{background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark))}
 .rc-step:hover::before{background:var(--rc-muted)}
 .rc-step[aria-selected="true"]:hover::before{background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark))}
+
+@media (max-width:700px){
+  /* A tenth of a neighbour is not worth the width on a phone; take a slimmer
+     peek and stack the figure over the text. */
+  .rc-track{gap:.75rem;padding:0 6%}
+  .rc-slide{flex:0 0 88%}
+  .rc-figure img{max-height:11rem}
+  .rc-body{padding:1.25rem}
+  .rc-slide .rw-area h2{font-size:1.25rem}
+}
 
 /* The slide already carries the area's figure, so the figure carousel inside
    the area below it is the same picture a second time. Images at the top only.
@@ -343,14 +365,17 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
    still just another <section class="rw-area"> with ordinary Markdown inside -
    no slide to write, nothing repeated in two places.
 
-   Progressive enhancement: with JavaScript off the carousel stays hidden and
-   every area is visible, which is how this section behaved before it had a
-   rail. Each heading keeps its generated id, so deep links such as
-   #ai-for-vision still resolve.
+   The area is MOVED into its slide rather than summarised onto it, so the text
+   exists once, the <details> of key publications keeps working, and the heading
+   carries its generated id along - #ai-for-vision still resolves.
 
-   The slide you are looking at is the area shown underneath. The viewport
-   scrolls natively with snap points, so a swipe needs none of this code; the
-   arrows and the segmented bar drive the same scroll. */
+   Progressive enhancement: with JavaScript off the carousel stays hidden and
+   every area is visible in the order it was written, which is how this section
+   behaved before it had a rail.
+
+   Slides are 80% wide and snap to centre, so the previous and next one show at
+   the edges. A swipe needs none of this code; the arrows, the segmented bar,
+   the arrow keys and a click on a neighbouring slide drive the same scroll. */
 (function () {
   var root = document.querySelector('.rc');
   var areas = Array.prototype.slice.call(document.querySelectorAll('.rw-area'));
@@ -364,24 +389,8 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
   var total = areas.length;
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
 
-  /* Cut on a word rather than mid-syllable, and only say something was cut if
-     it was - otherwise a paragraph that ends inside the limit picks up a stop
-     followed by an ellipsis. */
-  function teaser(text, limit) {
-    if (text.length <= limit) return text;
-    var cut = text.slice(0, limit);
-    var space = cut.lastIndexOf(' ');
-    if (space > limit * 0.6) cut = cut.slice(0, space);
-    return cut.replace(/[\s.,;:\u2013\u2014-]+$/, '') + '\u2026';
-  }
-
   var slides = areas.map(function (area, i) {
     var heading = area.querySelector('h2');
-    var leadPara = area.querySelector('p a[href^="/author/"]');
-    var lead = leadPara ? leadPara.closest('p').textContent.trim() : 'Lead to be announced';
-    var paras = Array.prototype.filter.call(area.querySelectorAll('p'), function (p) {
-      return !p.querySelector('a[href^="/author/"]') && p.textContent.trim().length > 40;
-    });
     var img = area.querySelector('img');
 
     var slide = document.createElement('article');
@@ -392,31 +401,22 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
         (img ? '<img alt="" loading="lazy" src="' + img.getAttribute('src') + '">'
              : '<span class="rc-figure-empty">No figure yet</span>') +
       '</figure>' +
-      '<div class="rc-body">' +
-        '<p class="rc-index">' + pad(i + 1) + ' / ' + pad(total) + '</p>' +
-        '<h3 class="rc-title"></h3>' +
-        '<p class="rc-lead"></p>' +
-        '<p class="rc-teaser"></p>' +
-        '<button type="button" class="rc-more">Read this area &#8595;</button>' +
-      '</div>';
-    slide.querySelector('.rc-title').textContent = heading ? heading.textContent : '';
-    slide.querySelector('.rc-lead').textContent = lead;
-    slide.querySelector('.rc-teaser').textContent =
-      paras.length ? teaser(paras[0].textContent.trim(), 190) : 'Section in preparation.';
-    slide.querySelector('.rc-more').addEventListener('click', function () {
-      var el = document.getElementById(slide.dataset.target);
-      if (el) el.scrollIntoView({block: 'start', behavior: 'smooth'});
+      '<div class="rc-body"><p class="rc-index">' + pad(i + 1) + ' / ' + pad(total) + '</p></div>';
+    slide.querySelector('.rc-body').appendChild(area);
+    slide.addEventListener('click', function () {
+      if (slide.dataset.active !== 'true') go(i);
     });
     track.appendChild(slide);
     return slide;
   });
 
   var steps = areas.map(function (area, i) {
+    var heading = area.querySelector('h2');
     var step = document.createElement('button');
     step.type = 'button';
     step.className = 'rc-step';
     step.setAttribute('role', 'tab');
-    step.setAttribute('aria-label', slides[i].querySelector('.rc-title').textContent);
+    step.setAttribute('aria-label', heading ? heading.textContent : 'Area ' + (i + 1));
     step.addEventListener('click', function () { go(i); });
     stepbar.appendChild(step);
     return step;
@@ -424,12 +424,9 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 
   var current = -1;
 
-  /* Show one area and mark its slide. Scrolling the viewport is separate, so
-     that syncing after a swipe does not fight the swipe. */
   function select(i) {
     if (i === current) return;
     current = i;
-    areas.forEach(function (a, n) { a.style.display = n === i ? '' : 'none'; });
     slides.forEach(function (s, n) { s.dataset.active = n === i ? 'true' : 'false'; });
     steps.forEach(function (s, n) { s.setAttribute('aria-selected', n === i ? 'true' : 'false'); });
     /* Disabling the button that has focus drops focus to the document, and the
@@ -443,9 +440,16 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
     if (focused === prev && prev.disabled) next.focus();
   }
 
+  /* Slides snap to the centre, so the resting scroll position of slide i puts
+     its middle over the middle of the viewport. */
+  function offsetOf(i) {
+    return slides[i].offsetLeft - track.offsetLeft
+         + slides[i].offsetWidth / 2 - viewport.clientWidth / 2;
+  }
+
   function go(i) {
     i = Math.max(0, Math.min(total - 1, i));
-    viewport.scrollTo({left: slides[i].offsetLeft - track.offsetLeft, behavior: 'smooth'});
+    viewport.scrollTo({left: offsetOf(i), behavior: 'smooth'});
     select(i);
   }
 
@@ -457,19 +461,18 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
     if (e.key === 'ArrowRight') { go(current + 1); e.preventDefault(); }
   });
 
-  /* A swipe moves the viewport without going through go(), so read the
-     resting position back and follow it. */
+  /* A swipe moves the viewport without going through go(), so read the resting
+     position back and follow whichever slide is nearest the middle. */
   var settle;
   viewport.addEventListener('scroll', function () {
     clearTimeout(settle);
     settle = setTimeout(function () {
-      var middle = viewport.scrollLeft + viewport.clientWidth / 2;
-      var nearest = 0;
+      var best = 0, bestGap = Infinity;
       for (var i = 0; i < slides.length; i++) {
-        var left = slides[i].offsetLeft - track.offsetLeft;
-        if (left + slides[i].offsetWidth / 2 <= middle) nearest = i;
+        var gap = Math.abs(offsetOf(i) - viewport.scrollLeft);
+        if (gap < bestGap) { bestGap = gap; best = i; }
       }
-      select(nearest);
+      select(best);
     }, 90);
   }, {passive: true});
 
@@ -482,15 +485,12 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
   }
   window.addEventListener('hashchange', function () {
     var i = fromHash();
-    if (i !== null) {
-      go(i);
-      document.getElementById(slides[i].dataset.target).scrollIntoView({block: 'start'});
-    }
+    if (i !== null) { go(i); root.scrollIntoView({block: 'start'}); }
   });
 
   root.hidden = false;
   var start = fromHash();
   select(start === null ? 0 : start);
-  if (start) go(start);
+  if (start) viewport.scrollTo({left: offsetOf(start), behavior: 'auto'});
 })();
 </script>
