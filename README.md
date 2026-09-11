@@ -33,6 +33,7 @@ That's it. There is no second repo to push to and no local Hugo to keep in sync.
 | What | Where |
 |---|---|
 | Homepage sections (news, people, research, teaching, vacancies, contact) | `content/home/*.md` |
+| Research areas (the Research carousel) | `content/research/<area>/index.md` (+ `figure.png`) |
 | Team member profiles | `content/authors/<Name>/_index.md` (+ `avatar.jpg`) |
 | Publications | `content/publication/` |
 | Blog / news posts | `content/post/` |
@@ -42,6 +43,7 @@ That's it. There is no second repo to push to and no local Hugo to keep in sync.
 | Navigation menu | `config/_default/menus.toml` |
 | Custom styling | `assets/scss/custom.scss` |
 | Custom widget templates | `layouts/partials/widgets/` |
+| Shortcodes | `layouts/shortcodes/` |
 | Images and files served as-is | `static/` |
 
 ## Running it locally (optional)

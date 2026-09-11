@@ -405,3 +405,126 @@
   margin: 0 0 10px;
   text-align: center;
 }
+
+
+/* ---------------------------------------------------------------------------
+   The Research carousel.
+
+   Moved here from a <style> block inside content/home/publications.md, where it
+   was served unminified and out of reach of the rest of the stylesheet. The
+   markup it dresses is layouts/shortcodes/research_areas.html, which builds the
+   slides from content/research/.
+   --------------------------------------------------------------------------- */
+/* Research areas: a horizontal rail of cards, with the selected area's full
+   text below it. The cards are built from the sections themselves, so adding
+   an area means adding one <section> wrapper around ordinary Markdown -
+   nothing has to be repeated in two places.
+   Values follow Wowchemy: 1rem/1.5 body, headings at weight 500, #dee2e6
+   rules, rgba(0,0,0,.54) for secondary text. */
+/* One area per slide. The viewport scrolls natively with snap points, so a
+   swipe works on a touch screen with no JavaScript in the path and the arrows
+   only automate what the finger already does. Values follow Wowchemy - 1rem/1.5
+   body, headings at weight 500, #dee2e6 rules, rgba(0,0,0,.54) for secondary
+   text, #2962ff for the accent - and the dark variation takes the theme's own
+   greys rather than staying white, which is what the cards used to do. */
+.rc{--rc-line:#dee2e6;--rc-bg:#fff;--rc-fg:#212529;--rc-muted:rgba(0,0,0,.54);
+  --rc-accent:#2962ff;--rc-spark:#00c2ff;--rc-thumb:#f7f7f7;margin:1.5rem 0 .5rem}
+.dark .rc{--rc-line:#44475a;--rc-bg:#282a36;--rc-fg:#f8f8f2;
+  --rc-muted:rgba(248,248,242,.54);--rc-thumb:#23252f}
+/* The shell is empty until the script fills it, and `hidden` alone would lose
+   to the display below, so it is spelled out. With no JavaScript nothing is
+   shown here and every area stays open underneath, as before. */
+.rc[hidden]{display:none}
+
+.rc-viewport{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.rc-viewport::-webkit-scrollbar{display:none}
+/* 80% slides inside a track padded by 10% leave a tenth of the previous and the
+   next one showing at rest, and let the first and last sit in the middle like
+   every other slide rather than jamming against the end. */
+.rc-track{display:flex;gap:1rem;padding:0 10%;align-items:stretch}
+/* One column, not two. With the whole area folded in, a 5/7 split left the
+   figure column empty for seventeen hundred pixels and squeezed the text into
+   a 400px measure. Figure across the top, text under it at the full width of
+   the slide. */
+.rc-slide{flex:0 0 80%;min-width:0;scroll-snap-align:center;position:relative;
+  display:flex;flex-direction:column;align-self:start;
+  border:1px solid var(--rc-line);background:var(--rc-bg);color:var(--rc-fg);
+  opacity:.3;transition:opacity .4s ease;cursor:pointer}
+.rc-slide[data-active="true"]{opacity:1;cursor:default}
+/* The one flourish: a hairline that draws itself across the slide you land on.
+   Nothing moves on the page, so it is safe to leave running. */
+.rc-slide::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;z-index:1;
+  background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark));
+  transform:scaleX(0);transform-origin:left;transition:transform .55s ease}
+.rc-slide[data-active="true"]::before{transform:scaleX(1)}
+
+/* The figure is the slide's header: a band the full width of the slide that the
+   picture fills edge to edge. `cover` crops to do it - these are composite
+   panels from papers, so some of each one is cut - and the caption is carried
+   in front matter for whatever shows the figure whole. */
+.rc-figure{margin:0;background:var(--rc-thumb);display:flex;align-items:center;
+  justify-content:center;overflow:hidden;height:16rem;
+  border-bottom:1px solid var(--rc-line)}
+.rc-figure img{width:100%;height:100%;object-fit:cover;display:block}
+.rc-figure-empty{font-size:.875rem;letter-spacing:.04em;color:var(--rc-muted)}
+
+.rc-body{padding:1.75rem 1.875rem;min-width:0}
+/* Mono numerals and a rule running off to the edge: the technical register the
+   section is about, without anything glowing. */
+.rc-index{display:flex;align-items:center;gap:.75rem;margin:0 0 .75rem;
+  font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.75rem;letter-spacing:.18em;color:var(--rc-muted)}
+.rc-index::after{content:"";flex:1;height:1px;background:var(--rc-line)}
+
+/* The area itself is moved into the slide rather than copied, so the text is
+   never in two places and the heading keeps the id its deep link uses. The
+   rule and spacing it carried as a standalone section come off here. */
+.rc-slide .rw-area{border:0;margin:0;padding:0;display:block}
+.rc-slide .rw-area h2{font-size:1.375rem;font-weight:500;line-height:1.25;
+  margin:0 0 .35rem;color:var(--rc-fg)}
+.rc-slide .rw-area p{font-size:.9375rem;line-height:1.6}
+.rc-slide .rw-pubs li{color:var(--rc-muted)}
+.rc-slide .rw-pubs{border-top-color:var(--rc-line)}
+
+/* The arrows sit against the sides of the slides rather than in a row of their
+   own. A slide is taller than the window, so a button centred on the slide
+   would be several hundred pixels below the fold: the overlay is the full
+   height of the stage and each button is sticky at the middle of the window,
+   so it rides down beside whatever you are reading. */
+.rc-stage{position:relative}
+.rc-arrows{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;
+  display:flex;align-items:flex-start;justify-content:space-between}
+.rc-nav{pointer-events:auto;position:sticky;top:calc(50vh - 1.375rem);
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:2.75rem;height:2.75rem;padding:0;font:inherit;line-height:1;cursor:pointer;
+  border:1px solid var(--rc-line);border-radius:50%;background:var(--rc-bg);color:var(--rc-fg)}
+.rc-nav:hover:not(:disabled){border-color:var(--rc-accent);color:var(--rc-accent)}
+.rc-nav:disabled{opacity:0;pointer-events:none}
+
+@media (max-width:700px){
+  /* A tenth of a neighbour is not worth the width on a phone; take a slimmer
+     peek and stack the figure over the text. */
+  .rc-track{gap:.75rem;padding:0 6%}
+  .rc-slide{flex:0 0 88%}
+  .rc-nav{width:2.5rem;height:2.5rem}
+  .rc-figure{height:10rem}
+  .rc-body{padding:1.25rem}
+  .rc-slide .rw-area h2{font-size:1.25rem}
+}
+
+@media (max-width:700px){
+  .rc-slide{grid-template-columns:minmax(0,1fr)}
+  .rc-figure{min-height:0;max-height:11rem}
+  .rc-body{padding:1.25rem}
+  .rc-title{font-size:1.25rem}
+}
+
+/* The area's own rules. It only ever appears inside a slide now, but keeping
+   these unscoped means the no-script stack below still gets them. */
+.rw-area h2{font-size:1.5rem;font-weight:500;line-height:1.2;margin:0 0 .25rem}
+.rc-leads{font-size:.875rem;margin:0 0 .75rem}
+.rw-pubs{margin-top:1.125rem;border-top:1px solid #dee2e6;padding-top:.75rem}
+.rw-pubs summary{cursor:pointer;font-weight:500}
+.rw-pubs ul{margin:.75rem 0 0}
+.rw-pubs li{margin-bottom:.5rem;font-size:.875rem;color:rgba(0,0,0,.54)}

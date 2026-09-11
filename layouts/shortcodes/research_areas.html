@@ -1,0 +1,177 @@
+{{/* Research areas as a carousel, built from content/research/.
+
+     One directory per area, ordered by `weight`. Adding an area means adding a
+     folder with an index.md - this template, the stylesheet and the script are
+     untouched, and nothing about the area is written down twice.
+
+     The heading keeps the anchor the hand-written markup used to generate, so
+     /#ai-for-vision and the rest still resolve. */}}
+
+{{- $section := site.GetPage "/research" -}}
+{{- $areas := sort (where $section.Pages "Draft" "!=" true) "Weight" -}}
+{{- $total := len $areas -}}
+
+{{- if $areas -}}
+<div class="rc" hidden>
+  <div class="rc-stage">
+    <div class="rc-viewport" tabindex="0" role="region" aria-label="Research areas">
+      <div class="rc-track">
+        {{- range $i, $area := $areas -}}
+        {{- $id := anchorize $area.Title -}}
+        {{- $figure := index ($area.Params.figures | default slice) 0 -}}
+        <article class="rc-slide" data-target="{{ $id }}">
+          <figure class="rc-figure">
+            {{- with $figure -}}
+              {{- with $area.Resources.GetMatch .file -}}
+                {{- $img := .Fit "1100x620" -}}
+                {{/* The band crops to fill, so a figure can say which part of itself
+                     must survive - `focus = "top"` for a panel figure whose first
+                     row carries the point. Anything `object-position` accepts. */}}
+                <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+                     style="object-position: center {{ $figure.focus | default "center" }}"
+                     alt="{{ $figure.alt | default "" }}" loading="lazy">
+              {{- end -}}
+            {{- else -}}
+              <span class="rc-figure-empty">No figure yet</span>
+            {{- end -}}
+          </figure>
+          <div class="rc-body">
+            <p class="rc-index">{{ printf "%02d / %02d" (add $i 1) $total }}</p>
+            <div class="rw-area">
+              <h2 id="{{ $id }}">{{ $area.Title }}</h2>
+              {{- with $area.Params.leads }}
+              <p class="rc-leads">
+                {{- range $n, $lead := . -}}
+                  {{- if $n }} · {{ end -}}
+                  {{- with $lead.url }}<a href="{{ . | relURL }}">{{ $lead.name }}</a>{{ else }}{{ $lead.name }}{{ end -}}
+                {{- end -}}
+              </p>
+              {{- end }}
+              {{ $area.Content }}
+              {{- with $area.Params.publications }}
+              <details class="rw-pubs">
+                <summary>Key publications</summary>
+                <ul>
+                  {{- range . }}
+                  <li>{{ . | markdownify }}</li>
+                  {{- end }}
+                </ul>
+              </details>
+              {{- end }}
+            </div>
+          </div>
+        </article>
+        {{- end }}
+      </div>
+    </div>
+    <div class="rc-arrows">
+      <button type="button" class="rc-nav rc-prev" aria-label="Previous research area">&#8592;</button>
+      <button type="button" class="rc-nav rc-next" aria-label="Next research area">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Navigation only. The slides are rendered by Hugo from content/research/, so
+   nothing here reads headings or images back out of the page the way the old
+   version had to.
+
+   Progressive enhancement: with JavaScript off the carousel stays hidden and
+   the areas below it are the page, which is what a visitor without scripts
+   used to get.
+
+   Slides are 80% wide and snap to centre, so the previous and the next one
+   show at the edges, and the mono numerals say where in the run you are. A
+   swipe needs none of this; the arrows, the arrow keys and a click on a
+   neighbouring slide drive the same scroll. */
+(function () {
+  var root = document.querySelector('.rc');
+  if (!root) return;
+  var viewport = root.querySelector('.rc-viewport');
+  var track = root.querySelector('.rc-track');
+  var slides = Array.prototype.slice.call(root.querySelectorAll('.rc-slide'));
+  var prev = root.querySelector('.rc-prev');
+  var next = root.querySelector('.rc-next');
+  if (!slides.length) return;
+
+  var fallback = document.querySelector('.rc-fallback');
+  if (fallback) fallback.remove();
+
+  var current = -1;
+
+  function select(i) {
+    if (i === current) return;
+    current = i;
+    slides.forEach(function (s, n) { s.dataset.active = n === i ? 'true' : 'false'; });
+    /* Disabling the button that has focus drops focus to the document, and the
+       next arrow key is then someone else's event. Read who had it first -
+       setting `disabled` blurs it before we could ask - and hand focus to the
+       arrow that is still live. */
+    var focused = document.activeElement;
+    prev.disabled = i === 0;
+    next.disabled = i === slides.length - 1;
+    if (focused === next && next.disabled) prev.focus();
+    if (focused === prev && prev.disabled) next.focus();
+  }
+
+  /* Slides snap to the centre, so the resting scroll position of slide i puts
+     its middle over the middle of the viewport. */
+  function offsetOf(i) {
+    return slides[i].offsetLeft - track.offsetLeft
+         + slides[i].offsetWidth / 2 - viewport.clientWidth / 2;
+  }
+
+  function go(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    viewport.scrollTo({left: offsetOf(i), behavior: 'smooth'});
+    select(i);
+  }
+
+  slides.forEach(function (slide, i) {
+    slide.addEventListener('click', function () {
+      if (slide.dataset.active !== 'true') go(i);
+    });
+  });
+
+  prev.addEventListener('click', function () { go(current - 1); });
+  next.addEventListener('click', function () { go(current + 1); });
+
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { go(current - 1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { go(current + 1); e.preventDefault(); }
+  });
+
+  /* A swipe moves the viewport without going through go(), so read the resting
+     position back and follow whichever slide is nearest the middle. */
+  var settle;
+  viewport.addEventListener('scroll', function () {
+    clearTimeout(settle);
+    settle = setTimeout(function () {
+      var best = 0, bestGap = Infinity;
+      for (var i = 0; i < slides.length; i++) {
+        var gap = Math.abs(offsetOf(i) - viewport.scrollLeft);
+        if (gap < bestGap) { bestGap = gap; best = i; }
+      }
+      select(best);
+    }, 90);
+  }, {passive: true});
+
+  function fromHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    for (var i = 0; i < slides.length; i++) {
+      if (slides[i].dataset.target === id) return i;
+    }
+    return null;
+  }
+  window.addEventListener('hashchange', function () {
+    var i = fromHash();
+    if (i !== null) { go(i); root.scrollIntoView({block: 'start'}); }
+  });
+
+  root.hidden = false;
+  var start = fromHash();
+  select(start === null ? 0 : start);
+  if (start) viewport.scrollTo({left: offsetOf(start), behavior: 'auto'});
+})();
+</script>
+{{- end -}}
