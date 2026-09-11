@@ -470,12 +470,6 @@
 .rc-figure-empty{font-size:.875rem;letter-spacing:.04em;color:var(--rc-muted)}
 
 .rc-body{padding:1.75rem 1.875rem;min-width:0}
-/* Mono numerals and a rule running off to the edge: the technical register the
-   section is about, without anything glowing. */
-.rc-index{display:flex;align-items:center;gap:.75rem;margin:0 0 .75rem;
-  font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:.75rem;letter-spacing:.18em;color:var(--rc-muted)}
-.rc-index::after{content:"";flex:1;height:1px;background:var(--rc-line)}
 
 /* The area itself is moved into the slide rather than copied, so the text is
    never in two places and the heading keeps the id its deep link uses. The
@@ -499,8 +493,7 @@
   display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
   width:2.75rem;height:2.75rem;padding:0;font:inherit;line-height:1;cursor:pointer;
   border:1px solid var(--rc-line);border-radius:50%;background:var(--rc-bg);color:var(--rc-fg)}
-.rc-nav:hover:not(:disabled){border-color:var(--rc-accent);color:var(--rc-accent)}
-.rc-nav:disabled{opacity:0;pointer-events:none}
+.rc-nav:hover{border-color:var(--rc-accent);color:var(--rc-accent)}
 
 @media (max-width:700px){
   /* A tenth of a neighbour is not worth the width on a phone; take a slimmer
