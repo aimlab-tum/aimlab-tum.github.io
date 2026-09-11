@@ -9,14 +9,14 @@
 
 {{- $section := site.GetPage "/research" -}}
 {{- $areas := sort (where $section.Pages "Draft" "!=" true) "Weight" -}}
-{{- $total := len $areas -}}
 
 {{- if $areas -}}
 <div class="rc" hidden>
   <div class="rc-stage">
     <div class="rc-viewport" tabindex="0" role="region" aria-label="Research areas">
       <div class="rc-track">
-        {{- range $i, $area := $areas -}}
+        {{- range $areas -}}
+        {{- $area := . -}}
         {{- $id := anchorize $area.Title -}}
         {{- $figure := index ($area.Params.figures | default slice) 0 -}}
         <article class="rc-slide" data-target="{{ $id }}">
@@ -36,7 +36,6 @@
             {{- end -}}
           </figure>
           <div class="rc-body">
-            <p class="rc-index">{{ printf "%02d / %02d" (add $i 1) $total }}</p>
             <div class="rw-area">
               <h2 id="{{ $id }}">{{ $area.Title }}</h2>
               {{- with $area.Params.leads }}
@@ -73,58 +72,81 @@
 
 <script>
 /* Navigation only. The slides are rendered by Hugo from content/research/, so
-   nothing here reads headings or images back out of the page the way the old
-   version had to.
+   nothing here reads headings or images back out of the page.
 
    Progressive enhancement: with JavaScript off the carousel stays hidden and
-   the areas below it are the page, which is what a visitor without scripts
-   used to get.
+   the areas below it are the page.
 
-   Slides are 80% wide and snap to centre, so the previous and the next one
-   show at the edges, and the mono numerals say where in the run you are. A
-   swipe needs none of this; the arrows, the arrow keys and a click on a
-   neighbouring slide drive the same scroll. */
+   The run has no ends. One slide is cloned onto each end - the last one before
+   the first, the first one after the last - so that turning past either end
+   scrolls onto a copy of what is coming, and the scroll position is then moved
+   to the real one without animating. Nothing to see: the copy under the
+   pointer and the slide it lands on are the same picture, so a swipe, an arrow
+   and an arrow key all just keep going.
+
+   Slides are 80% wide and snap to centre, so the previous and the next one show
+   at the edges. A swipe needs none of this; the arrows, the arrow keys and a
+   click on a neighbouring slide drive the same scroll. */
 (function () {
   var root = document.querySelector('.rc');
   if (!root) return;
   var viewport = root.querySelector('.rc-viewport');
   var track = root.querySelector('.rc-track');
-  var slides = Array.prototype.slice.call(root.querySelectorAll('.rc-slide'));
   var prev = root.querySelector('.rc-prev');
   var next = root.querySelector('.rc-next');
-  if (!slides.length) return;
+  var real = Array.prototype.slice.call(root.querySelectorAll('.rc-slide'));
+  if (!real.length) return;
 
-  var fallback = document.querySelector('.rc-fallback');
-  if (fallback) fallback.remove();
-
-  var current = -1;
-
-  function select(i) {
-    if (i === current) return;
-    current = i;
-    slides.forEach(function (s, n) { s.dataset.active = n === i ? 'true' : 'false'; });
-    /* Disabling the button that has focus drops focus to the document, and the
-       next arrow key is then someone else's event. Read who had it first -
-       setting `disabled` blurs it before we could ask - and hand focus to the
-       arrow that is still live. */
-    var focused = document.activeElement;
-    prev.disabled = i === 0;
-    next.disabled = i === slides.length - 1;
-    if (focused === next && next.disabled) prev.focus();
-    if (focused === prev && prev.disabled) next.focus();
+  /* A copy is scenery: it must not answer to an id a link is aiming at, and it
+     must not be somewhere the keyboard can land. */
+  function copyOf(slide) {
+    var c = slide.cloneNode(true);
+    c.dataset.clone = 'true';
+    c.removeAttribute('data-target');
+    c.setAttribute('aria-hidden', 'true');
+    Array.prototype.forEach.call(c.querySelectorAll('[id]'), function (e) {
+      e.removeAttribute('id');
+    });
+    Array.prototype.forEach.call(c.querySelectorAll('a, button, summary, input, select'), function (e) {
+      e.setAttribute('tabindex', '-1');
+    });
+    return c;
   }
 
-  /* Slides snap to the centre, so the resting scroll position of slide i puts
-     its middle over the middle of the viewport. */
+  var looping = real.length > 1;
+  if (looping) {
+    track.insertBefore(copyOf(real[real.length - 1]), real[0]);
+    track.appendChild(copyOf(real[0]));
+  }
+
+  var slides = Array.prototype.slice.call(root.querySelectorAll('.rc-slide'));
+  var FIRST = looping ? 1 : 0;             // where the real run starts
+  var LAST = FIRST + real.length - 1;      // and ends
+  var current = -1;
+
   function offsetOf(i) {
     return slides[i].offsetLeft - track.offsetLeft
          + slides[i].offsetWidth / 2 - viewport.clientWidth / 2;
   }
 
+  function mark(i) {
+    if (i === current) return;
+    current = i;
+    slides.forEach(function (s, n) { s.dataset.active = n === i ? 'true' : 'false'; });
+  }
+
+  /* Move without animating, whatever CSS says about scroll-behavior. */
+  function jumpTo(i) {
+    var was = viewport.style.scrollBehavior;
+    viewport.style.scrollBehavior = 'auto';
+    viewport.scrollLeft = offsetOf(i);
+    viewport.style.scrollBehavior = was;
+    mark(i);
+  }
+
   function go(i) {
-    i = Math.max(0, Math.min(slides.length - 1, i));
     viewport.scrollTo({left: offsetOf(i), behavior: 'smooth'});
-    select(i);
+    mark(i);
   }
 
   slides.forEach(function (slide, i) {
@@ -142,7 +164,8 @@
   });
 
   /* A swipe moves the viewport without going through go(), so read the resting
-     position back and follow whichever slide is nearest the middle. */
+     position back, follow whichever slide is nearest the middle, and step off a
+     copy onto the slide it is a copy of. */
   var settle;
   viewport.addEventListener('scroll', function () {
     clearTimeout(settle);
@@ -152,13 +175,15 @@
         var gap = Math.abs(offsetOf(i) - viewport.scrollLeft);
         if (gap < bestGap) { bestGap = gap; best = i; }
       }
-      select(best);
-    }, 90);
+      if (looping && best < FIRST) jumpTo(LAST);
+      else if (looping && best > LAST) jumpTo(FIRST);
+      else mark(best);
+    }, 110);
   }, {passive: true});
 
   function fromHash() {
     var id = decodeURIComponent(location.hash.slice(1));
-    for (var i = 0; i < slides.length; i++) {
+    for (var i = FIRST; i <= LAST; i++) {
       if (slides[i].dataset.target === id) return i;
     }
     return null;
@@ -169,9 +194,9 @@
   });
 
   root.hidden = false;
-  var start = fromHash();
-  select(start === null ? 0 : start);
-  if (start) viewport.scrollTo({left: offsetOf(start), behavior: 'auto'});
+  /* The first real slide is not at scrollLeft 0 once a copy sits in front of
+     it, so the opening position has to be set rather than assumed. */
+  jumpTo(fromHash() || FIRST);
 })();
 </script>
 {{- end -}}
