@@ -36,7 +36,16 @@ We have a particularly strong interest in the application of imaging and computi
 The following research groups are based at our chair:
 
 <div class="rw">
-<div class="rw-rail"></div>
+<div class="rc" hidden>
+  <div class="rc-viewport" tabindex="0" role="region" aria-label="Research areas">
+    <div class="rc-track"></div>
+  </div>
+  <div class="rc-controls">
+    <button type="button" class="rc-nav rc-prev" aria-label="Previous research area">&#8592;</button>
+    <div class="rc-steps" role="tablist" aria-label="Research areas"></div>
+    <button type="button" class="rc-nav rc-next" aria-label="Next research area">&#8594;</button>
+  </div>
+</div>
 
 <section class="rw-area">
 
@@ -220,17 +229,83 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
    nothing has to be repeated in two places.
    Values follow Wowchemy: 1rem/1.5 body, headings at weight 500, #dee2e6
    rules, rgba(0,0,0,.54) for secondary text. */
-.rw-rail{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory}
-.rw-card{flex:0 0 15.5rem;scroll-snap-align:start;display:flex;flex-direction:column;overflow:hidden;
-  border:1px solid #dee2e6;background:#fff;padding:0;text-align:left;font:inherit;color:#212529;cursor:pointer}
-.rw-card:hover{border-color:#2962ff}
-.rw-card[aria-current="true"]{border-color:#2962ff;box-shadow:inset 0 0 0 1px #2962ff}
-.rw-thumb{height:6.5rem;width:100%;object-fit:cover;display:block;background:#f7f7f7}
-.rw-thumb-empty{display:flex;align-items:center;justify-content:center;font-size:.875rem;color:rgba(0,0,0,.54)}
-.rw-card-body{display:flex;flex-direction:column;gap:.3rem;padding:.75rem .875rem .875rem}
-.rw-card-title{font-weight:500;line-height:1.3}
-.rw-card-lead{font-size:.875rem;color:#2962ff}
-.rw-card-teaser{font-size:.875rem;color:rgba(0,0,0,.54);line-height:1.45}
+/* One area per slide. The viewport scrolls natively with snap points, so a
+   swipe works on a touch screen with no JavaScript in the path and the arrows
+   only automate what the finger already does. Values follow Wowchemy - 1rem/1.5
+   body, headings at weight 500, #dee2e6 rules, rgba(0,0,0,.54) for secondary
+   text, #2962ff for the accent - and the dark variation takes the theme's own
+   greys rather than staying white, which is what the cards used to do. */
+.rc{--rc-line:#dee2e6;--rc-bg:#fff;--rc-fg:#212529;--rc-muted:rgba(0,0,0,.54);
+  --rc-accent:#2962ff;--rc-spark:#00c2ff;--rc-thumb:#f7f7f7;margin:1.5rem 0 .5rem}
+.dark .rc{--rc-line:#44475a;--rc-bg:#282a36;--rc-fg:#f8f8f2;
+  --rc-muted:rgba(248,248,242,.54);--rc-thumb:#23252f}
+/* The shell is empty until the script fills it, and `hidden` alone would lose
+   to the display below, so it is spelled out. With no JavaScript nothing is
+   shown here and every area stays open underneath, as before. */
+.rc[hidden]{display:none}
+
+.rc-viewport{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.rc-viewport::-webkit-scrollbar{display:none}
+.rc-track{display:flex}
+.rc-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;position:relative;
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+  border:1px solid var(--rc-line);background:var(--rc-bg)}
+/* The one flourish: a hairline that draws itself across the slide you land on.
+   Nothing moves on the page, so it is safe to leave running. */
+.rc-slide::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;z-index:1;
+  background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark));
+  transform:scaleX(0);transform-origin:left;transition:transform .55s ease}
+.rc-slide[data-active="true"]::before{transform:scaleX(1)}
+
+.rc-figure{margin:0;background:var(--rc-thumb);display:flex;align-items:center;
+  justify-content:center;overflow:hidden;min-height:15rem;padding:1rem}
+/* `contain`, not `cover`: these are figures from papers, and a panel cropped to
+   fill the box loses the half of the diagram that carried the point. */
+.rc-figure img{max-width:100%;max-height:16rem;width:auto;height:auto;
+  object-fit:contain;display:block}
+.rc-figure-empty{font-size:.875rem;letter-spacing:.04em;color:var(--rc-muted)}
+
+.rc-body{display:flex;flex-direction:column;justify-content:center;gap:.5rem;
+  padding:1.75rem 1.875rem}
+/* Mono numerals and a rule running off to the edge: the technical register the
+   section is about, without anything glowing. */
+.rc-index{display:flex;align-items:center;gap:.75rem;margin:0;
+  font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.75rem;letter-spacing:.18em;color:var(--rc-muted)}
+.rc-index::after{content:"";flex:1;height:1px;background:var(--rc-line)}
+.rc-title{font-size:1.375rem;font-weight:500;line-height:1.25;margin:0;color:var(--rc-fg)}
+.rc-lead{font-size:.875rem;color:var(--rc-accent);margin:0}
+.rc-teaser{font-size:.9375rem;line-height:1.6;color:var(--rc-muted);margin:0}
+.rc-more{align-self:flex-start;margin-top:.375rem;padding:0;border:0;background:none;
+  font:inherit;font-size:.875rem;color:var(--rc-accent);cursor:pointer}
+.rc-more:hover{text-decoration:underline}
+
+.rc-controls{display:flex;align-items:center;gap:1rem;margin-top:1rem}
+.rc-nav{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:2.75rem;height:2.75rem;padding:0;font:inherit;line-height:1;cursor:pointer;
+  border:1px solid var(--rc-line);background:var(--rc-bg);color:var(--rc-fg)}
+.rc-nav:hover:not(:disabled){border-color:var(--rc-accent);color:var(--rc-accent)}
+.rc-nav:disabled{opacity:.35;cursor:default}
+/* A segmented bar rather than dots: it reads as position and as progress at the
+   same time. The bar is drawn inside the button rather than being the button,
+   so the target is the full 2.5rem the padding gives it and not the 2px you
+   can see - a pseudo-element stretched over a 2px button is not reliably
+   hit-tested. */
+.rc-steps{display:flex;flex:1;gap:.375rem}
+.rc-step{display:block;flex:1;padding:1.25rem 0;border:0;background:none;cursor:pointer}
+.rc-step::before{content:"";display:block;height:2px;background:var(--rc-line)}
+.rc-step[aria-selected="true"]::before{background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark))}
+.rc-step:hover::before{background:var(--rc-muted)}
+.rc-step[aria-selected="true"]:hover::before{background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark))}
+
+@media (max-width:700px){
+  .rc-slide{grid-template-columns:minmax(0,1fr)}
+  .rc-figure{min-height:0;max-height:11rem}
+  .rc-body{padding:1.25rem}
+  .rc-title{font-size:1.25rem}
+}
+
 .rw-area{padding-top:1.25rem;border-top:1px solid #dee2e6;margin-top:.5rem}
 .rw-area h2{font-size:1.5rem;font-weight:500;line-height:1.2;margin:0 0 .25rem}
 .rw-pubs{margin-top:1.125rem;border-top:1px solid #dee2e6;padding-top:.75rem}
@@ -257,19 +332,43 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 </style>
 
 <script>
-/* Builds the rail from the sections below it, so a new research area is just
-   another <section class="rw-area"> with ordinary Markdown inside - no card to
-   write, nothing repeated.
+/* Builds the carousel from the sections below it, so a new research area is
+   still just another <section class="rw-area"> with ordinary Markdown inside -
+   no slide to write, nothing repeated in two places.
 
-   Progressive enhancement: with JavaScript off, the rail stays empty and every
-   area is visible, which is how this section behaved before. Each heading keeps
-   its generated id, so deep links such as #ai-for-vision still resolve. */
+   Progressive enhancement: with JavaScript off the carousel stays hidden and
+   every area is visible, which is how this section behaved before it had a
+   rail. Each heading keeps its generated id, so deep links such as
+   #ai-for-vision still resolve.
+
+   The slide you are looking at is the area shown underneath. The viewport
+   scrolls natively with snap points, so a swipe needs none of this code; the
+   arrows and the segmented bar drive the same scroll. */
 (function () {
-  var rail = document.querySelector('.rw-rail');
+  var root = document.querySelector('.rc');
   var areas = Array.prototype.slice.call(document.querySelectorAll('.rw-area'));
-  if (!rail || !areas.length) return;
+  if (!root || !areas.length) return;
 
-  var cards = areas.map(function (area) {
+  var viewport = root.querySelector('.rc-viewport');
+  var track = root.querySelector('.rc-track');
+  var stepbar = root.querySelector('.rc-steps');
+  var prev = root.querySelector('.rc-prev');
+  var next = root.querySelector('.rc-next');
+  var total = areas.length;
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+
+  /* Cut on a word rather than mid-syllable, and only say something was cut if
+     it was - otherwise a paragraph that ends inside the limit picks up a stop
+     followed by an ellipsis. */
+  function teaser(text, limit) {
+    if (text.length <= limit) return text;
+    var cut = text.slice(0, limit);
+    var space = cut.lastIndexOf(' ');
+    if (space > limit * 0.6) cut = cut.slice(0, space);
+    return cut.replace(/[\s.,;:\u2013\u2014-]+$/, '') + '\u2026';
+  }
+
+  var slides = areas.map(function (area, i) {
     var heading = area.querySelector('h2');
     var leadPara = area.querySelector('p a[href^="/author/"]');
     var lead = leadPara ? leadPara.closest('p').textContent.trim() : 'Lead to be announced';
@@ -278,45 +377,113 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
     });
     var img = area.querySelector('img');
 
-    var card = document.createElement('button');
-    card.type = 'button';
-    card.className = 'rw-card';
-    card.dataset.target = heading ? heading.id : '';
-    card.innerHTML =
-      (img ? '<img class="rw-thumb" alt="" loading="lazy" src="' + img.getAttribute('src') + '">'
-           : '<span class="rw-thumb rw-thumb-empty">No figure yet</span>') +
-      '<span class="rw-card-body">' +
-        '<span class="rw-card-title"></span>' +
-        '<span class="rw-card-lead"></span>' +
-        '<span class="rw-card-teaser"></span>' +
-      '</span>';
-    card.querySelector('.rw-card-title').textContent = heading ? heading.textContent : '';
-    card.querySelector('.rw-card-lead').textContent = lead;
-    card.querySelector('.rw-card-teaser').textContent =
-      paras.length ? paras[0].textContent.trim().slice(0, 110) + '…' : 'Section in preparation.';
-    rail.appendChild(card);
-    return card;
+    var slide = document.createElement('article');
+    slide.className = 'rc-slide';
+    slide.dataset.target = heading ? heading.id : '';
+    slide.innerHTML =
+      '<figure class="rc-figure">' +
+        (img ? '<img alt="" loading="lazy" src="' + img.getAttribute('src') + '">'
+             : '<span class="rc-figure-empty">No figure yet</span>') +
+      '</figure>' +
+      '<div class="rc-body">' +
+        '<p class="rc-index">' + pad(i + 1) + ' / ' + pad(total) + '</p>' +
+        '<h3 class="rc-title"></h3>' +
+        '<p class="rc-lead"></p>' +
+        '<p class="rc-teaser"></p>' +
+        '<button type="button" class="rc-more">Read this area &#8595;</button>' +
+      '</div>';
+    slide.querySelector('.rc-title').textContent = heading ? heading.textContent : '';
+    slide.querySelector('.rc-lead').textContent = lead;
+    slide.querySelector('.rc-teaser').textContent =
+      paras.length ? teaser(paras[0].textContent.trim(), 190) : 'Section in preparation.';
+    slide.querySelector('.rc-more').addEventListener('click', function () {
+      var el = document.getElementById(slide.dataset.target);
+      if (el) el.scrollIntoView({block: 'start', behavior: 'smooth'});
+    });
+    track.appendChild(slide);
+    return slide;
   });
 
-  function select(id) {
-    areas.forEach(function (a, i) {
-      var h = a.querySelector('h2');
-      var match = h && h.id === id;
-      a.style.display = match ? '' : 'none';
-      cards[i].setAttribute('aria-current', match ? 'true' : 'false');
-    });
-  }
-  cards.forEach(function (c) {
-    c.addEventListener('click', function () { select(c.dataset.target); });
+  var steps = areas.map(function (area, i) {
+    var step = document.createElement('button');
+    step.type = 'button';
+    step.className = 'rc-step';
+    step.setAttribute('role', 'tab');
+    step.setAttribute('aria-label', slides[i].querySelector('.rc-title').textContent);
+    step.addEventListener('click', function () { go(i); });
+    stepbar.appendChild(step);
+    return step;
   });
+
+  var current = -1;
+
+  /* Show one area and mark its slide. Scrolling the viewport is separate, so
+     that syncing after a swipe does not fight the swipe. */
+  function select(i) {
+    if (i === current) return;
+    current = i;
+    areas.forEach(function (a, n) { a.style.display = n === i ? '' : 'none'; });
+    slides.forEach(function (s, n) { s.dataset.active = n === i ? 'true' : 'false'; });
+    steps.forEach(function (s, n) { s.setAttribute('aria-selected', n === i ? 'true' : 'false'); });
+    /* Disabling the button that has focus drops focus to the document, and the
+       next arrow key is then someone else's event. Read who had it first -
+       setting `disabled` blurs it before we could ask - and hand focus to the
+       arrow that is still live. */
+    var focused = document.activeElement;
+    prev.disabled = i === 0;
+    next.disabled = i === total - 1;
+    if (focused === next && next.disabled) prev.focus();
+    if (focused === prev && prev.disabled) next.focus();
+  }
+
+  function go(i) {
+    i = Math.max(0, Math.min(total - 1, i));
+    viewport.scrollTo({left: slides[i].offsetLeft - track.offsetLeft, behavior: 'smooth'});
+    select(i);
+  }
+
+  prev.addEventListener('click', function () { go(current - 1); });
+  next.addEventListener('click', function () { go(current + 1); });
+
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { go(current - 1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { go(current + 1); e.preventDefault(); }
+  });
+
+  /* A swipe moves the viewport without going through go(), so read the
+     resting position back and follow it. */
+  var settle;
+  viewport.addEventListener('scroll', function () {
+    clearTimeout(settle);
+    settle = setTimeout(function () {
+      var middle = viewport.scrollLeft + viewport.clientWidth / 2;
+      var nearest = 0;
+      for (var i = 0; i < slides.length; i++) {
+        var left = slides[i].offsetLeft - track.offsetLeft;
+        if (left + slides[i].offsetWidth / 2 <= middle) nearest = i;
+      }
+      select(nearest);
+    }, 90);
+  }, {passive: true});
+
   function fromHash() {
     var id = decodeURIComponent(location.hash.slice(1));
-    return cards.some(function (c) { return c.dataset.target === id; }) ? id : null;
+    for (var i = 0; i < slides.length; i++) {
+      if (slides[i].dataset.target === id) return i;
+    }
+    return null;
   }
   window.addEventListener('hashchange', function () {
-    var id = fromHash();
-    if (id) { select(id); document.getElementById(id).scrollIntoView({block: 'start'}); }
+    var i = fromHash();
+    if (i !== null) {
+      go(i);
+      document.getElementById(slides[i].dataset.target).scrollIntoView({block: 'start'});
+    }
   });
-  select(fromHash() || cards[0].dataset.target);
+
+  root.hidden = false;
+  var start = fromHash();
+  select(start === null ? 0 : start);
+  if (start) go(start);
 })();
 </script>
