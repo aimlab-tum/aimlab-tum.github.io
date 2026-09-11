@@ -305,7 +305,7 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 .rc-nav{pointer-events:auto;position:sticky;top:calc(50vh - 1.375rem);
   display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
   width:2.75rem;height:2.75rem;padding:0;font:inherit;line-height:1;cursor:pointer;
-  border:1px solid var(--rc-line);background:var(--rc-bg);color:var(--rc-fg)}
+  border:1px solid var(--rc-line);border-radius:50%;background:var(--rc-bg);color:var(--rc-fg)}
 .rc-nav:hover:not(:disabled){border-color:var(--rc-accent);color:var(--rc-accent)}
 .rc-nav:disabled{opacity:0;pointer-events:none}
 
