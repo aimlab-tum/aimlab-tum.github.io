@@ -299,6 +299,13 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 .rc-step:hover::before{background:var(--rc-muted)}
 .rc-step[aria-selected="true"]:hover::before{background:linear-gradient(90deg,var(--rc-accent),var(--rc-spark))}
 
+/* The slide already carries the area's figure, so the figure carousel inside
+   the area below it is the same picture a second time. Images at the top only.
+   This hides rather than deletes: the second and third figures of an area, and
+   every caption, still exist in the Markdown and come back by dropping this
+   rule. */
+.rw-area .hrv-carousel{display:none}
+
 @media (max-width:700px){
   .rc-slide{grid-template-columns:minmax(0,1fr)}
   .rc-figure{min-height:0;max-height:11rem}
