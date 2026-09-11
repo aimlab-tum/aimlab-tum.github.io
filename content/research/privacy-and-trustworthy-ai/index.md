@@ -30,6 +30,8 @@ publications = [
 # the rest are kept with their captions for whatever shows them next.
 [[figures]]
   file = "figure.png"
+  # Panels a and b carry the setup; centred, the band opens on c.
+  focus = "top"
   alt = "Threat models in privacy-preserving machine learning and their impact on the necessary privacy protection and model performance"
   caption = '''<strong>a,</strong> Adversaries can have various capabilities depending on the setting. <strong>b,</strong> The combination of the adversary's capabilities defines the threat model. In a worst-case analysis, they have all capabilities. However, access to the database is a pessimistic, practically irrelevant scenario. <strong>c,</strong> The necessary privacy protection depends on the threat model. In a worst-case threat model, the adversary only needs to match the model and gradient to an image in the database. In a practically more relevant scenario, the image must be reconstructed from the model and gradient. Here, much less privacy protection is necessary. <strong>d,</strong> The more stringent the privacy protection is chosen, the higher the impacts on the model performance are. Thus, if a realistic threat model is considered appropriate, models can perform better.'''
 

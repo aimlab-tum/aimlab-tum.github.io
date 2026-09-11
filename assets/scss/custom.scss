@@ -459,12 +459,14 @@
   transform:scaleX(0);transform-origin:left;transition:transform .55s ease}
 .rc-slide[data-active="true"]::before{transform:scaleX(1)}
 
+/* The figure is the slide's header: a band the full width of the slide that the
+   picture fills edge to edge. `cover` crops to do it - these are composite
+   panels from papers, so some of each one is cut - and the caption is carried
+   in front matter for whatever shows the figure whole. */
 .rc-figure{margin:0;background:var(--rc-thumb);display:flex;align-items:center;
-  justify-content:center;overflow:hidden;padding:1rem;border-bottom:1px solid var(--rc-line)}
-/* `contain`, not `cover`: these are figures from papers, and a panel cropped to
-   fill the box loses the half of the diagram that carried the point. */
-.rc-figure img{max-width:100%;max-height:13rem;width:auto;height:auto;
-  object-fit:contain;display:block}
+  justify-content:center;overflow:hidden;height:16rem;
+  border-bottom:1px solid var(--rc-line)}
+.rc-figure img{width:100%;height:100%;object-fit:cover;display:block}
 .rc-figure-empty{font-size:.875rem;letter-spacing:.04em;color:var(--rc-muted)}
 
 .rc-body{padding:1.75rem 1.875rem;min-width:0}
@@ -506,7 +508,7 @@
   .rc-track{gap:.75rem;padding:0 6%}
   .rc-slide{flex:0 0 88%}
   .rc-nav{width:2.5rem;height:2.5rem}
-  .rc-figure img{max-height:11rem}
+  .rc-figure{height:10rem}
   .rc-body{padding:1.25rem}
   .rc-slide .rw-area h2{font-size:1.25rem}
 }

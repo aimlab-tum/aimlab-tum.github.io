@@ -24,7 +24,11 @@
             {{- with $figure -}}
               {{- with $area.Resources.GetMatch .file -}}
                 {{- $img := .Fit "1100x620" -}}
+                {{/* The band crops to fill, so a figure can say which part of itself
+                     must survive - `focus = "top"` for a panel figure whose first
+                     row carries the point. Anything `object-position` accepts. */}}
                 <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+                     style="object-position: center {{ $figure.focus | default "center" }}"
                      alt="{{ $figure.alt | default "" }}" loading="lazy">
               {{- end -}}
             {{- else -}}

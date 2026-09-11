@@ -24,6 +24,7 @@ weight = 50
 # [[figures]]
 #   file = "figure.png"
 #   alt = "What the picture shows, for a screen reader."
+#   focus = "top"   # the band crops to fill; "top", "bottom" or a percentage
 #   caption = "What the picture means."
 +++
 One or two paragraphs about the group, written the way the others are: what the
