@@ -528,3 +528,112 @@
 .rw-pubs summary{cursor:pointer;font-weight:500}
 .rw-pubs ul{margin:.75rem 0 0}
 .rw-pubs li{margin-bottom:.5rem;font-size:.875rem;color:rgba(0,0,0,.54)}
+
+
+/* ---------------------------------------------------------------------------
+   The dark variation.
+
+   Three sets of rules were written against a white page and never given a dark
+   counterpart: the theme's own link and button colours, the Bluesky feed in the
+   News section, and the Teaching section. Secondary text was `rgba(0, 0, 0,
+   .54)` on a near-black ground, which measures 1.2:1 - a grey smear, not text.
+
+   Every value below was measured against the ground it actually sits on. The
+   theme's dark greys are #23252f for the page, #272935 for an alternating
+   section and #282a36 for a card, and the figures quoted are the worst of the
+   three.
+   --------------------------------------------------------------------------- */
+
+/* The accent reads as a link on white at 5.6:1, but the same blue on the dark
+   page is 2.9:1. This is the lightest tint that still reads as the same blue,
+   and it measures 5.9:1. */
+.dark a,
+.dark h3.article-title a:hover {
+  color: #6ea8ff;
+}
+
+.dark a:not(.btn):hover,
+.dark a:not(.btn):focus {
+  color: #9cc4ff;
+}
+
+/* `.btn-primary` is white on the accent everywhere else, which is 4.9:1. The
+   dark variation overrides it to `initial` - black on the same blue, 4.3:1 -
+   so this is the theme's own colour put back. */
+.dark .btn-primary,
+.dark .btn.btn-primary.active {
+  color: #fff;
+}
+
+.dark .btn-outline-primary {
+  color: #6ea8ff;
+  border-color: #6ea8ff;
+}
+
+.dark .btn-outline-primary:hover,
+.dark .btn-outline-primary:focus {
+  color: #23252f;
+  background-color: #6ea8ff;
+  border-color: #6ea8ff;
+}
+
+.dark {
+  /* News: the Bluesky feed. The handle and the like/repost/reply counts were
+     the worst text on the site in this variation at 1.2:1. */
+  .nw-feed,
+  .nw-ext { border-color: #44475a; }
+
+  .nw-feed-head,
+  .nw-post { border-bottom-color: #44475a; }
+
+  .nw-feed-handle,
+  .nw-meta { color: rgba(248, 248, 242, .54); }
+
+  .nw-ext {
+    color: #f8f8f2;
+    &:hover { background: #2b2e3b; }
+  }
+
+  .nw-img { background: #23252f; }
+
+  /* Teaching: the semester labels, the evergreen note and the card eyebrows,
+     all of them the same 1.3:1 grey. Their base rules live in the <style> block
+     in content/home/teaching.md. */
+  .tw-head,
+  .tw-card,
+  .tw-card ul,
+  .tw-evergreen { border-color: #44475a; }
+
+  .tw-pick,
+  .tw-sem p,
+  .tw-evergreen,
+  .tw-card > p:first-child { color: rgba(248, 248, 242, .54); }
+
+  .tw-pick select {
+    color: #f8f8f2;
+    background: #282a36;
+    border-color: #44475a;
+  }
+
+  /* The key-publications list, for the no-script stack where a slide's own
+     colours are not in play. */
+  .rw-pubs li { color: rgba(248, 248, 242, .54); }
+
+  /* Borders drawn for a white page and left on a dark one: the pagination on
+     the people and theses listings, and the publication filters. A field's own
+     ground is #44475a, so its edge has to be a step lighter than that to read
+     at all; everything else takes the theme's rule colour. */
+  /* Matching the theme's own selector: `.dark .pagination li > a` beats
+     `.dark .page-link`, so the pagination kept a #ddd edge. */
+  .pagination li > a,
+  .pagination li > span { border-color: #44475a; }
+
+  .form-control,
+  .filter-search,
+  .pub-filters { border-color: #5b5f74; }
+
+  /* The search panel's own field keeps a #dedede ring until it is focused,
+     which is a white outline on a near-black panel. Two ids, to match the
+     theme's `#search-box #search-query`. */
+  #search-box #search-query { border-color: #5b5f74; }
+}
