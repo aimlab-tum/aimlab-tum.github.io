@@ -9,7 +9,7 @@ authors: ["Daniel Rückert"]
 tags: []
 categories: []
 date: 2025-03-19T09:00:00+01:00
-featured: false
+featured: true
 draft: false
 
 # Featured image

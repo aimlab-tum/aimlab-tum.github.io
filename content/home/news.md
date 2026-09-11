@@ -15,7 +15,9 @@ subtitle = ""
   page_type = "post"
   
   # Choose how much pages you would like to display (0 = all pages)
-  # Five in the section; everything else is one click away on /post/.
+  # A ceiling rather than the selection itself - the `featured` filter below
+  # decides what is eligible. Raise it if there are ever more than five worth
+  # showing at once.
   count = 5
 
   # Show the lab's Bluesky posts beside the news list.
@@ -36,13 +38,22 @@ subtitle = ""
     enable = true
     text = "All news"
 
-  # Filter posts by a taxonomy term.
+  # Filter posts.
+  #
+  # `featured = true` is what makes this section a selection rather than a feed:
+  # only posts carrying `featured: true` in their own front matter appear here.
+  # Everything else is still published and still listed under "All news" at
+  # /post/ - it just does not claim a place on the homepage.
+  #
+  # To put a post here, set `featured: true` at the top of it. To take one down,
+  # set it back to false. Nothing else moves.
   [content.filters]
     tag = ""
     category = ""
     publication_type = ""
     author = ""
     exclude_featured = false
+    featured = true
   
 [design]
   # Full width, with the heading above the content - the same layout the
