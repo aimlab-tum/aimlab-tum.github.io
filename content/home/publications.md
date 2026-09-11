@@ -23,7 +23,7 @@ subtitle = ""
 +++
 
 
-The Lab for AI in Medicine at [TU Munich](https://www.tum.de/) develops algorithms and models to improve medicine for patients and healthcare professionals. Our aim is to develop artificial intelligence (AI) and machine learning (ML) techniques for the analysis and interpretation of biomedical data. The group focuses on pursuing blue-sky research, including:
+At the Lab for AI in Medicine at [TU Munich](https://www.tum.de/), we develop algorithms and models to improve medicine for patients and healthcare professionals. Our aim is to develop artificial intelligence (AI) and machine learning (ML) techniques for the analysis and interpretation of biomedical data. We focus on pursuing blue-sky research, including:
 
 - AI for the early detection, prediction and diagnosis of diseases
 - AI for personalized interventions and therapies
@@ -31,15 +31,9 @@ The Lab for AI in Medicine at [TU Munich](https://www.tum.de/) develops algorith
 - Safe, robust and interpretable AI approaches
 - Privacy-preserving AI approaches
 
-We have particularly strong interest in the application of imaging and computing technology to improve the understanding of brain development (in-utero and ex-utero), to improve the diagnosis and stratification of patients with dementia, stroke and traumatic brain injury, as well as for the comprehensive diagnosis and management of patients with cardiovascular disease and cancer.
+We have a particularly strong interest in the application of imaging and computing technology to improve the understanding of brain development (in-utero and ex-utero), to improve the diagnosis and stratification of patients with dementia, stroke and traumatic brain injury, as well as for the comprehensive diagnosis and management of patients with cardiovascular disease and cancer.
 
-The following research groups are based at the chair:
-
-- [AI for biomedical image analysis and interpretation](#ai-for-biomedical-image-analysis-and-interpretation)
-- [Inverse problems in biomedical imaging](#inverse-problems-in-biomedical-imaging)
-- [Privacy-preserving and trustworthy AI in medicine](#privacy-preserving-and-trustworthy-ai-in-medicine)
-- [AI for vision](#ai-for-vision)
-- AI for opportunistic cardiac MRI
+The following research groups are based at our chair:
 
 <div class="rw">
 <div class="rw-rail"></div>
