@@ -36,7 +36,11 @@
   {{ with site.GetPage (printf "/authors/%s" (path.Base (path.Split .Path).Dir)) }}
     {{ $link = .RelPermalink }}
   {{ end }}
-  <div class="col-12 col-sm-auto people-person">
+  {{/* The theme widens each person to 30% at 576px and 20% at 992px but leaves
+       phones at one per row, which turns a lab this size into a page thousands
+       of pixels long. `col-6` adds the missing bottom rung; from 576px up the
+       theme's own percentages still win on specificity. */}}
+  <div class="col-6 col-sm-auto people-person">
     {{ $src := "" }}
     {{ if site.Params.avatar.gravatar }}
       {{ $src = printf "https://s.gravatar.com/avatar/%s?s=150" (md5 .Params.email) }}

@@ -252,8 +252,13 @@ The AI for Vision group focuses on blue-sky research in medical image analysis w
 .hrv-slide{flex:0 0 100%;scroll-snap-align:center;margin:0;padding:0;text-align:center}
 .hrv-slide img{width:100%;height:auto;display:block;object-fit:contain;background:#f7f7f7}
 .hrv-slide figcaption{font-size:.875rem;color:rgba(0,0,0,.54);margin-top:.6rem;padding:0 .5rem;text-align:left}
-.hrv-dots{display:flex;justify-content:center;gap:.6rem;margin-top:.9rem}
-.hrv-dots a{width:11px;height:11px;border-radius:50%;background:#dee2e6}
+/* The dot stays 11px, but on a touch screen an 11px target is not reachable,
+   so each one carries an invisible 2.5rem square. The gap is widened to match
+   it, otherwise the squares overlap and the last dot swallows its neighbours. */
+.hrv-dots{display:flex;justify-content:center;gap:1.75rem;margin-top:.9rem}
+.hrv-dots a{position:relative;width:11px;height:11px;border-radius:50%;background:#dee2e6}
+.hrv-dots a::after{content:"";position:absolute;left:50%;top:50%;width:2.5rem;height:2.5rem;
+  transform:translate(-50%,-50%)}
 .hrv-dots a:hover{background:rgba(0,0,0,.54)}
 </style>
 

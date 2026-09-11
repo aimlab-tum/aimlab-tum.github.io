@@ -140,8 +140,16 @@
    group shot is the band where the people are. Both live on the figure, so a
    different photograph brings its own two numbers and nothing else changes.
 
-   The gradient runs left to right and is gone by 70% across, so the group -
-   centre and right in every one of these photographs - keeps its exposure.
+   The gradient runs left to right and clears by 95% across, so the group -
+   centre and right in every one of these photographs - keeps its exposure. It
+   used to be gone by 70%, which measured well on the left third but not where
+   the words actually end: the copy is a fixed 34rem and the band is not, so its
+   right edge lands between 53% and 65% of the band at every width from 800px
+   up, and the last third of every line sat in an almost transparent scrim. At
+   992px, where the theme steps the root font from 13.86px to 18px and the copy
+   jumps to 612px, that measured 4.1:1. Holding the scrim to 45% and fading it
+   out over the rest puts every width between 6.9:1 and 8.6:1, and costs the
+   right of the photograph about a sixth of its brightness.
    --------------------------------------------------------------------------- */
 #page_header {
   padding-top: 0;
@@ -187,9 +195,10 @@
     opacity: var(--scrim, .65);
     background: linear-gradient(to right,
       rgb(0, 0, 0) 0%,
-      rgb(0, 0, 0) 32%,
-      rgba(0, 0, 0, .5) 50%,
-      rgba(0, 0, 0, 0) 70%);
+      rgb(0, 0, 0) 45%,
+      rgba(0, 0, 0, .6) 62%,
+      rgba(0, 0, 0, .2) 80%,
+      rgba(0, 0, 0, 0) 95%);
   }
 }
 
@@ -226,7 +235,20 @@
 }
 
 
+/* Below the width at which the copy stops being a column and becomes the whole
+   band, the left-to-right gradient stops covering the words: its tail is
+   transparent by 70% across, which on a phone is the middle of a sentence, so
+   white text landed on lit faces and snow. The measured --scrim still holds, so
+   keep it and turn the gradient through ninety degrees - dark across the text,
+   easing off at the foot of the band so the photograph is still a photograph. */
 @media (max-width: 800px) {
+  .hero-shot::after {
+    background: linear-gradient(to bottom,
+      rgb(0, 0, 0) 0%,
+      rgb(0, 0, 0) 72%,
+      rgba(0, 0, 0, .55) 100%);
+  }
+
   .hero-band { min-height: 340px; }
   .hero-copy h1 { font-size: 1.9rem; }
 }
@@ -237,11 +259,15 @@
    for it in the bundled Font Awesome. */
 .hero-social {
   display: flex;
-  gap: .9rem;
+  /* Wide enough that the invisible touch squares below meet without
+     overlapping - 1.5rem of icon plus 1.25rem of gap is 2.75rem of centre to
+     centre, which is what each square measures. */
+  gap: 1.25rem;
   margin: 1.25rem 0 0;
 
   a {
     display: inline-flex;
+    position: relative;
     width: 1.5rem;
     height: 1.5rem;
     color: #fff;
@@ -250,6 +276,19 @@
 
     &:hover,
     &:focus-visible { opacity: 1; }
+
+    /* 1.5rem is 21px at the root size the theme sets, which is below the 24px
+       floor for a touch target. The icon keeps its size and the target grows
+       around it. */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 2.75rem;
+      height: 2.75rem;
+      transform: translate(-50%, -50%);
+    }
   }
 
   svg {
@@ -257,5 +296,95 @@
     height: 100%;
     fill: currentColor;
     display: block;
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+   Responsive corrections.
+
+   Each of these is a place where the theme's own layout stops short at the
+   narrow end, so each reuses the theme's values and Bootstrap 4 breakpoints
+   (575.98 / 767.98 / 991.98) rather than introducing a second set.
+   --------------------------------------------------------------------------- */
+
+/* The theme lays the page out as a grid - `.page-wrapper`, rows auto/1fr/auto -
+   and never names a column, so the single implicit column is `auto`. A grid
+   item's automatic minimum size is the min-content width of what is inside it,
+   not the width of the container, so anything built to scroll sideways on
+   purpose - the research rail, the figure carousels - dragged the whole
+   document out with it: 455px of page inside a 375px viewport, on every page,
+   at every phone width. Naming the column `minmax(0, 1fr)` lets it shrink back
+   to the viewport, which is what the row track already assumes. */
+.page-wrapper {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Bootstrap's `.row` pulls its gutter - a hard 15px - out of each side, but the
+   theme pads `.universal-wrapper` by 1rem with the root font at 13.86px. The
+   row therefore hung 1.14px past the right edge and the list pages scrolled by
+   a pixel. Pad to the gutter instead; above 1000px the wrapper is a fixed
+   centred 1000px and the difference does not show. */
+.universal-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* The publication filters are three `.col-auto` cells in a `.form-row`, sized
+   by their contents. On a phone that is 375px wide the search box and the type
+   menu fill the line and the date menu drops underneath at a third of the
+   width, which reads as a mistake rather than a row. Below Bootstrap's `sm`
+   they each take the full line instead.
+
+   The search box is also the one control in the row the theme never styled -
+   it is a bare `input[type=search]`, so it sits a few pixels taller than the
+   two `.form-control-sm` menus beside it at every width. Give it the same
+   metrics the theme gives them. */
+.filter-search {
+  height: calc(1.5em + 0.5rem + 2px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.2rem;
+}
+
+/* In the dark variation the theme colours a bare `input` #23252f and a
+   `.form-control` #44475a, which nobody notices while the two sit apart but
+   reads as a mistake once they are stacked. Take the menus' colour. */
+.dark .filter-search {
+  background-color: #44475a;
+}
+
+@media (max-width: 575.98px) {
+  .form-row:has(> .col-auto > .filter-search) > .col-auto {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: .5rem;
+  }
+
+  .filter-search,
+  .form-row .pub-filters {
+    width: 100%;
+  }
+}
+
+/* The three controls that make up the navbar on a phone - the hamburger, the
+   search icon and the light/dark toggle - are drawn at the size of their glyph,
+   which measures 14x24 and 18x23. All three are under the 24px floor on at
+   least one axis, and the hamburger is the only way to reach the rest of the
+   site. Grow the targets around the glyphs; the icons themselves do not move.
+   Only below the width at which the menu collapses, since above it these are
+   ordinary pointer targets in a row of links. */
+@media (max-width: 991.98px) {
+  #navbar-main .navbar-toggler,
+  #navbar-main .nav-icons .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
   }
 }
