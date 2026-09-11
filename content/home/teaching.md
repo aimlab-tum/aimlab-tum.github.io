@@ -113,11 +113,9 @@ Teaching and education are an integral part of our institute's mission. All of o
 
 <div class="tw-evergreen">
 
-In addition to the main lecture series, the individual sub-areas and subject areas are explored in depth through practical sessions and seminars. Through direct interaction with our lecturers, students can deepen and apply their acquired knowledge.
+Practicals and seminars take the individual subject areas further, with students applying what they learn in direct contact with our lecturers.
 
-As an elective for medical students, we offer: **Computer Science for Medical Students**
-
-This course offers students exciting insights into the world of AI methods (especially neural networks) and their applications in medicine. In addition to acquiring basic theoretical knowledge, they gain initial practical experience with Python programming and have the opportunity to train their own neural networks.
+For medical students we offer the elective **Computer Science for Medical Students**: AI methods, above all neural networks, and their use in medicine. Students learn the theory, write their first Python, and train a network of their own.
 
 </div>
 
@@ -131,9 +129,9 @@ This course offers students exciting insights into the world of AI methods (espe
 
 ## AI in Biomedicine
 
-Our chair is participating in the Elite Master's program AI in Biomedicine, with Prof. Daniel Rückert as program speaker. The program bridges the gap between computer science, engineering, and medicine to train future generations of AI experts who combine deep technical expertise in cutting-edge AI techniques with domain knowledge about biomedical applications. AI in Biomedicine is a research-oriented two-year graduate program, with an optional Research Excellence Certificate, offered at the Technical University of Munich in cooperation with Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU). It is designed to prepare students for careers in academic research and high-impact industrial innovation. The program emphasizes independent scientific thinking, methodological rigor, and the ability to contribute to the advancement of AI technologies in biomedicine.
+Our chair takes part in this Elite Master's programme, with Prof. Daniel Rückert as programme speaker. A research-oriented two-year degree at TUM in cooperation with Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU), it bridges computer science, engineering and medicine to train AI experts who pair technical depth with biomedical domain knowledge, and prepares them for academic research and industry. An optional Research Excellence Certificate is available.
 
-More details on the [program website](https://www.cit.tum.de/en/cit/studies/degree-programs/ai-in-biomedicine/).
+More details on the [programme website](https://www.cit.tum.de/en/cit/studies/degree-programs/ai-in-biomedicine/).
 
 Applications can be submitted every year between February 1 and May 31. If you have questions regarding the application, please contact [app-msaibm.asa@xcit.tum.de](mailto:app-msaibm.asa@xcit.tum.de).
 
