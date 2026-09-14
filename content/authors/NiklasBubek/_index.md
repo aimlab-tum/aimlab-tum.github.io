@@ -24,7 +24,7 @@ bio: DL
 interests:
 - Generative AI in Medical Imaging
 - Medical Image Reconstruction
-- Multi-Modal Foundation Models
+- Representation Learning
 
 education:
   courses:
@@ -49,6 +49,9 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/niklasbubeck
+- icon: globe
+  icon_pack: fas
+  link: https://www.niklasbubeck.com
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -56,7 +59,7 @@ social:
 #   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "“niklas.bubeck@tum.de”"
+email: "niklas.bubeck@tum.de"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -64,4 +67,4 @@ user_groups:
 - "Researchers"
 ---
 
-I'm a Doctoral researcher affiliated with the Institute of Artificial Intelligence in Medicine at the Technical University of Munich (TUM). Before starting my PhD, I received a MSc. in Robotics, Cognition and Intelligence, as well as a BSc. in Medical Engineering from FAU. My research interest is in the broad field of multi-modal foundation models as well as generative AI for medical image and volumetric reconstruction.
+I'm a Doctoral researcher affiliated with the Institute of Artificial Intelligence in Medicine at the Technical University of Munich (TUM). Before starting my PhD, I received a MSc. in Robotics, Cognition and Intelligence, as well as a BSc. in Medical Engineering from FAU. My research interests are generative AI for medical image and volumetric reconstruction, and representation learning.

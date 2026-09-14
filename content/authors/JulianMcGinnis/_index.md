@@ -31,7 +31,7 @@ education:
   - course: Electrical Engineering and Information Technology (M.Sc.)
     institution: TUM
     year: 2022
-  - course: "(B.Sc.)"
+  - course: Electrical Engineering and Information Technology (B.Sc.)
     institution: Baden-Wuerttemberg Cooperative State University Ravensburg (DHBW)
     year: 2016
 

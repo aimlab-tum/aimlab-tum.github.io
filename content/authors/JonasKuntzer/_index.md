@@ -31,7 +31,7 @@ education:
   - course: Electrical Engineering and Information Technology (M.Sc.)
     institution: RWTH Aachen
     year: 2020
-  - course: "(B.Sc.)"
+  - course: Electrical Engineering and Information Technology (B.Sc.)
     institution: RWTH Aachen
     year: 2017
 
