@@ -30,7 +30,7 @@ education:
   - course: Electrical Engineering and Information Technology (M.Sc.)
     institution: TUM
     year: 2018
-  - course: "(B.Sc.)"
+  - course: Electrical Engineering and Information Technology (B.Sc.)
     institution: TUM
     year: 2015
 

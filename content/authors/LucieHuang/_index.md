@@ -31,7 +31,7 @@ education:
   - course: Electrical and Computer Engineering (M.Sc.)
     institution: TUM
     year: 2024
-  - course: "(B.Sc.)"
+  - course: Electrical and Computer Engineering (B.Sc.)
     institution: TUM
     year: 2021
 
