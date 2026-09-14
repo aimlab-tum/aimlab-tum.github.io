@@ -11,23 +11,30 @@ authors:
 superuser: false
 
 # Role/position
-role: Research Scientist
+role: Research Fellow
 
 # Organizations/Affiliations
 organizations:
 - name: Institute of AI in Healthcare and Medicine, Technical University of Munich
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
+- name: Stanford University
+  url: "https://www.stanford.edu/"
+
 # Short bio (displayed in user profile at end of posts)
-bio: My main research interests lie in medical imaging computing, semantic segmentation and flow estimation
+bio: I develop AI agents and multimodal models for medicine and healthcare, with a focus on reasoning, benchmarking and auditable AI.
 
 interests:
-- Medical Imaging Computing
-- Semantic Segmentation
-- Medical Image Reconstruction
+- LLMs and AI Agents for Medicine
+- Medical AI Benchmarking and Auditing
+- Medical Imaging
+
 
 education:
   courses:
+  - course: Computer Science (Ph.D.)
+    institution: Technical University of Munich
+    year: 2025
   - course: Electrical Engineering and Information Technology (M.Sc.)
     institution: University of Stuttgart
     year: 2020
@@ -46,14 +53,15 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/jiazhen-pan-72230b185/
-- icon: github
-  icon_pack: fab
-  link: https://jzpeterpan.github.io/
+- icon: google-scholar
+  icon_pack: ai
+  link: "https://scholar.google.com/citations?user=3ajAndQAAAAJ&hl=en&oi=ao"
+- icon: globe
+  icon_pack: fas
+  link: https://jiazhenpan.me/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
+
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
@@ -64,4 +72,8 @@ user_groups:
 - "Senior Researchers"
 ---
 
-I am a Ph.D. student at the Institutes of Radiology and Artificial Intelligence and Informatics in Medicine at the Technical University of Munich (TUM). Before my Ph.D., I received my Master's degree in Electrical Engineering and Information Technology at the University of Stuttgart with a focus on computer vision and pattern recognition. During my master's study, I wrote a research thesis with the collaboration of the Eberhard Karls University Tübingen, which focused on the whole body organ- and tissue segmentation problem. In my master thesis at King's College London, I built a neural network that can solve the non-rigid registration problem directly from k-space for MR Imaging. Currently, I am researching applications of MRI Reconstruction, image denoising and flow estimation.
+I am a research fellow at Stanford University and the Technical University of Munich (TUM), working closely with Daniel Rueckert, Benedikt Wiestler and Akshay Chaudhari.
+
+My research focuses on large language models and AI agents for medicine and healthcare, with an emphasis on medical reasoning, realistic benchmarks and auditable AI. I develop methods to evaluate and improve the reliability of these systems in medical dialogue and clinical workflows. My work also spans multimodal medical imaging, medical generative models and accelerated MRI reconstruction, with applications in brain and heart imaging.
+
+I work with doctoral researchers and students on AI agents, reasoning in language and vision-language models, and multimodal and generative methods for medical imaging. I serve as an Area Chair for MICCAI 2026 and review for Nature Health, Nature Medicine and npj Digital Medicine.
