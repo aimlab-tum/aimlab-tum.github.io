@@ -31,10 +31,10 @@ education:
   - course: Electrical Engineering and Information Technology (M.Sc.)
     institution: TUM
     year: 2021
-  - course: "(M.Sc.)"
+  - course: Electrical Engineering and Information Technology (M.Sc.)
     institution: University of Technology Sydney
     year: 2019
-  - course: "(B.Sc.)"
+  - course: Electrical Engineering and Information Technology (B.Sc.)
     institution: TUM
     year: 2019
   - course: Management & Technology (B.Sc.)
