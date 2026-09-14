@@ -24,7 +24,7 @@ bio: DL
 interests:
 - Generative AI in Medical Imaging
 - Medical Image Reconstruction
-- Multi-Modal Foundation Models
+- Representation Learning
 
 education:
   courses:
@@ -64,4 +64,4 @@ user_groups:
 - "Researchers"
 ---
 
-I'm a Doctoral researcher affiliated with the Institute of Artificial Intelligence in Medicine at the Technical University of Munich (TUM). Before starting my PhD, I received a MSc. in Robotics, Cognition and Intelligence, as well as a BSc. in Medical Engineering from FAU. My research interest is in the broad field of multi-modal foundation models as well as generative AI for medical image and volumetric reconstruction.
+I'm a Doctoral researcher affiliated with the Institute of Artificial Intelligence in Medicine at the Technical University of Munich (TUM). Before starting my PhD, I received a MSc. in Robotics, Cognition and Intelligence, as well as a BSc. in Medical Engineering from FAU. My research interests are generative AI for medical image and volumetric reconstruction, and representation learning.
