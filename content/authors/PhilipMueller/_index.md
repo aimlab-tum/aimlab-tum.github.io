@@ -11,29 +11,31 @@ authors:
 superuser: false
 
 # Role/position
-role: Doctoral researcher
+role: Research Scientist
 
 # Organizations/Affiliations
 organizations:
-- name: Institute of AI in Healthcare and Medicine, Technical University of Munich
+- name: Technical University of Munich
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include vision-language models and localization.
+bio: My research focuses on representation learning and multimodal deep learning, including multimodal fusion and alignment as well as vision-language modeling.
 
 interests:
-- Multi-Modal Learning
-- Vision-Language Models
-- Localization / Object Detection
+- Multimodal Deep Learning
 - Representation Learning
+- Vision-Language Modeling
 
 education:
   courses:
-  - course: M.Sc. Informatics
-    institution: TUM
+  - course: PhD (Dr. rer. nat.) in Computer Science
+    institution: Technical University of Munich
+    year: 2025
+  - course: M.Sc. in Informatics
+    institution: Technical University of Munich
     year: 2020
-  - course: B.Eng. Informatics
-    institution: "Baden-Württemberg Cooperative State University, Ravensburg"
+  - course: B.Eng. in Informatics
+    institution: Baden-Württemberg Cooperative State University, Ravensburg
     year: 2016
 
 # Social/Academic Networking
@@ -65,7 +67,7 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Researchers"
+- "Senior Researchers"
 ---
 
-Philip Müller is a Ph.D. student at the Institute of Artificial Intelligence and Informatics in Medicine at the Technical University of Munich (TUM). In 2020 he received his Master's degree in Informatics at TUM. During his Master's thesis at the Computer Vision Group at TUM, he developed rotation-equivariant deep learning models for the use on diffusion-MRI scans. Currently, his research focuses on vision-language models and localization.
+Philip Müller is a research scientist at the Institute for AI and Informatics in Medicine, Technical University of Munich (TUM). He received his PhD (Dr. rer. nat.) in computer science from TUM in 2025 under the supervision of Prof. Daniel Rueckert. His doctoral research focused on vision-language modeling and localization for medical imaging. As a postdoctoral researcher, his work centers on representation learning and multimodal deep learning, including multimodal fusion and alignment as well as vision-language modeling, with a particular focus on cardiovascular medicine.
