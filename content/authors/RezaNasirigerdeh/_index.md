@@ -19,7 +19,7 @@ organizations:
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
 # Where they went after the lab (shown on the People widget instead of interests)
-current_position: "Postdoc at TUM (Alexander von Humboldt Research Fellow)"
+current_position: "Postdoc at TUM"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include privacy-preserving machine learning and distributed system

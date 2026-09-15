@@ -19,7 +19,7 @@ organizations:
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
 # Where they went after the lab (shown on the People widget instead of interests)
-current_position: "Research Engineer & Scientist at QuantCo"
+current_position: "Research Engineer & Scientist at Virdx, a QuantCo company"
 current_position_url: "https://www.quantco.com/"
 
 # Short bio (displayed in user profile at end of posts)
