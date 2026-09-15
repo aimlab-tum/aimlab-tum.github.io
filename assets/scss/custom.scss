@@ -630,3 +630,14 @@
      theme's `#search-box #search-query`. */
   #search-box #search-query { border-color: #5b5f74; }
 }
+
+/* Alumni cards: the small "Now" label in front of where the person went after
+   the lab (see `current_position` in the author front matter). */
+.people-widget .people-now-label {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-right: 0.2em;
+}

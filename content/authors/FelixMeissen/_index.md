@@ -18,6 +18,10 @@ organizations:
 - name: Technical University of Munich
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "Researcher at Microsoft Research Health Futures, Cambridge (UK)"
+current_position_url: "https://www.microsoft.com/en-us/research/lab/microsoft-health-futures/"
+
 # Short bio (displayed in user profile at end of posts)
 bio: Unsupervised machine learning for anomaly detection in medical images.
 

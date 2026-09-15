@@ -20,6 +20,10 @@ organizations:
 - name: Institute of Diagnostic and Interventional Radiology, Klinikum rechts der Isar
   url: "https://www.rad.mri.tum.de/ag/braren"
 
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "Korro AI (AI for children's healthcare)"
+current_position_url: "https://www.korro.ai/"
+
 # Short bio (displayed in user profile at end of posts)
 bio: My main research interests lie in applications of algorithms and technology in healthcare, artificial intelligence, and neuroscience.
 
@@ -45,6 +49,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: mailto:tamara.mueller@tum.de
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/tamara-mueller
 - icon: google-scholar
   icon_pack: ai
   link: "https://scholar.google.com/citations?user=Ljk2Gs8AAAAJ&hl=en"
