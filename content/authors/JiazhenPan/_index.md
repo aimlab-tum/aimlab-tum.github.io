@@ -11,7 +11,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Research Fellow
+role: "Research Scientist"
 
 # Organizations/Affiliations
 organizations:
@@ -64,7 +64,7 @@ social:
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
+email: "jiazhen.pan@tum.de"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -72,8 +72,6 @@ user_groups:
 - "Senior Researchers"
 ---
 
-I am a research fellow at Stanford University and the Technical University of Munich (TUM), working closely with Daniel Rueckert, Benedikt Wiestler and Akshay Chaudhari.
+I am a research fellow at Stanford University and Technical University of Munich, working closely with Daniel Rueckert, Benedikt Wiestler and Akshay Chaudhari.
 
-My research focuses on large language models and AI agents for medicine and healthcare, with an emphasis on medical reasoning, realistic benchmarks and auditable AI. I develop methods to evaluate and improve the reliability of these systems in medical dialogue and clinical workflows. My work also spans multimodal medical imaging, medical generative models and accelerated MRI reconstruction, with applications in brain and heart imaging.
-
-I work with doctoral researchers and students on AI agents, reasoning in language and vision-language models, and multimodal and generative methods for medical imaging. I serve as an Area Chair for MICCAI 2026 and review for Nature Health, Nature Medicine and npj Digital Medicine.
+My research keywords: Agents AI, Benchmarks, Biomedical World Models and Auditable AI. Please check my google scholar profile for my recent publications.
