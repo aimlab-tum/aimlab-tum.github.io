@@ -18,6 +18,10 @@ organizations:
 - name: Institute of AI in Healthcare and Medicine, Technical University of Munich
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "Research Engineer & Scientist at Virdx, a QuantCo company"
+current_position_url: "https://www.quantco.com/"
+
 # Short bio (displayed in user profile at end of posts)
 bio: My main research interest is how to effectively integrate biological, genetic and lifestyle information into medical imaging deep learning models.
 

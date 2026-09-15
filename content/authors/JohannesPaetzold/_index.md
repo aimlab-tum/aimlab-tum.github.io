@@ -20,6 +20,10 @@ organizations:
 - name: "Helmholtz Zentrum München"
   url: "http://erturk-lab.com/"
 
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "Assistant Professor of AI in Radiology, Weill Cornell Medicine (New York)"
+current_position_url: "https://vivo.weill.cornell.edu/display/cwid-jop4027"
+
 # Short bio (displayed in user profile at end of posts)
 bio: My main interest is the development of deep learning and graph learning methods for large biological networks such as vessels and neurons. Further research interests include topology aware machine learning and generative models.
 

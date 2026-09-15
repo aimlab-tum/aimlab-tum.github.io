@@ -57,7 +57,12 @@
       <h2>{{with $link}}<a href="{{.}}">{{end}}{{ .Title }}{{if $link}}</a>{{end}}</h2>
       {{ with .Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
       {{ if $show_social }}{{ partial "social_links" . }}{{ end }}
-      {{ if and $show_interests .Params.interests }}<p class="people-interests">{{ delimit .Params.interests ", " | markdownify | emojify }}</p>{{ end }}
+      {{/* Alumni carry `current_position` (+ optional `current_position_url`) in
+           their front matter: where they went after the lab is more useful on
+           this card than their old interests, so it takes the interests' slot. */}}
+      {{ if .Params.current_position }}
+      <p class="people-interests people-now"><span class="people-now-label">Now</span> {{ with .Params.current_position_url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .Params.current_position | markdownify | emojify }}{{ if .Params.current_position_url }}</a>{{ end }}</p>
+      {{ else if and $show_interests .Params.interests }}<p class="people-interests">{{ delimit .Params.interests ", " | markdownify | emojify }}</p>{{ end }}
     </div>
   </div>
   {{ end }}
