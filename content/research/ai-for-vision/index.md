@@ -3,11 +3,13 @@ title = "AI for vision"
 weight = 40
 
 publications = [
+  "Kreitner, L., Hager, P., Mengedoht, J., Kaissis, G., Rueckert, D., & Menten, M. J. (2026). Efficient numeracy in language models through single-token number embeddings. *ICML*.",
+  "Mildenberger, D., Hager, P., Rueckert, D., & Menten, M. J. (2025). A tale of two classes: Adapting supervised contrastive learning to binary imbalanced datasets. *CVPR*, 10305–10314.",
+  "Holland, R., Taylor, T. R. P., Holmes, C., Riedl, S., Mai, J., Patsiamanidi, M., Mitsopoulou, D., Hager, P., Müller, P., Paetzold, J. C., Scholl, H. P. N., Bogunović, H., Schmidt-Erfurth, U., Rueckert, D., Sivaprasad, S., Lotery, A. J., & Menten, M. J. (2025). Specialized curricula for training vision language models in retinal image analysis. *npj Digital Medicine, 8*(1):532.",
   "Holland, R., Leingang, O., Bogunović, H., Riedl, S., Fritsche, L., Prevost, T., Scholl, H. P. N., Schmidt-Erfurth, U., Sivaprasad, S., Lotery, A. J., Rueckert, D., & Menten, M. J. (2024). Metadata-enhanced contrastive learning from retinal optical coherence tomography images. *Medical Image Analysis, 97*:103296.",
   "Kreitner, L., Paetzold, J. C., Rauch, N., Chen, C., Hagag, A. M., Fayed, A. E., Sivaprasad, S., Rausch, S., Weichsel, J., Menze, B. H., Harders, M., Knier, B., Rueckert, D., & Menten, M. J. (2024). Synthetic optical coherence tomography angiographs for detailed retinal vessel segmentation without human annotations. *IEEE Transactions on Medical Imaging, 43*(6):2061–2073.",
   "Menten, M. J., Paetzold, J. C., Zimmer, V. A., Shit, S., Ezhov, I., Holland, R., Probst, M., Schnabel, J. A., & Rueckert, D. (2023). A skeletonization algorithm for gradient-based optimization. *ICCV*, 21394–21403.",
   "Holland, R., Leingang, O., Holmes, C., Anders, P., Kaye, R., Riedl, S., Paetzold, J. C., Ezhov, I., Bogunović, H., Schmidt-Erfurth, U., Scholl, H. P. N., Sivaprasad, S., Lotery, A. J., Rueckert, D., & Menten, M. J. (2023). Clustering disease trajectories in contrastive feature space for biomarker proposal in age-related macular degeneration. *MICCAI*, 724–734.",
-  "Menten, M. J., Holland, R., Leingang, O., Bogunović, H., Hagag, A. M., Kaye, R., Riedl, S., Traber, G. L., Hassan, O. N., Pawlowski, N., Glocker, B., Fritsche, L. G., Scholl, H. P. N., Sivaprasad, S., Schmidt-Erfurth, U., Rueckert, D., & Lotery, A. J. (2023). Exploring healthy retinal aging with deep learning. *Ophthalmology Science, 3*(3):100294.",
   "Hager, P., Menten, M. J., & Rueckert, D. (2023). Best of both worlds: Multimodal contrastive learning with tabular and imaging data. *CVPR*, 23924–23935.",
   "Menten, M. J., Paetzold, J. C., Dima, A., Menze, B. H., Knier, B., & Rueckert, D. (2022). Physiology-based simulation of the retinal vasculature enables annotation-free segmentation of OCT angiographs. *MICCAI*, 330–340.",
 ]
@@ -17,6 +19,11 @@ publications = [
   name = "Martin Menten"
   url = "/author/martin-menten/"
 
+[[figures]]
+  file = "figure.png"
+  focus = "center"
+  alt = "A figure showcasing how the research of the AI for Vision group spans ophthalmology, medical imaging, and computer vision."
+  caption = "A figure showcasing how the research of the AI for Vision group spans ophthalmology, medical imaging, and computer vision."
 +++
 The AI for Vision group focuses on blue-sky research in medical image analysis with a particular focus on the application of machine learning and computer vision algorithms in the field of ophthalmology. Specifically, we are working on:
 
