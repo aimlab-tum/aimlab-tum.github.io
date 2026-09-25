@@ -18,6 +18,10 @@ organizations:
 - name: Technical University of Munich
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "ImFusion GmbH (medical imaging software, Munich)"
+current_position_url: "https://www.imfusion.com/"
+
 # Short bio (displayed in user profile at end of posts)
 bio: Huaqi (Harvey) Qiu, PhD is a researcher at the Chair of Artificial Intelligence in Healthcare and Medicine in Technical University of Munich. His research explores the use of modern multi-modal Machine Learning algorithms for preventive sports medicine and sports cardiology using real clinical data.
 
@@ -62,7 +66,7 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Senior Researchers"
+- "Alumni"
 ---
 
 Huaqi (Harvey) Qiu, PhD is a researcher at the Chair of Artificial Intelligence in Healthcare and Medicine in Technical University of Munich. His research explores the use of modern multi-modal Machine Learning algorithms for preventive sports medicine and sports cardiology using real clinical data. Prior to joining the lab, Harvey received his PhD in Computing Research from Imperial College London where he focused on Deformable Image Registration using Deep Learning, with application in cardiac imaging. In his current position, he is also continuing work on medical image registration, with a new focus on building accessible registration tools for modern medical imaging research using deep learning frameworks.
