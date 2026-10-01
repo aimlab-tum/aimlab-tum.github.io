@@ -7,10 +7,8 @@ last_name: "Kaissis"
 authors:
 - Georgios Kaissis
 
-# Old URLs that should keep working: the profile under the old first name, the
-# author page Hugo generates from "G. Kaissis" in publications (its folder has
-# render disabled), and a long-gone "G. A. Kaissis" page that search engines
-# still list.
+# Old URLs that should keep working: the profile under the old first name and a
+# long-gone "G. A. Kaissis" author page that search engines still list.
 aliases:
 - /author/georgios-kaissis/
 - /author/g.-a.-kaissis/
