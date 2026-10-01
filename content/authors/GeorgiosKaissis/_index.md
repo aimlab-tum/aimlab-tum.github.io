@@ -1,27 +1,35 @@
 ---
 # Display name
-title: Georgios Kaissis
+title: George Kaissis
 last_name: "Kaissis"
 
 # Username (this should match the folder name)
 authors:
 - Georgios Kaissis
 
+# Old URLs that should keep working: the profile under the old first name and a
+# long-gone "G. A. Kaissis" author page that search engines still list.
+aliases:
+- /author/georgios-kaissis/
+- /author/g.-a.-kaissis/
+
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position
-role: Research Scientist
+role: Professor of Human-Centred Transformative AI
 
 # Organizations/Affiliations
 organizations:
-- name: Technical University of Munich
-  url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
-- name: Imperial College London
-  url: "https://biomedia.doc.ic.ac.uk"
+- name: Hasso Plattner Institute (HPI)
+  url: "https://hpi.de/en/research/research-groups/digital-health-human-centered-transformative-ai/"
+
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "Hasso Plattner Institute (HPI), Potsdam"
+current_position_url: "https://hpi.de/en/research/research-groups/digital-health-human-centered-transformative-ai/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include image analysis, secure and private artificial intelligence and probabilistic modelling.
+bio: George Kaissis is an alumnus of the Institute for AI and Informatics in Medicine at TUM and now Professor of Human-Centred Transformative AI at the Hasso Plattner Institute (HPI).
 
 interests:
 - Privacy-preserving artificial intelligence
@@ -46,11 +54,8 @@ education:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
-- icon: envelope
+- icon: globe
   icon_pack: fas
-  link: mailto:g.kaissis@tum.de
-- icon: github
-  icon_pack: fab
   link: https://g-k.ai/
 - icon: google-scholar
   icon_pack: ai
@@ -67,7 +72,7 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Senior Researchers"
+- "Alumni"
 ---
 
-Georgios Kaissis is a senior research scientist at the Institute of Artificial Intelligence and Informatics in Medicine and specialist diagnostic radiologist at the Institute for Radiology at TUM, a postdoctoral researcher at the Department of Computing at Imperial College London and leads the Healthcare Unit at OpenMined. His research concentrates on biomedical image analysis with a focus on next-generation privacy-preserving machine learning methods as well as probabilistic methods for the design and deployment of robust, secure, fair and transparent machine learning algorithms to medical imaging workflows.
+George Kaissis is an alumnus of the Institute for AI and Informatics in Medicine at the Technical University of Munich. He is now Professor of Human-Centred Transformative AI at the Hasso Plattner Institute (HPI). For current research and contact information, please see his [personal website](https://g-k.ai/).
