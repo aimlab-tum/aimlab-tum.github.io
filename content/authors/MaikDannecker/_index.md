@@ -59,7 +59,7 @@ email: "m.dannecker@tum.de"
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Researchers"
+- "Alumni"
 ---
 
 Maik Dannecker is a doctoral researcher at the AI in Healthcare and Medicine Chair at the Technical University of Munich (TUM). He received his Bachelor's and Master's degrees in Informatics from TUM. In his Master's thesis he compared classic and deep learning methods for deformable CT lung registration. During his PhD, he is developing methods for the quantification and prediction of abnormal growth patterns of perinatal brains.
