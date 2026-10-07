@@ -64,7 +64,7 @@ email: "robert.graf@tum.de\""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Researchers"
+- "Alumni"
 ---
 
 I'm a Doctoral researcher affiliated with the Institute of Artificial Intelligence in Medicine at the Technical University of Munich (TUM) and the Deep-Spine group (deep-spine.de). I work on Spine image translation, superresolution, registration, and analysis.
