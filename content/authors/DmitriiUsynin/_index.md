@@ -59,7 +59,7 @@ email: "alex.ziller@tum.de"
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Researchers"
+- "Alumni"
 ---
 
 I am a PhD student at the Joint Academy of Doctoral Studies (JADS) launched between Imperial College London and Technical University of Munich. My research interests lie on the intersection of collaborative machine learning (CML) and trustworthy artificial intelligence (TAI). In particular, I am interested in topics such as privacy-preserving machine learning (PPML), attacks on CML, adversarial robustness, federated learning and memorisation in ML. Additionally, I am interested in applications of my research in the domain of collaborative biomedical imaging. Some of my recent works include gradient-based model inversion attacks on collaboratively trained computer vision models (ACM TOPS 2023), low-cost empirical defences against privacy adversaries (PoPETS 2022), a framework for trustworthy collaborative medical image analysis (Nature Machine Intelligence 2021) and an overview of the current state of PPML and attacks on CML (Nature Machine Intelligence 2021). Outside of my PhD, I am an Investment Partner at CreatorFund, leading early-stage deep tech investment in Europe. Previously I was also a privacy researcher at OpenMined, working on federated learning and differential privacy in healthcare. And outside of all that I am a rower and a WSET-certified expert in beer.
