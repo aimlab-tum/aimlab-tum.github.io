@@ -64,7 +64,7 @@ email: "veronika.zimmer@tum.de"
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Senior Researchers"
+- "Alumni"
 ---
 
 Veronika A. Zimmer is a senior research scientist at the Institute of Computer Sciences at TUM and a visiting researcher at the School of Biomedical Engineering & Imaging Sciences at King's College London. She received her PhD in Information and Communication Technologies from the Universitat Pompeu Fabra, Barcelona, Spain, in 2017. Her research focuses on image analysis and machine learning with a particular interest in robust and generalizable methods for multimodal registration and segmentation in medical imaging.
