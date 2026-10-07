@@ -18,6 +18,10 @@ organizations:
 - name: Technical University of Munich
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "Senior Research Scientist at Siemens Healthineers"
+current_position_url: "https://www.siemens-healthineers.com/"
+
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include deep learning in medical imaging as well as prisecure and private AI.
 

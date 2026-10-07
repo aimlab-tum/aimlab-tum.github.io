@@ -18,6 +18,10 @@ organizations:
 - name: Imperial College London
   url: "https://biomedia.doc.ic.ac.uk/person/dmitrii-usynin/"
 
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "Principal AI Research Engineer at CyberDesk"
+current_position_url: "https://www.cyberdesk.app/"
+
 # Short bio (displayed in user profile at end of posts)
 bio: Attacks on machine learning, privacy-preserving machine learning.
 

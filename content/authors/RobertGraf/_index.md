@@ -20,6 +20,10 @@ organizations:
 - name: Institute of AI in Healthcare and Medicine, Technical University of Munich
   url: "https://www.translatum.tum.de/en/translatum/research-groups/daniel-rueckert-ai-in-healthcare-and-medicine/"
 
+# Where they went after the lab (shown on the People widget instead of interests)
+current_position: "Postdoctoral researcher at University Health Network, Toronto"
+current_position_url: "https://www.uhnresearch.ca/"
+
 # Short bio (displayed in user profile at end of posts)
 bio: DL
 
