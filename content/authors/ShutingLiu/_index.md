@@ -57,7 +57,7 @@ email: "shuting.liu@tum.de"
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Researchers"
+- "Alumni"
 ---
 
 Shuting Liu is a Ph.D. student at the Institutes of Radiology and Artificial Intelligence and Informatics in Medicine at the Technical University of Munich (TUM). She received her Master's degree in Tsinghua University, Beijing, China. Her previous research focused on virtual immunohistochemical stain transfer based on Generative Adversarial Network. Her research interests include deep learning for domain transfer and multi-modality images analysis.
