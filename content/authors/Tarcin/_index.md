@@ -22,7 +22,7 @@ organizations:
 bio: One of the lab's two mental health managers.
 
 interests:
-- Reading glasses
+- Reading (papers, mostly)
 - Long walks
 - Supervising lunch
 
