@@ -19,7 +19,8 @@ subtitle = ""
                  "Researchers",
                  "Collaborators",
                  "Visitors",
-                 "Alumni"]
+                 "Alumni",
+                 "Mental Health Managers"]
 
 [design]
   # Show user's social networking links? (true/false)
