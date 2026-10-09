@@ -15,12 +15,12 @@ subtitle = ""
   #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
   user_groups = ["Chair", 
                  "Management",
-                 "Mental Health Managers",
                  "Senior Researchers",
                  "Researchers",
                  "Collaborators",
                  "Visitors",
-                 "Alumni"]
+                 "Alumni",
+                 "Mental Health Managers"]
 
 [design]
   # Show user's social networking links? (true/false)
