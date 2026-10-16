@@ -62,7 +62,7 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Researchers"
+- "Collaborators"
 ---
 
 Clara is a PhD candidate specializing in multimodal machine learning in psychiatry, integrating neuroimaging, genetics, childhood trauma, and behavioural data to identify transdiagnostic risk and resilience signatures and predict psychiatric disease outcomes. She holds an MSc in Psychology & Behavioural Data Science from the University of Amsterdam and has experience in international research collaborations and IT start-ups.
