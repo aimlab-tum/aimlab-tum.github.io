@@ -11,7 +11,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Doctoral researcher
+role: "Affiliated Researcher"
 
 # Organizations/Affiliations
 organizations:
