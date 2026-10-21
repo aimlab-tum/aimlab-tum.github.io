@@ -6,7 +6,7 @@ last_name: "Kalla"
 authors:
 - DanielaKalla
 
-role: "Science Manager"
+role: "Program Coordinator"
 
 organizations:
 - name: "Technical University of Munich"
