@@ -898,3 +898,24 @@ body.dark {
   .ds-teach-cards { grid-template-columns: minmax(0, 1fr); }
   .ds-intro ul { columns: 1; }
 }
+
+/* ---------------------------------------------------------------------------
+   /research/ as an editorial: each area's picture runs out to the edge of the
+   window, on alternating sides, with the full text beside it; the
+   introduction sits at the left, in line with the rows. The theme's container
+   is 960px from 992px up and 1200px from 1200px, with 15px gutters, so the
+   negative margin is the distance from the container's content edge to the
+   window's. Below 992px the rows stack and nothing bleeds.
+   --------------------------------------------------------------------------- */
+.ds-s-research-page .ds-intro { margin-left: 0; }
+
+@media (min-width: 992px) {
+  .ds-ed-row:not(.is-flipped) .ds-ed-media-wrap { margin-left: calc((960px - 100vw) / 2 - 15px); }
+  .ds-ed-row.is-flipped .ds-ed-media-wrap { margin-right: calc((960px - 100vw) / 2 - 15px); }
+  .ds-ed-media { border-radius: 0; }
+}
+
+@media (min-width: 1200px) {
+  .ds-ed-row:not(.is-flipped) .ds-ed-media-wrap { margin-left: calc((1200px - 100vw) / 2 - 15px); }
+  .ds-ed-row.is-flipped .ds-ed-media-wrap { margin-right: calc((1200px - 100vw) / 2 - 15px); }
+}
