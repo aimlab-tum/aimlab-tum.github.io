@@ -1,0 +1,52 @@
+{{/* People on the homepage: the chair, a mosaic of the team, the head count
+     per group and a button to /people/. Alumni and the mental health managers
+     are left to the full list. */}}
+
+{{ $st := .page }}
+{{ $authors := where site.Pages "Section" "authors" }}
+{{ $chair := false }}
+{{ $faces := slice }}
+{{ $counts := slice }}
+{{ $total := 0 }}
+
+{{ range $g := $st.Params.content.user_groups }}
+  {{ $name := lower $g }}
+  {{ if not (or (in $name "alumni") (in $name "mental")) }}
+    {{ $members := sort (where $authors ".Params.user_groups" "intersect" (slice $g)) ".Title" }}
+    {{ $n := len $members }}
+    {{ if gt $n 0 }}
+      {{ $counts = $counts | append (dict "name" $name "n" $n) }}
+      {{ $total = add $total $n }}
+    {{ end }}
+    {{ range $members }}
+      {{ if and (not $chair) (eq $name "chair") }}
+        {{ $chair = . }}
+      {{ else if (.Resources.ByType "image").GetMatch "*avatar*" }}
+        {{ $faces = $faces | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<header class="ds-head"><h1>{{ $st.Title }}</h1></header>
+
+<div class="ds-teaser">
+  {{ with $chair }}
+  <div class="ds-chair">
+    {{ with (.Resources.ByType "image").GetMatch "*avatar*" }}{{ $a := .Fill "240x240 Center q85" }}<img src="{{ $a.RelPermalink }}" width="240" height="240" alt="">{{ end }}
+    <div>
+      <p class="ds-eyebrow">Chair</p>
+      <h3 class="ds-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      {{ with .Params.role }}<p class="ds-meta">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+  <div class="ds-faces">
+    {{ range first 28 $faces }}
+      {{ $a := ((.Resources.ByType "image").GetMatch "*avatar*").Fill "120x120 Center q85" }}
+      <a href="{{ .RelPermalink }}" title="{{ .Title }}"><img src="{{ $a.RelPermalink }}" width="120" height="120" alt="{{ .Title }}" loading="lazy"></a>
+    {{ end }}
+  </div>
+  <p class="ds-counts">{{ range $counts }}<span><b>{{ .n }}</b> {{ .name }}</span>{{ end }}</p>
+  <p><a class="ds-btn ds-btn-ghost" href="{{ "people/" | relURL }}">Meet all {{ $total }} people</a></p>
+</div>

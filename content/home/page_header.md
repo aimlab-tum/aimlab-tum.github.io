@@ -1,7 +1,7 @@
 +++
-# The Welcome section: a photo carousel with the opening lines over it.
-# The heading lives in the body rather than in `title` so that it can sit
-# inside the image band; the rest of the copy follows below it on white.
+# The Welcome section: the retreat photograph edge to edge, the opening lines
+# on a scrim over its left half. The heading lives in the body rather than in
+# `title` so that it can sit inside the picture.
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
@@ -14,20 +14,22 @@ subtitle = ""
   columns = "1"
 +++
 
-<div class="hero-band">
+<div class="ds-hero ds-hero-image">
 
-<figure class="hero-shot" style="--scrim:0.62; --focal:56%">
-  <img src="/media/lab_retreat_winter-2560.jpg"
-       srcset="/media/lab_retreat_winter-1280.jpg 1280w, /media/lab_retreat_winter-1920.jpg 1920w, /media/lab_retreat_winter-2560.jpg 2560w"
-       sizes="100vw"
-       alt="The lab on a winter retreat in the Alps" width="2560" height="1920">
+<figure class="ds-hero-shot">
+  <div class="ds-media ds-hero-media is-figure">
+    <img src="/media/lab_retreat_winter-2560.jpg"
+         srcset="/media/lab_retreat_winter-1280.jpg 1280w, /media/lab_retreat_winter-1920.jpg 1920w, /media/lab_retreat_winter-2560.jpg 2560w"
+         sizes="100vw"
+         alt="The lab on a winter retreat in the Alps" width="2560" height="1920">
+  </div>
 </figure>
 
-<div class="hero-inner">
-  <div class="hero-copy">
+<div class="ds-hero-inner container">
+  <div class="ds-hero-copy">
     <h1>Welcome</h1>
-    <p class="hero-tagline">Chair of AI in Healthcare and Medicine</p>
-    <p class="hero-lead">Our interdisciplinary team from computer science, engineering and medicine develops
+    <p class="ds-hero-tagline">Chair of AI in Healthcare and Medicine</p>
+    <p class="ds-hero-lead">Our interdisciplinary team from computer science, engineering and medicine develops
     algorithms and methods for the analysis and interpretation of biomedical data.</p>
     <p class="hero-social">
       <a href="https://www.linkedin.com/company/tum-aim-lab" target="_blank" rel="noopener" aria-label="The lab on LinkedIn" title="LinkedIn">
@@ -41,4 +43,3 @@ subtitle = ""
 </div>
 
 </div>
-

@@ -2,6 +2,12 @@
 title = "AI for vision"
 weight = 40
 
+# The photograph on the area's tile (homepage) and beside its text on
+# /research/, from assets/images. Without one the first figure stands in.
+[card]
+  image = "images/vision.jpg"
+  alt = "A retinal fundus image beside an OCT scan and its thickness profile"
+
 publications = [
   "Kreitner, L., Hager, P., Mengedoht, J., Kaissis, G., Rueckert, D., & Menten, M. J. (2026). Efficient numeracy in language models through single-token number embeddings. *ICML*.",
   "Mildenberger, D., Hager, P., Rueckert, D., & Menten, M. J. (2025). A tale of two classes: Adapting supervised contrastive learning to binary imbalanced datasets. *CVPR*, 10305–10314.",

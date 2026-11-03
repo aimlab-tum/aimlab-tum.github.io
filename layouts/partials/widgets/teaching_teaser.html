@@ -1,0 +1,25 @@
+{{/* Teaching on the homepage: the opening line of the /teaching/ page and the
+     two things a prospective student can act on, each a card. The cards are
+     `content.cards` in content/home/teaching.md. */}}
+
+{{ $st := .page }}
+{{ $t := site.GetPage "/teaching" }}
+
+<header class="ds-head"><h1>{{ $st.Title }}</h1></header>
+
+<div class="ds-teach">
+  {{ with $t }}{{ with findRE "(?s)<p>.*?</p>" .Content 1 }}<p class="ds-teach-lead">{{ index . 0 | plainify | htmlUnescape }}</p>{{ end }}{{ end }}
+  <div class="ds-teach-cards">
+    {{ range $st.Params.content.cards }}
+    {{ $url := $t.RelPermalink }}{{ $ext := false }}
+    {{ with .url }}{{ $url = . }}{{ $ext = hasPrefix . "http" }}{{ end }}
+    <a class="ds-teach-card" href="{{ $url }}"{{ if $ext }} target="_blank" rel="noopener"{{ end }}>
+      <span class="ds-eyebrow">{{ .eyebrow }}</span>
+      <span class="ds-teach-title">{{ .title }}</span>
+      <span class="ds-action">{{ .action }} <span aria-hidden="true">→</span></span>
+    </a>
+    {{ end }}
+  </div>
+</div>
+
+{{ with $t }}<p class="ds-section-more"><a class="ds-action" href="{{ .RelPermalink }}">Courses, programmes and theses <span aria-hidden="true">→</span></a></p>{{ end }}

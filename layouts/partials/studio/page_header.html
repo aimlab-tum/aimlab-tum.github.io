@@ -1,0 +1,8 @@
+{{/* The band at the top of a page: breadcrumb, title and a line under it. */}}
+<header class="ds-page-header">
+  <div class="container">
+    <nav class="ds-crumbs" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .title }}</span></nav>
+    <h1>{{ .title }}</h1>
+    {{ with .sub }}<p class="ds-sub">{{ . }}</p>{{ end }}
+  </div>
+</header>

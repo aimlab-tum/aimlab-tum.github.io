@@ -2,6 +2,12 @@
 title = "Privacy-preserving and trustworthy AI in medicine"
 weight = 30
 
+# The photograph on the area's tile (homepage) and beside its text on
+# /research/, from assets/images. Without one the first figure stands in.
+[card]
+  image = "images/privacy.jpg"
+  alt = "A padlock on a shelf of patient files"
+
 publications = [
   "Kaiser, J., Ziller, A., Triantafillou, E., Rückert, D., & Kaissis, G. (2026). Your Privacy Depends on Others: Collusion Vulnerabilities in Individual Differential Privacy. *4th IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)*.",
   "Lockfisch, S., Schwethelm, K., Menten, M., Braren, R., Rueckert, D., Ziller, A., & Kaissis, G. (2025). On Arbitrary Predictions from Equally Valid Models. *AAAI Workshop on Navigating Model Uncertainty and the Rashomon Effect (MURE)*.",
