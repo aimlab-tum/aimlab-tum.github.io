@@ -12,10 +12,11 @@
   url = "/research/"
   weight = 20
 
-[[main]]
-  name = "Publications"
-  url = "/publications/"
-  weight = 25
+# Publications is kept off the bar for now; the page itself is still at /publications/.
+# [[main]]
+#   name = "Publications"
+#   url = "/publications/"
+#   weight = 25
 
 [[main]]
   name = "News"
