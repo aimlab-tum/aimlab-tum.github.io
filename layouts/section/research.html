@@ -1,6 +1,6 @@
 {{- define "main" -}}
 {{/* /research/: every area in full - the picture on one side, the number,
-     leads, text and key publications on the other, alternating sides. Each
+     leads and text on the other, alternating sides. Each
      area keeps the anchor the homepage tiles link to, so
      /research/#ai-for-vision lands on the right one. The introduction in
      content/research/_index.md is the homepage's; it is not shown here. */}}
@@ -23,12 +23,6 @@
             {{ with $people }}<p class="ds-kicker">{{ range $n, $l := . }}{{ if $n }} · {{ end }}<a href="{{ $l.url }}">{{ $l.name }}</a>{{ end }}</p>{{ end }}
             <h2 class="ds-title ds-ed-title" id="{{ anchorize $a.Title }}">{{ $a.Title }}</h2>
             <div class="ds-prose">{{ $a.Content }}</div>
-            {{ with $a.Params.publications }}
-            <details class="rw-pubs">
-              <summary>Key publications ({{ len . }})</summary>
-              <ul>{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
-            </details>
-            {{ end }}
           </div>
         </article>
         {{ end }}

@@ -458,10 +458,6 @@
     border-color: #44475a;
   }
 
-  /* The key-publications list, for the no-script stack where a slide's own
-     colours are not in play. */
-  .rw-pubs li { color: rgba(248, 248, 242, .54); }
-
   /* Borders drawn for a white page and left on a dark one: the pagination on
      the people and theses listings, and the publication filters. A field's own
      ground is #44475a, so its edge has to be a step lighter than that to read
@@ -612,28 +608,9 @@ body.dark {
   margin: 0 0 .9rem;
 }
 .ds-prose p,
-.ds-prose li { font-size: .95rem; line-height: 1.68; }
+.ds-prose li { font-size: 1.05rem; line-height: 1.7; }
 .ds-prose ul { padding-left: 1.2rem; }
 .ds-prose > :last-child { margin-bottom: 0; }
-
-.ds-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .5em;
-  padding: .62em 1.2em;
-  font-family: 'Roboto', sans-serif;
-  font-size: .82rem;
-  font-weight: 500;
-  letter-spacing: .01em;
-  line-height: 1.2;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  cursor: pointer;
-  text-decoration: none !important;
-  transition: background-color .2s, color .2s, border-color .2s;
-}
-.ds-btn-ghost { border-color: currentColor; color: var(--ds-ink); background: transparent; }
-.ds-btn-ghost:hover { color: var(--ds-accent); }
 
 /* ---------------------------------------------------------- pictures */
 
@@ -756,13 +733,13 @@ body.dark {
 .ds-editorial { display: flex; flex-direction: column; gap: clamp(3rem, 6vw, 5.5rem); }
 .ds-ed-row {
   display: grid;
-  /* The picture takes about a third of the row plus its bleed to the window's
-     edge - a quarter less than the studio's half-and-half split. */
-  grid-template-columns: minmax(0, .55fr) minmax(0, 1fr);
+  /* The picture takes under a third of the row plus its bleed to the window's
+     edge; the text has the rest. */
+  grid-template-columns: minmax(0, .45fr) minmax(0, 1fr);
   gap: clamp(2rem, 4vw, 3.75rem);
   align-items: start;
 }
-.ds-ed-row.is-flipped { grid-template-columns: minmax(0, 1fr) minmax(0, .55fr); }
+.ds-ed-row.is-flipped { grid-template-columns: minmax(0, 1fr) minmax(0, .45fr); }
 .ds-ed-row.is-flipped .ds-ed-media-wrap { order: 2; }
 .ds-ed-media-wrap { position: sticky; top: calc(var(--ds-nav-h) + 1.5rem); }
 .ds-ed-media { aspect-ratio: 1.3333; }
@@ -776,11 +753,6 @@ body.dark {
 }
 .ds-ed-body .ds-prose { margin-top: 1.1rem; }
 
-.rw-pubs { margin-top: 1.125rem; border-top: 1px solid var(--ds-line); padding-top: .75rem; }
-.rw-pubs summary { cursor: pointer; font-weight: 500; }
-.rw-pubs ul { margin: .75rem 0 0; padding-left: 1.1rem; }
-.rw-pubs li { margin-bottom: .5rem; font-size: .875rem; color: var(--ds-muted); }
-
 /* ---------------------------------------------------------------- news */
 
 .ds-news-wrap {
@@ -792,17 +764,44 @@ body.dark {
 
 /* -------------------------------------------------------------- people */
 
+/* The chair large on the left, the management on the right, everyone else's
+   face in a row underneath. */
 .ds-teaser {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
-  gap: 1.5rem 3.25rem;
+  gap: 2rem 3.25rem;
   align-items: center;
 }
 .ds-chair { display: flex; gap: 1.3rem; align-items: center; }
 .ds-chair img { width: 6.6rem; height: 6.6rem; border-radius: 50%; object-fit: cover; flex: none; }
 .ds-chair .ds-eyebrow { margin-bottom: .35rem; }
 .ds-chair .ds-title { font-size: 1.25rem; }
-.ds-faces { display: flex; flex-wrap: wrap; gap: .4rem; }
+
+.ds-pgrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr));
+  gap: .95rem 1.6rem;
+}
+.ds-person { display: flex; gap: .8rem; align-items: center; min-width: 0; }
+.ds-avatar { width: 3.1rem; height: 3.1rem; border-radius: 50%; object-fit: cover; flex: none; background: var(--ds-bg-alt); }
+.ds-avatar-empty { display: inline-flex; align-items: center; justify-content: center; color: var(--ds-muted); font-weight: 600; }
+.ds-p-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.3; }
+.ds-p-name { font-size: .88rem; font-weight: 500; }
+.ds-p-name a { color: var(--ds-head); text-decoration: none; }
+.ds-p-name a:hover { color: var(--ds-accent); }
+.ds-p-role {
+  font-size: .72rem;
+  color: var(--ds-muted);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.ds-faces { grid-column-start: 1; grid-column-end: -1; display: flex; flex-wrap: wrap; gap: .4rem; }
 .ds-faces img {
   width: 2.8rem;
   height: 2.8rem;
@@ -812,18 +811,6 @@ body.dark {
   display: block;
 }
 .ds-faces a:hover img { transform: scale(1.12); }
-.ds-counts {
-  grid-column-start: 1;
-  grid-column-end: -1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem 1.6rem;
-  margin: 0;
-  font-size: .82rem;
-  color: var(--ds-muted);
-}
-.ds-counts b { color: var(--ds-head); font-weight: 600; }
-.ds-teaser > p:last-child { grid-column-start: 1; grid-column-end: -1; margin: 0; }
 
 /* ------------------------------------------------------------ teaching */
 
