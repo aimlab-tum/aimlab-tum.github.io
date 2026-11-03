@@ -1,6 +1,6 @@
 +++
 title = "AI for vision"
-weight = 40
+weight = 30
 
 # The photograph on the area's tile (homepage) and beside its text on
 # /research/, from assets/images. Without one the first figure stands in.

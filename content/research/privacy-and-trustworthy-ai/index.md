@@ -1,6 +1,6 @@
 +++
 title = "Privacy-preserving and trustworthy AI in medicine"
-weight = 30
+weight = 40
 
 # The photograph on the area's tile (homepage) and beside its text on
 # /research/, from assets/images. Without one the first figure stands in.
