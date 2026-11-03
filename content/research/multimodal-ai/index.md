@@ -2,6 +2,10 @@
 title = "Multimodal AI"
 weight = 35
 
+# Kept but not shown: the site lists the four original areas. Remove this
+# line to publish it.
+draft = true
+
 publications = [
   "Müller, P., Jungmann, F., Kaissis, G., & Rueckert, D. (2026). A structured, tagged, and localized visual question answering dataset with full sentence answers and scene graphs for chest X-ray images. *ICLR*.",
   "Cenikj, N., Turgut, Ö., Müller, A., Steger, A., Kehrer, J., Brugger, M., Rueckert, D., Martens, E., & Müller, P. (2026). Multi-view stenosis classification leveraging transformer-based multiple-instance learning using real-world clinical data. *IEEE Transactions on Medical Imaging*.",

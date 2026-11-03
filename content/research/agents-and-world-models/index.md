@@ -2,6 +2,10 @@
 title = "Agents and World Models in Health"
 weight = 60
 
+# Kept but not shown: the site lists the four original areas. Remove this
+# line to publish it.
+draft = true
+
 publications = [
   "Pan, J., Jian, B., Hager, P., Zhang, Y., Liu, C., Jungmann, F., Li, H. B., Canisius, J., You, C., Wu, J., Zhu, J., Liu, F., Liu, Y., Bubeck, N., Knolle, M., Chen, C., Wachinger, C., Gong, Z., Ouyang, C., Kaissis, G., Wiestler, B., & Rueckert, D. (2026). [Addressing Benchmarking Gaps in Large Language Models for Health and Medicine with Dynamic Red-Teaming](https://www.nature.com/articles/s44360-026-00152-8). *Nature Health*.",
   "Wu, J., Zhu, J., Liu, F., Hu, M., & Pan, J. (2026). [J-CoT: Chain-of-Thought in J-Space](https://arxiv.org/abs/2607.21981). Preprint, arXiv:2607.21981.",

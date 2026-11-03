@@ -1,6 +1,6 @@
 {{/* Research on the homepage.
 
-     The introduction's opening paragraph and list come from the /research/
+     The introduction's opening paragraph comes from the /research/
      page (content/research/_index.md); the tiles are the areas under it, in
      `weight` order, the first one large. Each tile links to its own part of
      /research/. The picture is the area's `card.image` (a photograph in
@@ -17,7 +17,6 @@
 {{ with $research.Content }}
 <div class="ds-intro">
   {{ with findRE "(?s)<p>.*?</p>" . 1 }}{{ index . 0 | safeHTML }}{{ end }}
-  {{ with findRE "(?s)<ul>.*?</ul>" . 1 }}{{ index . 0 | safeHTML }}{{ end }}
 </div>
 {{ end }}
 

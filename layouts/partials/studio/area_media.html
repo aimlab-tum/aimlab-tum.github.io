@@ -10,6 +10,8 @@
 {{ $img := false }}
 {{ $figure := false }}
 {{ with $p.Params.card }}{{ with .image }}{{ with resources.Get . }}{{ $img = . }}{{ end }}{{ end }}{{ end }}
+{{/* `figure.png` first, since `figure-2.png` sorts ahead of it. */}}
+{{ if not $img }}{{ with $p.Resources.GetMatch "figure.*" }}{{ $img = . }}{{ $figure = true }}{{ end }}{{ end }}
 {{ if not $img }}{{ with $p.Resources.GetMatch "figure*" }}{{ $img = . }}{{ $figure = true }}{{ end }}{{ end }}
 
 {{ if $img }}
