@@ -1,14 +1,7 @@
 {{- define "main" -}}
 {{/* /people/: the theme's People widget - every group in content/people.md -
-     under a page header that counts them. */}}
-{{ $authors := where site.Pages "Section" "authors" }}
-{{ $total := 0 }}
-{{ $groups := 0 }}
-{{ range .Params.content.user_groups }}
-  {{ $n := len (where $authors ".Params.user_groups" "intersect" (slice .)) }}
-  {{ if gt $n 0 }}{{ $total = add $total $n }}{{ $groups = add $groups 1 }}{{ end }}
-{{ end }}
-{{ partial "studio/page_header.html" (dict "title" .Title "sub" (printf "%d people across %d groups" $total $groups)) }}
+     under a page header. */}}
+{{ partial "studio/page_header.html" (dict "title" .Title) }}
 <section class="home-section ds-section ds-in-page">
   <div class="container">
     {{ partial "widgets/people.html" (dict "root" . "page" . "hash_id" "people") }}
