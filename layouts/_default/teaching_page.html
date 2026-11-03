@@ -45,7 +45,8 @@
         <div class="tp-rows">
           {{ $last := "" }}
           {{ range $c := $s.courses }}
-            <div class="tp-type">{{ if ne $c.type $last }}{{ $c.type }}{{ end }}</div>
+            {{/* The type is written in the singular in the data and shown in the plural. */}}
+            <div class="tp-type">{{ if ne $c.type $last }}{{ index (dict "Practical" "Practicals" "Lecture" "Lectures" "Seminar" "Seminars") $c.type | default $c.type }}{{ end }}</div>
             <div class="tp-course">{{ with $c.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $c.title }}</a>{{ else }}{{ $c.title }}{{ end }}{{ with $c.note }} <span class="tp-note">— {{ . }}</span>{{ end }}</div>
             <div class="tp-code">{{ replace $c.code ", " " · " }}</div>
             {{ $last = $c.type }}

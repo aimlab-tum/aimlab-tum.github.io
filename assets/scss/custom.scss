@@ -962,16 +962,15 @@ body.dark {
   background: var(--ds-accent-soft);
 }
 .tp-rows { display: grid; grid-template-columns: 6rem minmax(0, 1fr) auto; column-gap: 1.25rem; }
-.tp-rows > div { padding: .5rem 0; border-bottom: 1px solid var(--ds-line); font-size: .98rem; line-height: 1.45; }
-.tp-rows > div:nth-last-child(-n+3) { border-bottom: 0; }
-.tp-type { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ds-muted); padding-top: .7rem; }
+.tp-rows > div { padding: .38rem 0; font-size: .98rem; line-height: 1.45; }
+.tp-type { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ds-muted); padding-top: .62rem; }
 .tp-code {
   font-size: .82rem;
   color: var(--ds-muted);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   text-align: right;
-  padding-top: .62rem;
+  padding-top: .52rem;
 }
 .tp-note { font-size: .85rem; color: var(--ds-muted); font-style: italic; }
 .tp-sem.is-past { opacity: .8; }
