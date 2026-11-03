@@ -15,12 +15,7 @@ publications = [
   "Zhang, Y., Chen, C., Shit, S., Starck, S., Rueckert, D., & Pan, J. (2024). Whole heart 3D+t representation learning through sparse 2D cardiac MR images. *MICCAI* (pp. 359–369). Springer.",
 ]
 
-# Each lead is a name and the author page it links to.
-[[leads]]
-  name = "Huaqi (Harvey) Qiu"
-  url = "/author/huaqi-harvey-qiu/"
-
-# Senior researchers working in this area, shown under the leads on /research/.
+# The people of this area, named on its tile and on /research/ (leads first).
 [[researchers]]
   name = "Jiazhen Pan"
   url = "/author/jiazhen-pan/"

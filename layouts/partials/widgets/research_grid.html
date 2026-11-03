@@ -26,7 +26,8 @@
     <a class="ds-tile ds-item" href="{{ $research.RelPermalink }}#{{ anchorize $area.Title }}">
       {{ partial "studio/area_media.html" (dict "page" $area "cls" "ds-tile-media" "fill" (cond (eq $i 0) "1400x940" "900x600")) }}
       <div class="ds-tile-cap">
-        {{ with $area.Params.leads }}<p class="ds-kicker">{{ range $n, $l := . }}{{ if $n }} · {{ end }}{{ $l.name }}{{ end }}</p>{{ end }}
+        {{ $people := $area.Params.leads | default slice }}{{ with $area.Params.researchers }}{{ $people = $people | append . }}{{ end }}
+        {{ with $people }}<p class="ds-kicker">{{ range $n, $l := . }}{{ if $n }} · {{ end }}{{ $l.name }}{{ end }}</p>{{ end }}
         <h3 class="ds-title">{{ $area.Title }}</h3>
       </div>
     </a>

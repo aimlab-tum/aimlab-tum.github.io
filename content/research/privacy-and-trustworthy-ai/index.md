@@ -32,7 +32,7 @@ publications = [
   name = "Alexander Ziller"
   url = "/author/alexander-ziller/"
 
-# Senior researchers working in this area, shown under the leads on /research/.
+# The people of this area, named on its tile and on /research/ (leads first).
 [[researchers]]
   name = "Raphael Rehms"
   url = "/author/raphael-rehms/"
