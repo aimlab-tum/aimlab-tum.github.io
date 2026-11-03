@@ -854,6 +854,23 @@ body.dark {
 /* Vacancies: the page's text, full width, with its two small headings. */
 .ds-vacancies h3 { font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 .5rem; }
 
+/* Contact on the homepage: the theme's widget puts its heading in a narrow
+   left column; here it sits centred above the details like every other
+   section, and the details block is centred under it. */
+#contact .section-heading {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+#contact .section-heading h1 { font-size: 2.25rem; margin: 0; }
+#contact .section-heading + .col-lg-8 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /* ---------------------------------------------------------------- pages */
 
 .ds-page-header {
