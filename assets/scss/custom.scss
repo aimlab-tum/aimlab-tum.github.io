@@ -756,10 +756,13 @@ body.dark {
 .ds-editorial { display: flex; flex-direction: column; gap: clamp(3rem, 6vw, 5.5rem); }
 .ds-ed-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  /* The picture takes about a third of the row plus its bleed to the window's
+     edge - a quarter less than the studio's half-and-half split. */
+  grid-template-columns: minmax(0, .55fr) minmax(0, 1fr);
   gap: clamp(2rem, 4vw, 3.75rem);
   align-items: start;
 }
+.ds-ed-row.is-flipped { grid-template-columns: minmax(0, 1fr) minmax(0, .55fr); }
 .ds-ed-row.is-flipped .ds-ed-media-wrap { order: 2; }
 .ds-ed-media-wrap { position: sticky; top: calc(var(--ds-nav-h) + 1.5rem); }
 .ds-ed-media { aspect-ratio: 1.3333; }
