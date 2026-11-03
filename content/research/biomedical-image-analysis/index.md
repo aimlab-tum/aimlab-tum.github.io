@@ -2,6 +2,12 @@
 title = "AI for biomedical image analysis and interpretation"
 weight = 10
 
+# The photograph on the area's tile (homepage) and beside its text on
+# /research/, from assets/images. Without one the first figure stands in.
+[card]
+  image = "images/analysis_interpretation.jpg"
+  alt = "A radiologist reading brain and spine scans across a row of monitors"
+
 publications = [
   "Hager, P., Jungmann, F., Holland, R., Bhagat, K., Hubrecht, I., Knauer, M.M., Vielhauer, J., Makowski, M., Braren, R., Kaissis, G., & Rueckert, D. (2024). Evaluation and mitigation of the limitations of large language models in clinical decision-making. *Nature Medicine, 30*, 2613–2622.",
   "Dima, A.F., Zimmer, V.A., Menten, M.J., Li, H.B., Graf, M., Lemke, T., Raffler, P., Graf, R., Kirschke, J.S., Braren, R.F., & Rueckert, D. (2023). 3D Arterial Segmentation via Single 2D Projections and Depth Supervision in Contrast-Enhanced CT Images. *MICCAI*.",
