@@ -1,13 +1,12 @@
 +++
-# "Work with us" on the homepage: the current state of the vacancies, quoted
-# from the paragraph under "Current vacancies" in content/vacancies.md, and a
-# link to that page.
-widget = "vacancies_teaser"
+# Vacancies on the homepage: the text of content/vacancies.md, under a
+# centred heading.
+widget = "vacancies"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 70  # Order that this section will appear.
 
-title = "Work with us"
+title = "Vacancies"
 subtitle = ""
 
 [advanced]

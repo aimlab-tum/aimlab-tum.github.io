@@ -1,0 +1,10 @@
+{{/* Vacancies on the homepage: the text of the /vacancies/ page as it is,
+     under a centred heading. */}}
+
+{{ $st := .page }}
+
+<header class="ds-head"><h1>{{ $st.Title }}</h1></header>
+
+{{ with site.GetPage "/vacancies" }}
+<div class="ds-prose ds-vacancies">{{ .Content }}</div>
+{{ end }}
