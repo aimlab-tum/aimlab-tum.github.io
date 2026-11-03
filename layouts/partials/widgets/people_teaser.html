@@ -38,7 +38,9 @@
   </div>
   {{ end }}
   {{ with $management }}
-  <ul class="ds-pgrid ds-management">
+  <div class="ds-management">
+  <p class="ds-eyebrow">Management</p>
+  <ul class="ds-pgrid">
     {{ range . }}
     <li class="ds-person">
       {{ with (.Resources.ByType "image").GetMatch "*avatar*" }}{{ $a := .Fill "120x120 Center q85" }}<img class="ds-avatar" src="{{ $a.RelPermalink }}" width="120" height="120" alt="" loading="lazy">{{ else }}<span class="ds-avatar ds-avatar-empty" aria-hidden="true">{{ substr .Title 0 1 }}</span>{{ end }}
@@ -49,12 +51,16 @@
     </li>
     {{ end }}
   </ul>
+  </div>
   {{ end }}
+  <div class="ds-team">
+  <p class="ds-eyebrow">Researchers</p>
   <div class="ds-faces">
     {{ range $faces }}
       {{ $a := ((.Resources.ByType "image").GetMatch "*avatar*").Fill "120x120 Center q85" }}
       <a href="{{ .RelPermalink }}" title="{{ .Title }}"><img src="{{ $a.RelPermalink }}" width="120" height="120" alt="{{ .Title }}" loading="lazy"></a>
     {{ end }}
+  </div>
   </div>
 </div>
 

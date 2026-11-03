@@ -801,7 +801,11 @@ body.dark {
   -webkit-box-orient: vertical;
 }
 
-.ds-faces { grid-column-start: 1; grid-column-end: -1; display: flex; flex-wrap: wrap; gap: .4rem; }
+/* The two groups carry the same small heading as the chair. */
+.ds-management .ds-eyebrow,
+.ds-team .ds-eyebrow { margin-bottom: .75rem; }
+.ds-team { grid-column-start: 1; grid-column-end: -1; }
+.ds-faces { display: flex; flex-wrap: wrap; gap: .4rem; }
 .ds-faces img {
   width: 2.8rem;
   height: 2.8rem;
