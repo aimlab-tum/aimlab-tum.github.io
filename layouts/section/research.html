@@ -20,6 +20,7 @@
           <div class="ds-ed-body">
             <p class="ds-number">{{ printf "%02d" (add $i 1) }}</p>
             {{ with $a.Params.leads }}<p class="ds-kicker">{{ range $n, $l := . }}{{ if $n }} · {{ end }}<a href="{{ $l.url }}">{{ $l.name }}</a>{{ end }}</p>{{ end }}
+            {{ with $a.Params.researchers }}<p class="ds-kicker ds-kicker-with">With {{ range $n, $r := . }}{{ if $n }} · {{ end }}<a href="{{ $r.url }}">{{ $r.name }}</a>{{ end }}</p>{{ end }}
             <h2 class="ds-title ds-ed-title" id="{{ anchorize $a.Title }}">{{ $a.Title }}</h2>
             <div class="ds-prose">{{ $a.Content }}</div>
             {{ with $a.Params.publications }}

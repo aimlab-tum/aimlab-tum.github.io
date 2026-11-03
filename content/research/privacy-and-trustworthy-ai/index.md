@@ -32,6 +32,12 @@ publications = [
   name = "Alexander Ziller"
   url = "/author/alexander-ziller/"
 
+# Senior researchers working in this area, shown under the leads on /research/.
+[[researchers]]
+  name = "Raphael Rehms"
+  url = "/author/raphael-rehms/"
+
+
 # Figures live beside this file. The first is the one the slide shows;
 # the rest are kept with their captions for whatever shows them next.
 [[figures]]

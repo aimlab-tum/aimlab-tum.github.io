@@ -20,6 +20,24 @@ publications = [
   name = "Huaqi (Harvey) Qiu"
   url = "/author/huaqi-harvey-qiu/"
 
+# Senior researchers working in this area, shown under the leads on /research/.
+[[researchers]]
+  name = "Jiazhen Pan"
+  url = "/author/jiazhen-pan/"
+
+[[researchers]]
+  name = "Julian Suk"
+  url = "/author/julian-suk/"
+
+[[researchers]]
+  name = "Paula A. Perez-Toro"
+  url = "/author/paula-a.-perez-toro/"
+
+[[researchers]]
+  name = "Philip Müller"
+  url = "/author/philip-muller/"
+
+
 # Figures live beside this file. The first is the one the slide shows;
 # the rest are kept with their captions for whatever shows them next.
 [[figures]]
