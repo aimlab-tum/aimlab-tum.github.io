@@ -564,6 +564,8 @@ body.dark {
 }
 
 .ds-intro { max-width: 50rem; margin: 0 auto 2.75rem; }
+/* On the homepage the introduction runs the full width of the tiles below it. */
+.wg-research-grid .ds-intro { max-width: none; }
 .ds-intro p { font-size: 1rem; }
 .ds-intro ul {
   columns: 2;
