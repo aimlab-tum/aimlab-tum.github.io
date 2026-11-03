@@ -820,14 +820,9 @@ body.dark {
 
 /* ------------------------------------------------------------ teaching */
 
-.ds-teach {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
-  gap: 2.75rem;
-  align-items: start;
-}
-.ds-teach-lead { margin: 0; }
-.ds-teach-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+/* The opening line across the full width, three cards under it. */
+.ds-teach-lead { margin: 0 0 2rem; font-size: 1.05rem; }
+.ds-teach-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .ds-teach-card {
   display: flex;
   flex-direction: column;
@@ -897,8 +892,8 @@ body.dark {
 @media (max-width: 991.98px) {
   .ds-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ds-news-wrap,
-  .ds-teach,
   .ds-ed-row { grid-template-columns: minmax(0, 1fr); }
+  .ds-teach-cards { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 767.98px) {
@@ -908,7 +903,6 @@ body.dark {
   .ds-teaser { grid-template-columns: minmax(0, 1fr); }
   .ds-ed-row.is-flipped .ds-ed-media-wrap { order: 0; }
   .ds-ed-media-wrap { position: static; }
-  .ds-teach-cards { grid-template-columns: minmax(0, 1fr); }
   .ds-intro ul { columns: 1; }
 }
 

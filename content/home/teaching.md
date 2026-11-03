@@ -1,6 +1,6 @@
 +++
-# Teaching on the homepage: the opening line of the /teaching/ page and the
-# two things a prospective student can act on. The courses, the semester
+# Teaching on the homepage: the opening line of the /teaching/ page and three
+# cards - the courses, the programme and the theses. The courses, the semester
 # picker and the full programme text are in content/teaching.md.
 widget = "teaching_teaser"
 headless = true  # This file represents a page section.
@@ -10,7 +10,12 @@ weight = 60  # Order that this section will appear.
 title = "Teaching"
 subtitle = ""
 
-# The two cards. Leave `url` out to send a card to the /teaching/ page.
+# The three cards. Leave `url` out to send a card to the /teaching/ page.
+[[content.cards]]
+  eyebrow = "Courses and programmes"
+  title = "Lectures, seminars and practicals"
+  action = "This semester's courses"
+
 [[content.cards]]
   eyebrow = "Elite Master's programme"
   title = "AI in Biomedicine"

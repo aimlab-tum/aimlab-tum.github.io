@@ -1,6 +1,7 @@
-{{/* Teaching on the homepage: the opening line of the /teaching/ page and the
-     two things a prospective student can act on, each a card. The cards are
-     `content.cards` in content/home/teaching.md. */}}
+{{/* Teaching on the homepage: the opening line of the /teaching/ page, then
+     three cards - the courses, the programme and the theses. The cards are
+     `content.cards` in content/home/teaching.md; a card without a `url`
+     leads to /teaching/. */}}
 
 {{ $st := .page }}
 {{ $t := site.GetPage "/teaching" }}
@@ -21,5 +22,3 @@
     {{ end }}
   </div>
 </div>
-
-{{ with $t }}<p class="ds-section-more"><a class="ds-action" href="{{ .RelPermalink }}">Courses, programmes and theses <span aria-hidden="true">→</span></a></p>{{ end }}
