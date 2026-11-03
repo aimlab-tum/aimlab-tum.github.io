@@ -766,17 +766,17 @@ body.dark {
 
 /* -------------------------------------------------------------- people */
 
-/* The chair large on the left, the management on the right, everyone else's
-   face in a row underneath. */
+/* The chair large on the left, the management on the right in a row of
+   three and a row of two, both blocks starting at the same line under their
+   small headings; everyone else's face in a row underneath. */
 .ds-teaser {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
   gap: 2rem 3.25rem;
-  align-items: center;
+  align-items: start;
 }
-.ds-chair { display: flex; gap: 1.3rem; align-items: center; }
+.ds-chair-card { display: flex; gap: 1.3rem; align-items: center; }
 .ds-chair img { width: 6.6rem; height: 6.6rem; border-radius: 50%; object-fit: cover; flex: none; }
-.ds-chair .ds-eyebrow { margin-bottom: .35rem; }
 .ds-chair .ds-title { font-size: 1.25rem; }
 
 .ds-pgrid {
@@ -784,8 +784,8 @@ body.dark {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr));
-  gap: .95rem 1.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .95rem 1rem;
 }
 .ds-person { display: flex; gap: .8rem; align-items: center; min-width: 0; }
 .ds-avatar { width: 3.1rem; height: 3.1rem; border-radius: 50%; object-fit: cover; flex: none; background: var(--ds-bg-alt); }
@@ -803,7 +803,8 @@ body.dark {
   -webkit-box-orient: vertical;
 }
 
-/* The two groups carry the same small heading as the chair. */
+/* The three groups carry the same small heading. */
+.ds-chair .ds-eyebrow,
 .ds-management .ds-eyebrow,
 .ds-team .ds-eyebrow { margin-bottom: .75rem; }
 .ds-team { grid-column-start: 1; grid-column-end: -1; }
@@ -901,6 +902,7 @@ body.dark {
   .ds-grid,
   .ds-grid[data-n] { grid-auto-rows: 11rem; }
   .ds-teaser { grid-template-columns: minmax(0, 1fr); }
+  .ds-pgrid { grid-template-columns: minmax(0, 1fr); }
   .ds-ed-row.is-flipped .ds-ed-media-wrap { order: 0; }
   .ds-ed-media-wrap { position: static; }
   .ds-intro ul { columns: 1; }

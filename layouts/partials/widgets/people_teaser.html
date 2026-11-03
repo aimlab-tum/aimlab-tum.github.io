@@ -29,11 +29,13 @@
 <div class="ds-teaser">
   {{ with $chair }}
   <div class="ds-chair">
-    {{ with (.Resources.ByType "image").GetMatch "*avatar*" }}{{ $a := .Fill "240x240 Center q85" }}<img src="{{ $a.RelPermalink }}" width="240" height="240" alt="">{{ end }}
-    <div>
-      <p class="ds-eyebrow">Chair</p>
-      <h3 class="ds-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      {{ with .Params.role }}<p class="ds-meta">{{ . }}</p>{{ end }}
+    <p class="ds-eyebrow">Chair</p>
+    <div class="ds-chair-card">
+      {{ with (.Resources.ByType "image").GetMatch "*avatar*" }}{{ $a := .Fill "240x240 Center q85" }}<img src="{{ $a.RelPermalink }}" width="240" height="240" alt="">{{ end }}
+      <div>
+        <h3 class="ds-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.role }}<p class="ds-meta">{{ . }}</p>{{ end }}
+      </div>
     </div>
   </div>
   {{ end }}
