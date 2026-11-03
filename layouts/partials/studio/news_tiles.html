@@ -8,7 +8,9 @@
     {{ range $i, $p := $pages }}
     <a class="ds-tile ds-item" href="{{ $p.RelPermalink }}">
       {{ with $p.Resources.GetMatch "featured*" }}
-        {{ $r := .Fill (cond (eq $i 0) "1400x700 Center q85" "800x400 Center q85") }}
+        {{/* The post's `image.focal_point` (Top, Center, ...) says where to crop. */}}
+        {{ $anchor := $p.Params.image.focal_point | default "Center" }}
+        {{ $r := .Fill (printf "%s %s q85" (cond (eq $i 0) "1400x700" "800x400") $anchor) }}
         <div class="ds-media ds-tile-media is-photo"><img src="{{ $r.RelPermalink }}" width="{{ $r.Width }}" height="{{ $r.Height }}" alt="" loading="lazy"></div>
       {{ else }}
         <div class="ds-media ds-tile-media ds-media-empty" aria-hidden="true"><span>No picture</span></div>
