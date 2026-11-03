@@ -1,16 +1,15 @@
 {{- define "main" -}}
-{{/* /research/: the introduction, then every area in full - the picture on
-     one side, the number, leads, text and key publications on the other,
-     alternating sides. Each area keeps the anchor the homepage tiles link
-     to, so /research/#ai-for-vision lands on the right one. */}}
+{{/* /research/: every area in full - the picture on one side, the number,
+     leads, text and key publications on the other, alternating sides. Each
+     area keeps the anchor the homepage tiles link to, so
+     /research/#ai-for-vision lands on the right one. The introduction in
+     content/research/_index.md is the homepage's; it is not shown here. */}}
 
 {{ $areas := sort (where .Pages "Draft" "!=" true) "Weight" }}
-{{ partial "studio/page_header.html" (dict "title" .Title "sub" (printf "%d research groups at the chair" (len $areas))) }}
+{{ partial "studio/page_header.html" (dict "title" .Title) }}
 
 <section class="home-section ds-section ds-s-research-page">
   <div class="container">
-    {{ with .Content }}<div class="ds-intro">{{ . }}</div>{{ end }}
-
     <div class="ds-collection ds-l-editorial ds-img-m" data-type="research">
       <div class="ds-editorial">
         {{ range $i, $a := $areas }}

@@ -1,6 +1,6 @@
 +++
 # The Research section. This file is the /research/ page and carries the
-# introduction; each subfolder is one area (opportunistic-cardiac-mri is a
+# introduction shown on the homepage (the page itself goes straight to the areas); each subfolder is one area (opportunistic-cardiac-mri is a
 # worked example of adding one). The homepage's Research widget reads the
 # opening paragraph and the list from here and builds its tiles from the
 # areas, so nothing is written twice. Areas are ordered by `weight`.
