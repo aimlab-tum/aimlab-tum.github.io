@@ -82,9 +82,10 @@ Education
 
 *Group* decides **which heading you appear under**, and it is matched against a fixed
 list (`Chair`, `Management`, `Senior Researchers`, `Researchers`, `Collaborators`,
-`Visitors`, `Alumni`). If it does not match one of those exactly, no heading claims you
-and **you do not appear on the site at all**. That is why it is a dropdown rather than a
-text box, and why the automation rejects an invalid value instead of publishing it.
+`Visitors`, `Alumni`, `Mental Health Managers`). If it does not match one of those
+exactly, no heading claims you and **you do not appear on the site at all**. That is why
+it is a dropdown rather than a text box, and why the automation rejects an invalid value
+instead of publishing it.
 
 They often change together, but not always: a promotion changes your Role while your Group
 stays `Researchers`; someone leaving changes only their Group to `Alumni`, keeping the Role
@@ -123,8 +124,8 @@ forms above handle both for you):
 - **`authors:` in a profile must equal the folder name.** It is the key that links publications
   to people.
 - **`user_groups` must be one of** `Chair`, `Management`, `Senior Researchers`, `Researchers`,
-  `Collaborators`, `Visitors`, `Alumni` (defined in `content/home/people.md`). A typo means the
-  person renders nowhere at all.
+  `Collaborators`, `Visitors`, `Alumni`, `Mental Health Managers` (defined in
+  `content/home/people.md`). A typo means the person renders nowhere at all.
 
 Also: do not copy `superuser: true` from an existing profile. It marks a site owner, not an
 ordinary member.

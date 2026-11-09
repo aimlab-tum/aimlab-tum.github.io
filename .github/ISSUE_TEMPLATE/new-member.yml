@@ -59,6 +59,7 @@ body:
         - Visitors
         - Chair
         - Alumni
+        - Mental Health Managers
       default: 0
     validations: {required: true}
   - type: input
