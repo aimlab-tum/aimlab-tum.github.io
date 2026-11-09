@@ -5,7 +5,7 @@ title: "Dr. Sevgi Gokce Kafali receives the Alexander von Humboldt Postdoctoral 
 subtitle: ""
 summary: "Dr. Sevgi Gokce Kafali receives the Alexander von Humboldt Postdoctoral Fellowship"
 
-authors: ["Sevgi Kafali"]
+authors: ["Sevgi Gokce Kafali"]
 tags: []
 categories: []
 date: 2025-10-06T09:00:00+02:00
