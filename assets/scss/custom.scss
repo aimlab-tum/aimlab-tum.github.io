@@ -746,11 +746,6 @@ body.dark {
   gap: 2.25rem;
   align-items: start;
 }
-/* /news/: the posts one beneath the other, the picture at the left. */
-.ds-news-thumb { display: block; flex: none; width: 12.5rem; aspect-ratio: 1.3333; }
-.ds-news-row { gap: 1.5rem; padding: 1.3rem 0; }
-.ds-news-row .ds-title { font-size: 1.15rem; }
-.ds-news-row:hover .ds-news-thumb img { transform: scale(1.04); }
 
 /* -------------------------------------------------------------- people */
 
@@ -1050,11 +1045,6 @@ body.dark {
   .is-narrow .ds-grid { grid-template-columns: minmax(0, 1fr); grid-auto-rows: 12rem; }
   .ds-grid > .ds-tile:first-child { grid-column: auto; grid-row: auto; }
   .ds-grid > .ds-tile:first-child .ds-title { font-size: 1.2rem; }
-
-  /* News rows: a smaller picture, the text keeps the room. */
-  .ds-news-thumb { width: 6.75rem; }
-  .ds-news-row { gap: 1rem; padding: 1.1rem 0; }
-  .ds-news-row .ds-title { font-size: 1rem; }
 
   /* Course rows: the type label takes a line of its own above its courses
      instead of a column too narrow for "Practicals". */
