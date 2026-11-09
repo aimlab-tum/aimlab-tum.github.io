@@ -1,0 +1,21 @@
+{{/* Posts as a list, one beneath the other: the picture at the left, then the
+     date, the title and the summary. `pages` are the posts, newest first. */}}
+<ol class="ds-list ds-news-list">
+  {{ range $p := .pages }}
+  {{ $sum := $p.Summary | plainify | htmlUnescape | replaceRE "\\s+" " " }}
+  {{ $sum = trim $sum " " }}
+  <li class="ds-row ds-news-row ds-item">
+    {{ with $p.Resources.GetMatch "featured*" }}
+      {{/* The post's `image.focal_point` (Top, Center, ...) says where to crop. */}}
+      {{ $r := .Fill (printf "640x480 %s q85" ($p.Params.image.focal_point | default "Center")) }}
+      <a class="ds-media ds-news-thumb is-photo" href="{{ $p.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ $r.RelPermalink }}" width="{{ $r.Width }}" height="{{ $r.Height }}" alt="" loading="lazy"></a>
+    {{ end }}
+    <div class="ds-row-body">
+      <p class="ds-kicker"><time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "Jan 2, 2006" }}</time></p>
+      <h3 class="ds-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+      {{ if and $sum (ne $sum $p.Title) }}<p class="ds-text">{{ $sum | truncate 220 }}</p>{{ end }}
+      <a class="ds-action" href="{{ $p.RelPermalink }}">Read more <span aria-hidden="true">→</span></a>
+    </div>
+  </li>
+  {{ end }}
+</ol>
