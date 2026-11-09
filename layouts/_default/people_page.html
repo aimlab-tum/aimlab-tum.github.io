@@ -1,0 +1,10 @@
+{{- define "main" -}}
+{{/* /people/: the theme's People widget - every group in content/people.md -
+     under a page header. */}}
+{{ partial "studio/page_header.html" (dict "title" .Title) }}
+<section class="home-section ds-section ds-in-page">
+  <div class="container">
+    {{ partial "widgets/people.html" (dict "root" . "page" . "hash_id" "people") }}
+  </div>
+</section>
+{{- end -}}

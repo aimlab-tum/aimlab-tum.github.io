@@ -2,6 +2,12 @@
 title = "Inverse problems in biomedical imaging"
 weight = 20
 
+# The photograph on the area's tile (homepage) and beside its text on
+# /research/, from assets/images. Without one the first figure stands in.
+[card]
+  image = "images/inverse.jpg"
+  alt = "Two axial brain MRI slices, FLAIR and T2-weighted"
+
 publications = [
   "Schlemper, J., Caballero, J., Hajnal, J.V., Price, A.N. & Rueckert, D. (2017). A deep cascade of convolutional neural networks for dynamic MR image reconstruction. *IEEE Transactions on Medical Imaging*.",
   "Qin, C., Schlemper, J., Caballero, J., Price, A.N., Hajnal, J.V. & Rueckert, D. (2018). Convolutional recurrent neural networks for dynamic MR image reconstruction. *IEEE Transactions on Medical Imaging*.",

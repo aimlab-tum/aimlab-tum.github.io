@@ -1,0 +1,13 @@
+{{- define "main" -}}
+{{/* /contact/: the homepage's Contact section (content/home/contact.md),
+     rendered by the theme's own widget, under a page header. */}}
+{{ partial "studio/page_header.html" (dict "title" .Title "sub" .Params.subtitle) }}
+{{ $home := site.GetPage "/home/index.md" }}
+{{ range where ($home.Resources.ByType "page") "Params.widget" "contact" }}
+<section class="home-section ds-section ds-in-page">
+  <div class="container">
+    {{ partial "widgets/contact.html" (dict "root" $ "page" . "hash_id" "contact") }}
+  </div>
+</section>
+{{ end }}
+{{- end -}}

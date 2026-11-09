@@ -1,24 +1,18 @@
 +++
-widget = "blank"
+# Vacancies on the homepage: the text of content/vacancies.md, under a
+# centred heading.
+widget = "vacancies"
 headless = true  # This file represents a page section.
+active = true  # Activate this widget? true/false
+weight = 70  # Order that this section will appear.
 
 title = "Vacancies"
-weight = 70
-[design]
-  # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "2"
+subtitle = ""
 
+[advanced]
+  # Custom CSS.
+  css_style = ""
+
+  # CSS class.
+  css_class = ""
 +++
-
-We are recruiting team members who would like to join us for a MSc, BSc or guided research/interdisciplinary project on an ongoing basis! Please look under Teaching to find out which projects we are currently offering. If you'd like to join us for one of these projects, please get in touch by contacting the appropriate staff member via e-mail and attach a motivation letter, transcript of academic records and CV.
-
-### Current vacancies
-
-Currently no positions are available.
-
-
-### Internships
-
-Unfortunately we cannot host any external students for internships.
-
-

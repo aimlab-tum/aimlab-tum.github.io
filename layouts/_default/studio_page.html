@@ -1,0 +1,14 @@
+{{- define "main" -}}
+{{/* A plain page under the site's page header: the Markdown body as it is,
+     full width. Teaching and Vacancies use it (`layout = "studio_page"`). */}}
+{{ partial "studio/page_header.html" (dict "title" .Title "sub" .Params.subtitle) }}
+<section class="home-section ds-section ds-in-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</section>
+{{- end -}}

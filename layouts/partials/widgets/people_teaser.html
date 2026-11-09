@@ -1,0 +1,69 @@
+{{/* People on the homepage: the chair large on the left, the management on
+     the right, then the faces of everyone else in the current team, and a
+     link to /people/. Alumni and the mental health managers are left to the
+     full list. */}}
+
+{{ $st := .page }}
+{{ $authors := where site.Pages "Section" "authors" }}
+{{ $chair := false }}
+{{ $management := slice }}
+{{ $faces := slice }}
+
+{{ range $g := $st.Params.content.user_groups }}
+  {{ $name := lower $g }}
+  {{ if not (or (in $name "alumni") (in $name "mental")) }}
+    {{ range sort (where $authors ".Params.user_groups" "intersect" (slice $g)) ".Title" }}
+      {{ if and (not $chair) (eq $name "chair") }}
+        {{ $chair = . }}
+      {{ else if eq $name "management" }}
+        {{ $management = $management | append . }}
+      {{ else if (.Resources.ByType "image").GetMatch "*avatar*" }}
+        {{ $faces = $faces | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<header class="ds-head"><h1>{{ $st.Title }}</h1></header>
+
+<div class="ds-teaser">
+  {{ with $chair }}
+  <div class="ds-chair">
+    <p class="ds-eyebrow">Chair</p>
+    <div class="ds-chair-card">
+      {{ with (.Resources.ByType "image").GetMatch "*avatar*" }}{{ $a := .Fill "240x240 Center q85" }}<img src="{{ $a.RelPermalink }}" width="240" height="240" alt="">{{ end }}
+      <div>
+        <h3 class="ds-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.role }}<p class="ds-meta">{{ . }}</p>{{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  {{ with $management }}
+  <div class="ds-management">
+  <p class="ds-eyebrow">Management</p>
+  <ul class="ds-pgrid">
+    {{ range . }}
+    <li class="ds-person">
+      {{ with (.Resources.ByType "image").GetMatch "*avatar*" }}{{ $a := .Fill "120x120 Center q85" }}<img class="ds-avatar" src="{{ $a.RelPermalink }}" width="120" height="120" alt="" loading="lazy">{{ else }}<span class="ds-avatar ds-avatar-empty" aria-hidden="true">{{ substr .Title 0 1 }}</span>{{ end }}
+      <span class="ds-p-text">
+        <span class="ds-p-name"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+        {{ with .Params.role }}<span class="ds-p-role">{{ . }}</span>{{ end }}
+      </span>
+    </li>
+    {{ end }}
+  </ul>
+  </div>
+  {{ end }}
+  <div class="ds-team">
+  <p class="ds-eyebrow">Researchers</p>
+  <div class="ds-faces">
+    {{ range $faces }}
+      {{ $a := ((.Resources.ByType "image").GetMatch "*avatar*").Fill "120x120 Center q85" }}
+      <a href="{{ .RelPermalink }}" title="{{ .Title }}"><img src="{{ $a.RelPermalink }}" width="120" height="120" alt="{{ .Title }}" loading="lazy"></a>
+    {{ end }}
+  </div>
+  </div>
+</div>
+
+<p class="ds-section-more"><a class="ds-action" href="{{ "people/" | relURL }}">Meet all people <span aria-hidden="true">→</span></a></p>

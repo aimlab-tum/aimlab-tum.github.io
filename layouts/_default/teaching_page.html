@@ -1,0 +1,79 @@
+{{- define "main" -}}
+{{/* /teaching/: the programme as a band under the page header, then the
+     courses semester by semester - the current one open, the earlier ones
+     folded - and the theses box at the end. Everything comes from the front
+     matter and body of content/teaching.md. */}}
+{{ partial "studio/page_header.html" (dict "title" .Title) }}
+{{ $paras := findRE "(?s)<p>.*?</p>" .Content }}
+
+{{ with .Params.programme }}
+<div class="tp-programme">
+  <div class="container">
+    <div class="tp-programme-grid">
+      <div>
+        <p class="ds-eyebrow">{{ .eyebrow }}</p>
+        <h2 class="tp-programme-title">{{ .title }}</h2>
+        <div class="tp-programme-text">{{ .text | markdownify }}</div>
+        <p class="tp-actions">
+          <a class="btn btn-primary" href="{{ .url }}" target="_blank" rel="noopener">Programme website&nbsp;→</a>
+          {{ with .contact }}<a class="btn btn-outline-primary" href="mailto:{{ . }}">Questions about applying</a>{{ end }}
+        </p>
+      </div>
+      {{ with .facts }}
+      <dl class="tp-facts">
+        {{ range . }}<dt>{{ .label }}</dt><dd>{{ .value }}</dd>{{ end }}
+        {{ with $.Params.programme.contact }}<dt>Contact</dt><dd><a href="mailto:{{ . }}">{{ . }}</a></dd>{{ end }}
+      </dl>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
+
+<section class="home-section ds-section tp-courses" id="courses">
+  <div class="container">
+    <p class="ds-eyebrow">Courses</p>
+    {{ with $paras }}<div class="tp-lead">{{ index . 0 | safeHTML }}</div>{{ end }}
+
+    {{ range $i, $s := .Params.semesters }}
+      {{ if eq $i 1 }}<details class="tp-earlier"><summary>Earlier semesters</summary>{{ end }}
+      <div class="tp-sem{{ if $i }} is-past{{ end }}">
+        <div class="tp-sem-head">
+          <h2>{{ $s.name }}</h2>
+          {{ if not $i }}<span class="tp-current">Current</span>{{ end }}
+        </div>
+        <div class="tp-rows">
+          {{ $last := "" }}
+          {{ range $c := $s.courses }}
+            {{/* The type is written in the singular in the data and shown in the plural. */}}
+            <div class="tp-type">{{ if ne $c.type $last }}{{ index (dict "Practical" "Practicals" "Lecture" "Lectures" "Seminar" "Seminars") $c.type | default $c.type }}{{ end }}</div>
+            <div class="tp-course">{{ with $c.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $c.title }}</a>{{ else }}{{ $c.title }}{{ end }}{{ with $c.note }} <span class="tp-note">— {{ . }}</span>{{ end }}</div>
+            <div class="tp-code">{{ replace $c.code ", " " · " }}</div>
+            {{ $last = $c.type }}
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+    {{ if gt (len .Params.semesters) 1 }}</details>{{ end }}
+
+    {{ with $paras }}{{ if gt (len .) 1 }}
+    <div class="tp-notes">{{ range after 1 . }}<div class="tp-note-text">{{ . | safeHTML }}</div>{{ end }}</div>
+    {{ end }}{{ end }}
+  </div>
+</section>
+
+{{ with .Params.theses }}
+<div class="tp-work">
+  <div class="container">
+    <div class="tp-work-grid">
+      <div>
+        <p class="ds-eyebrow">{{ .eyebrow }}</p>
+        <h2>{{ .title }}</h2>
+        <p>{{ .text }}</p>
+      </div>
+      <a class="btn btn-primary" href="{{ .url }}" target="_blank" rel="noopener">{{ .action }}&nbsp;→</a>
+    </div>
+  </div>
+</div>
+{{ end }}
+{{- end -}}

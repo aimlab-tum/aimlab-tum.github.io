@@ -1,0 +1,43 @@
+{{/* The lab's Bluesky posts, read from data/bluesky.json. The data and its
+     images are fetched at deploy time by .github/scripts/fetch_bluesky.py, so
+     nothing on the page contacts Bluesky from a visitor's browser. */}}
+
+{{ $bsky := site.Data.bluesky }}
+{{ with $bsky }}{{ with .profile }}
+<aside class="nw-side">
+  <div class="nw-feed">
+    <div class="nw-feed-head">
+      {{ with .avatar }}<img class="nw-avatar" src="{{ . | relURL }}" alt="" width="40" height="40">{{ end }}
+      <div>
+        <div class="nw-feed-name">{{ .name }}</div>
+        <div class="nw-feed-handle">@{{ .handle }} · {{ .followers }} followers</div>
+      </div>
+      <a class="nw-follow" href="{{ .url }}" target="_blank" rel="noopener">Follow</a>
+    </div>
+    <div class="nw-posts">
+      {{ range $bsky.posts }}
+        {{ $alt := .alt }}
+        <article class="nw-post">
+          <p class="nw-text">{{ .text }}</p>
+          {{ with .image }}<img class="nw-img" src="{{ . | relURL }}" alt="{{ $alt }}" loading="lazy">{{ end }}
+          {{ with .external }}
+            <a class="nw-ext" href="{{ .url }}" target="_blank" rel="noopener">
+              <strong>{{ .title }}</strong>
+            </a>
+          {{ end }}
+          <div class="nw-meta">
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .date }}</a>
+            <span>♥ {{ .likes }}</span>
+            <span>↻ {{ .reposts }}</span>
+            <span>💬 {{ .replies }}</span>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+    <div class="nw-feed-foot">
+      <a href="{{ .url }}" target="_blank" rel="noopener">All posts on Bluesky →</a>
+      <a href="{{ "post/index.xml" | relURL }}">Subscribe by RSS</a>
+    </div>
+  </div>
+</aside>
+{{ end }}{{ end }}

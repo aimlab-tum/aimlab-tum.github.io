@@ -1,0 +1,25 @@
+{{/* Posts as a grid of tiles, the first one large: the date and the title on
+     the featured picture. `pages` are the posts, newest first; `narrow` is set
+     when the grid shares its row with the Bluesky feed. */}}
+
+{{ $pages := .pages }}
+<div class="ds-collection ds-l-grid ds-img-s{{ if .narrow }} is-narrow{{ end }}" data-type="news">
+  <div class="ds-grid" data-n="{{ len $pages }}">
+    {{ range $i, $p := $pages }}
+    <a class="ds-tile ds-item" href="{{ $p.RelPermalink }}">
+      {{ with $p.Resources.GetMatch "featured*" }}
+        {{/* The post's `image.focal_point` (Top, Center, ...) says where to crop. */}}
+        {{ $anchor := $p.Params.image.focal_point | default "Center" }}
+        {{ $r := .Fill (printf "%s %s q85" (cond (eq $i 0) "1400x700" "800x400") $anchor) }}
+        <div class="ds-media ds-tile-media is-photo"><img src="{{ $r.RelPermalink }}" width="{{ $r.Width }}" height="{{ $r.Height }}" alt="" loading="lazy"></div>
+      {{ else }}
+        <div class="ds-media ds-tile-media ds-media-empty" aria-hidden="true"><span>No picture</span></div>
+      {{ end }}
+      <div class="ds-tile-cap">
+        <p class="ds-kicker"><time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "Jan 2, 2006" }}</time></p>
+        <h3 class="ds-title">{{ $p.Title }}</h3>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>

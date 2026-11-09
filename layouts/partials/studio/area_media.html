@@ -1,0 +1,30 @@
+{{/* The picture of a research area.
+
+     `card.image` in the area's front matter names a photograph in
+     assets/images; without one the area's first figure stands in, and without
+     that a labelled blank. `fill` is the size for a tile, cropped to cover it;
+     when `fit` is given a figure is kept whole at that size instead, since a
+     paper figure is a composite and cropping it throws half of it away. */}}
+
+{{ $p := .page }}
+{{ $img := false }}
+{{ $figure := false }}
+{{ with $p.Params.card }}{{ with .image }}{{ with resources.Get . }}{{ $img = . }}{{ end }}{{ end }}{{ end }}
+{{/* `figure.png` first, since `figure-2.png` sorts ahead of it. */}}
+{{ if not $img }}{{ with $p.Resources.GetMatch "figure.*" }}{{ $img = . }}{{ $figure = true }}{{ end }}{{ end }}
+{{ if not $img }}{{ with $p.Resources.GetMatch "figure*" }}{{ $img = . }}{{ $figure = true }}{{ end }}{{ end }}
+
+{{ if $img }}
+  {{ $r := "" }}
+  {{ if and $figure $.fit }}
+    {{ $r = $img.Fit (printf "%s q85" $.fit) }}
+  {{ else }}
+    {{ $r = $img.Fill (printf "%s Center q85" ($.fill | default "900x600")) }}
+  {{ end }}
+  {{ $alt := "" }}
+  {{ with $p.Params.card }}{{ with .alt }}{{ $alt = . }}{{ end }}{{ end }}
+  {{ if not $alt }}{{ with $p.Params.figures }}{{ with (index . 0).alt }}{{ $alt = . }}{{ end }}{{ end }}{{ end }}
+  <div class="ds-media {{ .cls }} {{ if $figure }}is-figure{{ else }}is-photo{{ end }}"><img src="{{ $r.RelPermalink }}" width="{{ $r.Width }}" height="{{ $r.Height }}" alt="{{ $alt }}" loading="lazy"></div>
+{{ else }}
+  <div class="ds-media {{ .cls }} ds-media-empty" aria-hidden="true"><span>No figure yet</span></div>
+{{ end }}

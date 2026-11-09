@@ -1,0 +1,17 @@
+{{/* News on the homepage: the featured posts as tiles, the newest one large,
+     with the Bluesky feed beside them and a link to /news/. */}}
+
+{{ $st := .page }}
+{{ $count := $st.Params.content.count | default 5 }}
+{{ $query := where site.RegularPages "Type" "post" }}
+{{ if $st.Params.content.filters.featured }}{{ $query = where $query "Params.featured" true }}{{ end }}
+{{ $query = first $count $query.ByDate.Reverse }}
+{{ $feed := and ($st.Params.content.bluesky_feed | default false) site.Data.bluesky }}
+
+<header class="ds-head"><h1>{{ $st.Title }}</h1></header>
+
+{{ if $feed }}<div class="ds-news-wrap"><div class="ds-news-main">{{ end }}
+{{ partial "studio/news_tiles.html" (dict "pages" $query "narrow" (not (not $feed))) }}
+{{ if $feed }}</div><div class="ds-feed-slot">{{ partial "studio/bluesky_feed.html" . }}</div></div>{{ end }}
+
+<p class="ds-section-more"><a class="ds-action" href="{{ "news/" | relURL }}">All news <span aria-hidden="true">→</span></a></p>

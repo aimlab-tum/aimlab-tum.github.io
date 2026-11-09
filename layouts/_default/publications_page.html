@@ -1,0 +1,42 @@
+{{- define "main" -}}
+{{/* /publications/: one tab per year, newest first; in each, the papers of
+     that year as rows - venue, title, authors, the start of the abstract and a
+     link to the paper. The tabs need assets/js/studio.js; without it every
+     year is shown. The theme's searchable list stays at /publication/. */}}
+{{ partial "studio/page_header.html" (dict "title" .Title "sub" .Params.subtitle) }}
+{{ $years := (where site.RegularPages "Type" "publication").GroupByDate "2006" }}
+<section class="home-section ds-section ds-in-page">
+  <div class="container">
+    <div class="ds-collection ds-l-tabs ds-img-none" data-type="publications">
+      <div class="ds-tabs">
+        <div class="ds-tablist" role="tablist">
+          {{ range $i, $g := $years }}<button type="button" role="tab" id="pubs-t{{ $i }}" aria-controls="pubs-p{{ $i }}" aria-selected="{{ eq $i 0 }}" tabindex="{{ cond (eq $i 0) 0 -1 }}">{{ $g.Key }}</button>{{ end }}
+        </div>
+        {{ range $i, $g := $years }}
+        <div class="ds-tabpanel" role="tabpanel" id="pubs-p{{ $i }}" aria-labelledby="pubs-t{{ $i }}"{{ if $i }} hidden{{ end }}>
+          <ol class="ds-list">
+            {{ range $g.Pages }}
+              {{ $link := .RelPermalink }}
+              {{ with .Params.doi }}{{ $link = printf "https://doi.org/%s" . }}{{ end }}
+              {{ $authors := slice }}
+              {{ range .Params.authors }}{{ $n := trim . " ," }}{{ if $n }}{{ $authors = $authors | append $n }}{{ end }}{{ end }}
+              <li class="ds-row ds-item">
+                <div class="ds-row-body">
+                  {{ with .Params.publication }}<p class="ds-kicker">{{ replaceRE ",?\\s*\\d{4}\\.?$" "" . }}</p>{{ end }}
+                  <h3 class="ds-title"><a href="{{ $link }}"{{ if .Params.doi }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a></h3>
+                  <p class="ds-meta">{{ if gt (len $authors) 3 }}{{ delimit (first 3 $authors) ", " }} et al.{{ else }}{{ delimit $authors ", " }}{{ end }} · {{ .Date.Format "2006" }}</p>
+                  {{ with .Params.abstract }}<p class="ds-text">{{ . | plainify | truncate 260 }}</p>{{ end }}
+                  <a class="ds-action" href="{{ $link }}"{{ if .Params.doi }} target="_blank" rel="noopener"{{ end }}>{{ if .Params.doi }}Read the paper{{ else }}Details{{ end }} <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="ds-row-aside"><span class="ds-year">{{ .Date.Format "2006" }}</span></div>
+              </li>
+            {{ end }}
+          </ol>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <p class="ds-section-more"><a class="ds-action" href="{{ "publication/" | relURL }}">Search and filter every publication <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+{{- end -}}

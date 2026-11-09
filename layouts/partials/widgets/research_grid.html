@@ -1,0 +1,38 @@
+{{/* Research on the homepage.
+
+     The introduction's opening paragraph comes from the /research/
+     page (content/research/_index.md); the tiles are the areas under it, in
+     `weight` order, the first one large. Each tile links to its own part of
+     /research/. The picture is the area's `card.image` (a photograph in
+     assets/images) and, where there is none, its first figure. */}}
+
+{{ $st := .page }}
+{{ $research := site.GetPage "/research" }}
+{{ $areas := sort (where $research.Pages "Draft" "!=" true) "Weight" }}
+{{ $count := $st.Params.content.count | default 5 }}
+{{ $tiles := first $count $areas }}
+
+<header class="ds-head"><h1>{{ $st.Title }}</h1></header>
+
+{{ with $research.Content }}
+<div class="ds-intro">
+  {{ with findRE "(?s)<p>.*?</p>" . 1 }}{{ index . 0 | safeHTML }}{{ end }}
+</div>
+{{ end }}
+
+<div class="ds-collection ds-l-grid ds-img-m" data-type="research">
+  <div class="ds-grid" data-n="{{ len $tiles }}">
+    {{ range $i, $area := $tiles }}
+    <a class="ds-tile ds-item" href="{{ $research.RelPermalink }}#{{ anchorize $area.Title }}">
+      {{ partial "studio/area_media.html" (dict "page" $area "cls" "ds-tile-media" "fill" (cond (eq $i 0) "1400x940" "900x600")) }}
+      <div class="ds-tile-cap">
+        {{ $people := $area.Params.leads | default slice }}{{ with $area.Params.researchers }}{{ $people = $people | append . }}{{ end }}
+        {{ with $people }}<p class="ds-kicker">{{ range $n, $l := . }}{{ if $n }} · {{ end }}{{ $l.name }}{{ end }}</p>{{ end }}
+        <h3 class="ds-title">{{ $area.Title }}</h3>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+
+<p class="ds-section-more"><a class="ds-action" href="{{ $research.RelPermalink }}">All research areas <span aria-hidden="true">→</span></a></p>

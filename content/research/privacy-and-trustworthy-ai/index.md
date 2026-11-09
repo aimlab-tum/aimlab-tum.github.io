@@ -1,6 +1,12 @@
 +++
 title = "Privacy-preserving and trustworthy AI in medicine"
-weight = 30
+weight = 40
+
+# The photograph on the area's tile (homepage) and beside its text on
+# /research/, from assets/images. Without one the first figure stands in.
+[card]
+  image = "images/privacy.jpg"
+  alt = "A padlock on a shelf of patient files"
 
 publications = [
   "Kaiser, J., Ziller, A., Triantafillou, E., Rückert, D., & Kaissis, G. (2026). Your Privacy Depends on Others: Collusion Vulnerabilities in Individual Differential Privacy. *4th IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)*.",
@@ -25,6 +31,12 @@ publications = [
 [[leads]]
   name = "Alexander Ziller"
   url = "/author/alexander-ziller/"
+
+# The people of this area, named on its tile and on /research/ (leads first).
+[[researchers]]
+  name = "Raphael Rehms"
+  url = "/author/raphael-rehms/"
+
 
 # Figures live beside this file. The first is the one the slide shows;
 # the rest are kept with their captions for whatever shows them next.

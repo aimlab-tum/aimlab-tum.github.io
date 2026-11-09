@@ -7,7 +7,7 @@ date: 2025-02-03
 authors:
  - Hannah Eichhorn
  - Lina Felsner
- - Sevgi Gökçe Kafalı
+ - Sevgi Gökçe Kafali
 ---
 
 ![image](InvPr_seminar.jpg)
