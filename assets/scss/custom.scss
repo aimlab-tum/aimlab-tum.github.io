@@ -876,7 +876,12 @@ body.dark {
 @media (max-width: 991.98px) {
   .ds-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ds-news-wrap,
-  .ds-ed-row { grid-template-columns: minmax(0, 1fr); }
+  .ds-ed-row,
+  .ds-ed-row.is-flipped { grid-template-columns: minmax(0, 1fr); }
+  /* Stacked, every row reads picture first, and the picture must not stick:
+     in one column it would ride over the text below it. */
+  .ds-ed-row.is-flipped .ds-ed-media-wrap { order: 0; }
+  .ds-ed-media-wrap { position: static; }
   .ds-teach-cards { grid-template-columns: minmax(0, 1fr); }
 }
 
@@ -886,8 +891,6 @@ body.dark {
   .ds-grid[data-n] { grid-auto-rows: 11rem; }
   .ds-teaser { grid-template-columns: minmax(0, 1fr); }
   .ds-pgrid { grid-template-columns: minmax(0, 1fr); }
-  .ds-ed-row.is-flipped .ds-ed-media-wrap { order: 0; }
-  .ds-ed-media-wrap { position: static; }
   .ds-intro ul { columns: 1; }
 }
 

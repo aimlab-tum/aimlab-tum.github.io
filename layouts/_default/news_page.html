@@ -1,15 +1,13 @@
 {{- define "main" -}}
-{{/* /news/: every post as tiles, newest first, the Bluesky feed beside them,
-     and a link to the theme's archive at /post/. */}}
+{{/* /news/: every post, newest first, as the theme's compact list items - the
+     same ones the archive used - under the page header. /post/ redirects
+     here (an alias on content/news.md); only its RSS feed is still produced. */}}
 {{ partial "studio/page_header.html" (dict "title" .Title "sub" .Params.subtitle) }}
-{{ $posts := (where site.RegularPages "Type" "post").ByDate.Reverse }}
-{{ $feed := site.Data.bluesky }}
 <section class="home-section ds-section ds-in-page">
-  <div class="container">
-    {{ if $feed }}<div class="ds-news-wrap"><div class="ds-news-main">{{ end }}
-    {{ partial "studio/news_tiles.html" (dict "pages" $posts "narrow" (not (not $feed))) }}
-    {{ if $feed }}</div><div class="ds-feed-slot">{{ partial "studio/bluesky_feed.html" . }}</div></div>{{ end }}
-    <p class="ds-section-more"><a class="ds-action" href="{{ "post/" | relURL }}">News archive <span aria-hidden="true">→</span></a></p>
+  <div class="container ds-news-archive">
+    {{ range (where site.RegularPages "Type" "post").ByDate.Reverse }}
+      {{ partial "li_compact" . }}
+    {{ end }}
   </div>
 </section>
 {{- end -}}

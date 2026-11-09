@@ -16,7 +16,6 @@
         <div class="tp-programme-text">{{ .text | markdownify }}</div>
         <p class="tp-actions">
           <a class="btn btn-primary" href="{{ .url }}" target="_blank" rel="noopener">Programme website&nbsp;→</a>
-          {{ with .contact }}<a class="btn btn-outline-primary" href="mailto:{{ . }}">Questions about applying</a>{{ end }}
         </p>
       </div>
       {{ with .facts }}
