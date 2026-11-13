@@ -127,7 +127,7 @@ An optional Research Excellence Certificate is available.
     code = "IN2107, IN45072"
 +++
 
-Teaching and education are an integral part of our institute's mission. All of our courses—which are heavily influenced by our research—are taught in English. We offer lectures for students from various disciplines, but our core lectures are aimed at computer science students:
+Teaching and education are an integral part of our chair's mission. All of our courses—which are heavily influenced by our research—are taught in English. We offer lectures for students from various disciplines, but our core lectures are aimed at computer science students:
 
 Practicals and seminars take the individual subject areas further, with students applying what they learn in direct contact with our lecturers.
 
