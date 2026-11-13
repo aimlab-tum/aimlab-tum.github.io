@@ -583,15 +583,6 @@ body.dark {
 .ds-title a:hover { color: var(--ds-accent); }
 .ds-text { font-size: .86rem; line-height: 1.6; margin: .45rem 0 0; color: var(--ds-ink); }
 .ds-meta { font-size: .74rem; color: var(--ds-muted); margin: .35rem 0 0; }
-.ds-number {
-  font-family: 'Roboto', sans-serif;
-  font-size: .78rem;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: .14em;
-  color: var(--ds-accent);
-  margin: 0 0 .9rem;
-}
 .ds-prose p,
 .ds-prose li { font-size: 1.05rem; line-height: 1.7; }
 .ds-prose ul { padding-left: 1.2rem; }
@@ -849,6 +840,18 @@ body.dark {
   display: flex;
   justify-content: center;
 }
+
+/* Contact links: a heading and a row of icons. On /contact/ they sit in the
+   text column like the other entries; on the homepage, where the details are
+   one centred block, the row is centred under that block (the list indents
+   its text by 2.5em for the icon column, which the negative margin undoes). */
+.contact-follow-label { font-weight: 500; margin-bottom: .5rem; }
+.contact-follow-links { display: flex; align-items: center; gap: 1rem; }
+.contact-follow-links a { display: inline-flex; width: 1.75rem; height: 1.75rem; }
+.contact-follow-links svg { width: 100%; height: 100%; }
+.contact-follow-links i { font-size: 1.6rem; line-height: 1.75rem; }
+#contact .contact-follow { margin: .75rem 0 0 -2.5em; text-align: center; }
+#contact .contact-follow-links { justify-content: center; }
 
 /* ---------------------------------------------------------------- pages */
 
