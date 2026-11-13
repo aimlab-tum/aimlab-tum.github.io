@@ -111,7 +111,13 @@ office_hours = []
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
-contact_links = []
+#   Shown as a row of icons under `contact_links_title`; `name` labels the icon.
+#   An `icon_pack` of "custom" takes the icon from assets/media/icons/<icon>.svg.
+contact_links_title = "Follow us on:"
+contact_links = [
+  {icon = "linkedin", icon_pack = "custom", name = "LinkedIn", link = "https://www.linkedin.com/company/tum-aim-lab"},
+  {icon = "bluesky", icon_pack = "custom", name = "Bluesky", link = "https://bsky.app/profile/tum-aim-lab.bsky.social"}
+]
 
 ############################
 ## Social
