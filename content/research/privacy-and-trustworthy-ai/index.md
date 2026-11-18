@@ -53,14 +53,37 @@ publications = [
   caption = "This diagram presents an integrated framework for privacy-preserving and secure AI, highlighting technologies that safeguard both data and algorithms throughout the machine learning lifecycle. Under the Private AI paradigm, techniques like differential privacy protect sensitive medical data from identity leakage and inference attacks. On the Secure AI side, methods such as federated learning, secure multiparty computation, and homomorphic encryption enable collaborative model training without direct data sharing, defending against model theft, inversion, and adversarial manipulation. Together, these methods ensure that both patient data and algorithmic integrity are preserved in sensitive domains like healthcare."
 
 +++
+
 Our group is developing the next generation of privacy-preserving, secure, and trustworthy AI algorithms for medical applications.
 
-AI in medicine requires large, diverse, and representative datasets to train fair, generalizable, and reliable models. However, such datasets often contain sensitive personal information. Privacy-preserving machine learning bridges the gap between data utilization and data protection by enabling the training of AI models on private data while providing formal privacy guarantees. Our group focuses on:
+### Artificial Intelligence: Privacy, Security, and Safety
 
-- Differential privacy (DP) theory and applications to machine learning and deep learning, targeting both unstructured datasets (e.g., images) and structured data (e.g., tabular and graph databases).
-- Generative models and their applications, such as large language models (LLMs) and agentic systems, integrating differential privacy to ensure secure and privacy-preserving outcomes.
-- Data attribution techniques, which enable transparent and accountable data usage in training and inference.
+AI in medicine requires large, diverse, and representative datasets to train fair, generalizable, and reliable models. However, such datasets often contain sensitive personal information. Privacy-preserving machine learning bridges the gap between data utilization and data protection by enabling the training of AI models on private data while providing formal privacy guarantees.
+
+Our group focuses on:
+
+- Differential privacy (DP) theory and applications to machine learning and deep learning, targeting both unstructured datasets (e.g., images) and structured data (e.g., tabular and graph databases). This includes developing new theoretical frameworks for DP as well as practical implementations that balance privacy guarantees with model utility.
+- Generative models and their applications, such as large language models (LLMs) and agentic systems that utilize them, integrating differential privacy to ensure secure and privacy-preserving outcomes.
+- Data attribution techniques, which enable transparent and accountable data usage in training and inference, crucial for both privacy and intellectual property concerns.
 - Developing techniques to mitigate trade-offs between privacy, model utility, and computational efficiency.
 - AI security, including the study of vulnerabilities in collaborative machine learning protocols (e.g., federated learning) and designing robust defense mechanisms against adversarial attacks.
 
-Building trust in AI necessitates a comprehensive approach encompassing privacy, reliability, and security. Our work on trustworthy machine learning includes quantifying uncertainty in model outputs, incorporating domain expertise, developing probabilistic models to counteract poorly calibrated predictions, employing computational Bayesian techniques, and exploring the intersection of probabilistic and privacy-preserving machine learning. As AI systems increasingly integrate generative models like LLMs, we also work on establishing formal guarantees of safety and reliability for agentic LLM applications, exploring robustness in generative systems, and ensuring alignment of generative models with human values and ethical guidelines, particularly in high-stakes domains like healthcare.
+### Artificial Intelligence and Trustworthiness
+
+Building trust in AI necessitates a comprehensive approach encompassing privacy, reliability, and security. Our group works on trustworthy machine learning foundations, which include:
+
+- Quantifying uncertainty in model outputs to make predictions interpretable and reliable.
+- Incorporating domain expertise to ensure models align with expert expectations and context-specific requirements.
+- Developing probabilistic machine learning models to counteract poorly calibrated predictions from conventional models.
+- Employing computational Bayesian techniques to train statistical and deep learning algorithms.
+- Exploring the intersection of probabilistic and privacy-preserving machine learning, ensuring robust models that are secure, transparent, and fair.
+
+### AI Safety and Responsible Generative Systems
+
+As AI systems increasingly integrate generative models like LLMs, their safe deployment becomes paramount. Our group actively works on:
+
+- Establishing formal guarantees of safety and reliability for agentic LLM applications.
+- Exploring robustness in generative systems to reduce risks associated with misuse or erroneous outputs.
+- Ensuring the alignment of generative models with human values and ethical guidelines, particularly in high-stakes domains like healthcare.
+
+Through this multifaceted focus on privacy, security, and trust, we aim to set a standard for AI that is not only powerful but also safe, ethical, and respectful of individual rights.

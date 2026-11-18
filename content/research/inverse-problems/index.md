@@ -32,8 +32,15 @@ publications = [
   url = "/author/sevgi-gokce-kafali/"
 
 +++
+
 Our group is working on inverse problems in biomedical imaging and their solution using artificial intelligence and machine learning.
+
+### Deep learning for inverse problems
 
 The development of algorithms to solve inverse problems arising in sensor and imaging systems has a long tradition. Examples include compressed sensing approaches, e.g. for medical and computational imaging. Until recently, most algorithms for inverse problems were based on statistical or physical signal models, such as wavelets or sparse representations. Our research focuses on novel approaches based on deep learning to accelerate solving such problems.
 
-We study how these deep learning-based approaches can be optimized for clinical applications and how they can be combined with image analysis methods. Deep learning-based approaches for reconstructing magnetic resonance imaging (MRI) or computed tomography (CT) provide efficient AI models, allowing the reconstruction of high-quality MRI images, and high-quality CT images from low-dose X-ray images. Recent works on generative models have shown great promise for accelerating reconstruction tasks to shorten the scan time in MRI, as well as generating images with much higher resolution than the acquired resolution (e.g. super-resolution). Here, we tackle these problems by utilizing AI (i.e., diffusion models) guided by readily available MR images from other organs/tissues, MRI scanning parameters, or other MRI physics-guided information.
+### AI-based image reconstruction
+
+The focus of research here is how these deep learning-based approaches can be optimized for clinical applications and how they can be combined with image analysis methods. Deep learning-based approaches for reconstructing magnetic resonance imaging (MRI) or computed tomography (CT) provide efficient AI models, allowing the reconstruction of high-quality MRI images, and high-quality CT images from low-dose X-ray images.
+
+For example, recent works on generative models have shown great promise for accelerating reconstruction tasks to shorten the scan time in MRI, as well as generating images with much higher resolution than the acquired resolution (e.g. super-resolution). Here, we tackle these problems by utilizing AI (i.e., diffusion models) guided by readily available MR images from other organs/tissues, MRI scanning parameters, or other MRI physics-guided information.
